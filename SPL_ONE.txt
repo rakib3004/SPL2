@@ -1,0 +1,8 @@
+assalamualaikum library assistant tool
+this tool will help leaders to select
+popular books and assess librarian to
+add or remove books
+library assistant tool helps reader and
+librarian
+this will recommended books for readers
+through four waysthey arewriter wise typewise time wise and shellvoicethis tool also assists librarianproviding recommendationtoadd booksremove books and show all booksinformationin this project i have implemented threedifferent methods cross validation forchecking these methods accuracyvisualize output through charts likescatter chart line chart stack areachartshowing datadistribution through seven valuestatisticsmulti-variable regression analyticalhierarchy process and page rankalgorithm these three methods i haveimplemented in my projectin multivariable regressionthere are onedependent variable and three independentvariabledata seton a graphputting and finda line for which your value is minimumusing this line assumptionall output resultsin analytical hierarchy processattribute valuesare findingoutusing criteria and sub criteriaobject valueare calculated from attributed value andprioritize all objectin page rank algorithm objects value areprovided according to attributed weightattributed weight are calculated usingwriter nametype name alphabetic order and demandinglinkstools and implementationi have used java programming languagefor this projectjavafx as aframework this project contains 120 plusclassesin total 37 000 lines of codewhere 88 percent are source codei have done1300git commit on my github repositoryhere is my fullproject designthere are all reference i have used inmy whole projectthank you
