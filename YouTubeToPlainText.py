@@ -18,13 +18,15 @@ for video_id in video_group:
                 transcript+=val+"\n"
 
 
-    expression_info = transcript.splitlines()
-    print(expression_info)
-    final_transcript = " ".join(expression_info)
+
+    #expression_info = transcript.splitlines()
+    #print(expression_info)
+    #final_transcript = " ".join(expression_info)
+
 
 
     language = "Language"+str(lanID)+".txt"
     lanID=lanID+1
     file = open(language,"w")
-    file.write(final_transcript)
+    file.write(transcript)
     file.close()
