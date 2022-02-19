@@ -1,0 +1,81 @@
+javascript a high level single threaded
+garbage collected interpreted or just in
+time compiled prototype-based
+multi-paradigm dynamic language with a
+non-blocking event loop made famous for
+building websites it was created in 1995
+in just one week by brendan ike with the
+goal of adding an easy to learn
+scripting language to the netscape
+browser it was originally named mocha
+but the genius marketing people of the
+time wanted it to sound like that sexy
+new java language today it's a fully
+featured language that continues to
+evolve through the ecmascript standard
+it's most well known for building
+front-end web applications because it's
+the only language other than web
+assembly that is natively supported in
+browsers however anything that can be
+built with javascript will be built with
+javascript like server-side applications
+with node.js mobile applications with
+react native or ionic and desktop apps
+with electron it's an interpreted
+scripting language but tools like the v8
+engine and chromium use a just-in-time
+compiler to convert it to machine code
+at runtime it's also excellent at
+handling i o intensive jobs despite the
+fact that it's a single threaded
+language made possible by a non-blocking
+event loop that can queue up work in the
+background without blocking the main
+thread to get started create a file
+ending in.js your code will start
+executing from the global context use
+the console to log a value with the
+built-in debugger now think about where
+you want to run this file is it a
+front-end browser or a back-end node.js
+server in the browser you can reference
+it with a script tag then the browser
+will execute it when you open that html
+file on a website javascript is often
+used to grab an element from the dom
+document query selector will grab the
+first button then we can assign it to a
+variable with either var let or const
+var is the og way to do it but is
+typically avoided let is for variables
+that can be reassigned while const is
+for variables that cannot be reassigned
+now to make the button interactive we
+can add an event listener to it by
+defining a function for the on click
+event we can use the function keyword
+here or the more concise arrow syntax
+now the event loop will execute this
+function whenever a new click occurs
+functions are first class objects to
+support functional programming patterns
+but javascript also supports classes and
+inheritance for object oriented patterns
+even though it's single threaded it can
+do work asynchronously with the promise
+api which also supports the async await
+syntax js code can also run on the
+server thanks to the nodejs runtime
+instead of buttons on a web page it
+interacts with things like the file
+system api execute your code on the
+server by pulling up the terminal and
+entering the node command this has been
+javascript in 100 seconds hit the like
+button and subscribe if you want to see
+more short videos like this and become a
+fireship pro member if you want to learn
+how to do all kinds of crazy stuff with
+javascript thanks for watching and i
+will see you in the next one

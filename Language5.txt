@@ -1,0 +1,77 @@
+c sharp a statically typed general
+purpose programming language famous for
+being the workhorse of the windows.net
+framework it was created in the year
+2000 by anders heilsberg at microsoft it
+was designed as a modern c-like
+object-oriented language and was
+originally going to be called cool
+initially it was criticized as imitation
+java but it's evolved into one of the
+most popular and well-loved languages to
+this day it can be used to build almost
+anything like desktop apps on.net core
+cross-platform mobile apps with xamarin
+web applications with blazer and video
+games with the unity framework it became
+open source software in 2014 and can be
+used to build apps outside of the
+dot-net framework c-sharp code is
+compiled into an intermediate language
+which can then be interpreted by the
+common language runtime where it can be
+executed as native machine code on any
+operating system without the need to
+recompile it's known primarily as an
+object oriented language but also
+supports functional lambda expressions
+and has the ability to write a
+declarative query on any data structure
+with a feature called link it's a memory
+safe language thanks to garbage
+collection although it is possible to
+create an unsafe context if you want to
+allocate your own memory with pointers
+to get started install the.net core sdk
+then open the terminal to an empty
+directory and run.net new to create a
+new application that creates a
+program.cs file that imports the system
+namespace at the top then provides a
+class with a main function which is
+where your code will start executing
+declare a variable by starting with a
+type followed by a name and value by
+default a value cannot be null but you
+can make it nullable by adding a
+question mark to the type now to
+organize our code and share it in other
+files we will wrap it in a namespace we
+can then create a new class inside the
+namespace that has a constructor when
+the class is instantiated and a
+destructor when the class goes out of
+scope classes support inheritance
+polymorphism and everything else you
+would expect in a modern object-oriented
+language we can define a property on the
+class and make it readable with get or
+writable with set the language doesn't
+have top level functions but rather
+methods that are defined as a member of
+a class however it does support lambda
+expressions or anonymous functions and
+other functional programming patterns
+when it comes to asynchronous
+programming it supports a task-based
+asynchronous pattern allowing you to
+write non-blocking code using the async
+await syntax now to compile and execute
+your code use the.net run command this
+has been c sharp in 100 seconds hit the
+like button and subscribe if you want to
+see more short videos like this and let
+me know in the comments if you want to
+see a full.net or unity tutorial thanks
+for watching and i will see you in the
+next one

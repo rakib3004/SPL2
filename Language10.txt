@@ -1,0 +1,81 @@
+nest js is a node.js framework for
+building scalable server-side
+applications with typescript it provides
+a suite of tools that leverage either
+fastify or express to facilitate
+rapid development and predictable
+readable code it supports rest and
+graphql apis out of the box or you might
+use it to build a full stack application
+using the model view controller pattern
+similar to frameworks like laravel
+or ruby on rails and it contains a ton
+of built-in modules to work with
+databases
+handle security implement streaming and
+anything else you can imagine doing in a
+server side application
+nest has its own very powerful command
+line tool and you can scaffold out a new
+project with the nest
+new command that provides a code base
+pre-configured with jest for testing and
+set up with typescript to help us write
+more readable and reliable code in the
+source directory you'll notice a
+controller which is a fundamental
+building block of the framework
+it's responsible for handling incoming
+http requests
+and returning responses back to the
+client to implement a controller simply
+add the controller decorator
+to a class then inside the class you can
+implement methods
+and decorate them with http verbs like
+git
+post patch put etc by default this will
+create an http endpoint on the root url
+but you can pass a string to the
+decorator to
+change the route or implement dynamic
+route parameters in addition
+nest provides other decorators to
+control things like the status code and
+headers then
+in the method itself parameter
+decorators can be used to access the
+request parameters or body
+and finally the return value from the
+method is the response body
+that gets sent back down to the client
+what's awesome about nest
+is that you can use the cli to
+automatically generate more controllers
+to keep your code organized as it grows
+in complexity
+but there's more to nest than just
+controllers a provider is a class that
+contains shared logic throughout the
+entire application
+and can be injected as a dependency
+where needed any class with the
+injectable decorator can be injected in
+the constructor of another class
+for example a provider can be
+implemented as a guard to handle
+role-based user authentication
+or it might be implemented as a pipe to
+efficiently validate and transform
+values in a controller
+and lastly we have the module decorator
+which allows code to be organized into
+smaller chunks
+where it can be lazy loaded to run
+faster in serverless environments
+this has been nest js in 100 seconds if
+you want to see more short videos like
+this
+make sure to hit the like button and
+subscribe thanks for watching and i will
+see you in the next one

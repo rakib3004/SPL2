@@ -2,10 +2,12 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 
 import re
 
-video_group = ['jUuqBZwwkQw','vAoB4VbhRzM','xT8oP0wy-A0','x7X9w_GIm1s']
-#'l9AzO1FMgM8','ravLFzIguCM'
+video_group = ['jUuqBZwwkQw', 'vAoB4VbhRzM', 'xT8oP0wy-A0', 'x7X9w_GIm1s',
+               'ravLFzIguCM', 'ok-plXXHlWw', '446E-r0rXHI', '5C_HPTJg5ek',
+               'eIQh02xuVw4', '0M8AYU_hPas', 'DHjqpvDnNGE']
+#'ravLFzIguCM'
 
-#firebase, lua, kotline, python, java, c sharp
+#Firebase, Lua, Kotline, Python, C sharp, Html, Go, Rust, GraphQL, NestJS, Javascript
 lanID=1
 for video_id in video_group:
 
