@@ -12,7 +12,7 @@ from sklearn.feature_selection import SelectKBest, chi2
 
 
 json_data = None
-with open('Language1.txt') as data_file:
+with open('ConvertedText/Language1.txt') as data_file:
     lines = data_file.readlines()
     joined_lines = "[" + ",".join(lines) + "]"
 
