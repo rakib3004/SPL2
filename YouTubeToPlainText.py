@@ -13,6 +13,18 @@ video_group = ['jUuqBZwwkQw', 'vAoB4VbhRzM', 'xT8oP0wy-A0', 'x7X9w_GIm1s',
 #Channel Name: FireShip
 
 #Firebase, Lua, Kotline, Python, C sharp, Html, Go, Rust, GraphQL, NestJS, Javascript
+
+my_file = open("academy.txt", "r")
+
+# reading the file
+data = my_file.read()
+
+# replacing end splitting the text
+# when newline ('\n') is seen.
+video_group = data.split("\n")
+print(video_group)
+my_file.close()
+
 lanID=1
 for video_id in video_group:
 
@@ -29,7 +41,6 @@ for video_id in video_group:
     #expression_info = transcript.splitlines()
     #print(expression_info)
     #final_transcript = " ".join(expression_info)
-
 
 
     language = "ConvertedText/Language"+str(lanID)+".txt"
