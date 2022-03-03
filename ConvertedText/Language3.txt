@@ -1,0 +1,72 @@
+kotlin a statically typed multi-paradigm
+language designed quite simply as a
+better alternative to java like java it
+compiles to bytecode that runs on the
+java virtual machine but kotlin provides
+a more concise syntax and language
+features loved by modern developers like
+type inference functional patterns null
+safety and more it was announced in 2011
+by jetbrains with the first stable
+release coming in 2016. it's named after
+kotlin island in russia and it just got
+a mascot in october 2021 but it still
+doesn't have a name yet one of its key
+features is that it can interop with
+existing java code which means
+developers can gradually adopt it
+without throwing all of their code in
+the garbage in addition to jvm kotlin
+can also compile to native code and
+javascript opening the door to
+multi-platform apps it's been most
+influential in the android development
+community and as of 2019 google named it
+the preferred language for android
+development over java one of its killer
+features is co-routines which provides a
+simplified way to write asynchronous
+non-blocking code a common requirement
+for mobile developers to get started
+create a file ending in.kt most kotlin
+developers use something like intellij
+idea which is an ide brought to you by
+the same company that invented the
+language inside the file use the fun
+keyword to define a main function this
+is where your code will start executing
+and that syntax is a lot more fun to
+write than public static void main
+string args declare a variable with the
+var keyword assign a value and its type
+will be inferred automatically or you
+can add a colon after the variable name
+with an explicit type a variable can't
+be null unless you explicitly allow it
+with a question mark on the type now use
+printline to log the variable to the
+standard output notice how semicolons
+are optional which means that line
+breaks are significant kotlin supports
+familiar object-oriented patterns but
+can do special functional things that
+java cannot like modify the behavior of
+a class without inheritance using
+extension functions functions are first
+class objects which means they can be
+stored as variables passed as arguments
+or used anonymously with lambdas kotlin
+also reduces boilerplate with things
+like data classes so you don't have to
+write constructors getters and setters
+and supports destructuring when
+accessing the values on an object
+allowing you to write concise efficient
+code that you can then compile to a jar
+file by pulling up the terminal and
+running the kotlin compiler this has
+been kotlin in 100 seconds hit the like
+button and subscribe if you want to see
+more short videos like this thanks for
+watching and i will see you in the next
+one

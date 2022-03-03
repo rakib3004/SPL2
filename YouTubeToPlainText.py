@@ -2,9 +2,9 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 
 import re
 
-video_group = ['jUuqBZwwkQw', 'vAoB4VbhRzM', 'xT8oP0wy-A0', 'x7X9w_GIm1s',
+'''video_group = ['jUuqBZwwkQw', 'vAoB4VbhRzM', 'xT8oP0wy-A0', 'x7X9w_GIm1s',
                'ravLFzIguCM', 'ok-plXXHlWw', '446E-r0rXHI', '5C_HPTJg5ek',
-               'eIQh02xuVw4', '0M8AYU_hPas', 'DHjqpvDnNGE']
+               'eIQh02xuVw4', '0M8AYU_hPas', 'DHjqpvDnNGE']'''
 #https://www.youtube.com/watch?v=4vUtXdXmnRE//music
 
 #
