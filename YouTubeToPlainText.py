@@ -1,5 +1,6 @@
 from youtube_transcript_api import YouTubeTranscriptApi as yta
 
+
 import re
 
 '''video_group = ['jUuqBZwwkQw', 'vAoB4VbhRzM', 'xT8oP0wy-A0', 'x7X9w_GIm1s',
@@ -21,9 +22,12 @@ data = my_file.read()
 
 # replacing end splitting the text
 # when newline ('\n') is seen.
+
+
 video_group = data.split("\n")
 print(video_group)
 my_file.close()
+
 
 lanID=1
 for video_id in video_group:
@@ -37,10 +41,6 @@ for video_id in video_group:
                 transcript+=val+"\n"
 
 
-
-    #expression_info = transcript.splitlines()
-    #print(expression_info)
-    #final_transcript = " ".join(expression_info)
 
 
     language = "ConvertedText/Language"+str(lanID)+".txt"
