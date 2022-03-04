@@ -10,7 +10,7 @@ from googleapiclient.errors import HttpError
 # tab of
 #   https://cloud.google.com/console
 # Please ensure that you have enabled the YouTube Data API for your project.
-DEVELOPER_KEY = 'REPLACE_ME'
+DEVELOPER_KEY = 'AIzaSyCDqpvkFcSA2OucamX9Uk429DTXLNAvZkk'
 YOUTUBE_API_SERVICE_NAME = 'youtube'
 YOUTUBE_API_VERSION = 'v3'
 
@@ -53,7 +53,7 @@ if __name__ == '__main__':
   parser.add_argument('--max-results', help='Max results', default=30)
   args = parser.parse_args()
 
-  '''try:'''
-  youtube_search(args)
-  '''except:
-    print('An HTTP error %d occurred:\n%s')'''
+  try:
+    youtube_search(args)
+  except:
+    print('An HTTP error %d occurred:\n%s')
