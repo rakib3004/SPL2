@@ -1,10 +1,16 @@
-# coding: utf-8
-
-# In[1]:
-
-# Loading the data set - training data.
+import nltk
 from sklearn.datasets import fetch_20newsgroups
 from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.naive_bayes import MultinomialNB
+from sklearn.pipeline import Pipeline
+import numpy as np
+from sklearn.linear_model import SGDClassifier
+from sklearn.model_selection import GridSearchCV
+from sklearn.pipeline import Pipeline
+from sklearn.model_selection import GridSearchCV
+from nltk.stem.snowball import SnowballStemmer
+
 
 
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
@@ -30,7 +36,6 @@ print(X_train_counts.shape)
 # In[7]:
 
 # TF-IDF
-from sklearn.feature_extraction.text import TfidfTransformer
 
 tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
@@ -40,7 +45,6 @@ print(X_train_tfidf.shape)
 
 # Machine Learning
 # Training Naive Bayes (NB) classifier on training data.
-from sklearn.naive_bayes import MultinomialNB
 
 clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
 
@@ -49,7 +53,6 @@ clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
 # Building a pipeline: We can write less code and do all of the above, by building a pipeline as follows:
 # The names ‘vect’ , ‘tfidf’ and ‘clf’ are arbitrary but will be used later.
 # We will be using the 'text_clf' going forward.
-from sklearn.pipeline import Pipeline
 
 text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('clf', MultinomialNB())])
 
@@ -58,7 +61,6 @@ text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 # In[15]:
 
 # Performance of NB Classifier
-import numpy as np
 
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 predicted = text_clf.predict(twenty_test.data)
@@ -68,7 +70,6 @@ np.mean(predicted == twenty_test.target)
 
 # Training Support Vector Machines - SVM and calculating its performance
 
-from sklearn.linear_model import SGDClassifier
 
 text_clf_svm = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()),
                          ('clf-svm', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5, random_state=42))])
@@ -84,7 +85,6 @@ np.mean(predicted_svm == twenty_test.target)
 # All the parameters name start with the classifier name (remember the arbitrary name we gave).
 # E.g. vect__ngram_range; here we are telling to use unigram and bigrams and choose the one which is optimal.
 
-from sklearn.model_selection import GridSearchCV
 
 parameters = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True, False), 'clf__alpha': (1e-2, 1e-3)}
 
@@ -110,7 +110,6 @@ print(gs_clf.best_params_)
 # In[24]:
 
 # Similarly doing grid search for SVM
-from sklearn.model_selection import GridSearchCV
 
 parameters_svm = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True, False),
                   'clf-svm__alpha': (1e-2, 1e-3)}
@@ -125,7 +124,6 @@ print(gs_clf_svm.best_params_)
 
 # NLTK
 # Removing stop words
-from sklearn.pipeline import Pipeline
 
 text_clf = Pipeline([('vect', CountVectorizer(stop_words='english')), ('tfidf', TfidfTransformer()),
                      ('clf', MultinomialNB())])
@@ -134,11 +132,9 @@ text_clf = Pipeline([('vect', CountVectorizer(stop_words='english')), ('tfidf', 
 
 # Stemming Code
 
-import nltk
 
 nltk.download()
 
-from nltk.stem.snowball import SnowballStemmer
 
 stemmer = SnowballStemmer("english", ignore_stopwords=True)
 
