@@ -31,7 +31,7 @@ print("\n".join(twenty_train.data[0].split("\n")[:3]))  # prints first line of t
 
 count_vect = CountVectorizer()
 X_train_counts = count_vect.fit_transform(twenty_train.data)
-print(X_train_counts.shape)
+print('Train Set Count: ',X_train_counts.shape)
 
 # In[7]:
 
@@ -39,7 +39,8 @@ print(X_train_counts.shape)
 
 tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
-print(X_train_tfidf.shape)
+print('Term Frequency Data: \n',X_train_tfidf)
+print('Train Text Frequency: ',X_train_tfidf.shape)
 
 # In[9]:
 
@@ -64,19 +65,21 @@ text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 predicted = text_clf.predict(twenty_test.data)
-np.mean(predicted == twenty_test.target)
+print('CLF Prediction: ',np.mean(predicted == twenty_test.target))
 
 # In[16]:
 
 # Training Support Vector Machines - SVM and calculating its performance
 
-
+'''
 text_clf_svm = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()),
                          ('clf-svm', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5, random_state=42))])
 
 text_clf_svm = text_clf_svm.fit(twenty_train.data, twenty_train.target)
 predicted_svm = text_clf_svm.predict(twenty_test.data)
-np.mean(predicted_svm == twenty_test.target)
+print('SVM Prediction: ',np.mean(predicted_svm == twenty_test.target))
+
+'''
 
 # In[18]:
 
