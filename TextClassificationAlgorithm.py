@@ -4,13 +4,16 @@
 
 # Loading the data set - training data.
 from sklearn.datasets import fetch_20newsgroups
+from sklearn.feature_extraction.text import CountVectorizer
+
 
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
 
 # In[4]:
 
 # You can check the target names (categories) and some data files by following commands.
-twenty_train.target_names  # prints all the categories
+print(twenty_train.target_names)
+# prints all the categories
 
 # In[5]:
 
@@ -19,11 +22,10 @@ print("\n".join(twenty_train.data[0].split("\n")[:3]))  # prints first line of t
 # In[6]:
 
 # Extracting features from text files
-from sklearn.feature_extraction.text import CountVectorizer
 
 count_vect = CountVectorizer()
 X_train_counts = count_vect.fit_transform(twenty_train.data)
-X_train_counts.shape
+print(X_train_counts.shape)
 
 # In[7]:
 
@@ -32,7 +34,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
-X_train_tfidf.shape
+print(X_train_tfidf.shape)
 
 # In[9]:
 
@@ -98,8 +100,8 @@ gs_clf = gs_clf.fit(twenty_train.data, twenty_train.target)
 
 # To see the best mean score and the params, run the following code
 
-gs_clf.best_score_
-gs_clf.best_params_
+print(gs_clf.best_score_)
+print(gs_clf.best_params_)
 
 # Output for above should be: The accuracy has now increased to ~90.6% for the NB classifier (not so naive anymore! 😄)
 # and the corresponding parameters are {‘clf__alpha’: 0.01, ‘tfidf__use_idf’: True, ‘vect__ngram_range’: (1, 2)}.
@@ -116,8 +118,8 @@ parameters_svm = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True
 gs_clf_svm = GridSearchCV(text_clf_svm, parameters_svm, n_jobs=-1)
 gs_clf_svm = gs_clf_svm.fit(twenty_train.data, twenty_train.target)
 
-gs_clf_svm.best_score_
-gs_clf_svm.best_params_
+print(gs_clf_svm.best_score_)
+print(gs_clf_svm.best_params_)
 
 # In[25]:
 
