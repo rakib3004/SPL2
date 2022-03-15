@@ -18,7 +18,7 @@ twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
 # In[4]:
 
 # You can check the target names (categories) and some data files by following commands.
-print(twenty_train.target_names)
+print('',twenty_train.target_names)
 # prints all the categories
 
 # In[5]:
@@ -47,6 +47,9 @@ print('Train Text Frequency: ',X_train_tfidf.shape)
 # Machine Learning
 # Training Naive Bayes (NB) classifier on training data.
 
+text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('clf', MultinomialNB())])
+
+'''
 clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
 
 # In[14]:
@@ -55,31 +58,31 @@ clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
 # The names ‘vect’ , ‘tfidf’ and ‘clf’ are arbitrary but will be used later.
 # We will be using the 'text_clf' going forward.
 
-text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('clf', MultinomialNB())])
 
-text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
+text_clf = text_clf.fit(twenty_train.data, twenty_train.target)'''
 
 # In[15]:
 
 # Performance of NB Classifier
 
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
+'''
 predicted = text_clf.predict(twenty_test.data)
-print('CLF Prediction: ',np.mean(predicted == twenty_test.target))
-
+print('CLF Prediction: ', np.mean(predicted == twenty_test.target))
+'''
 # In[16]:
 
 # Training Support Vector Machines - SVM and calculating its performance
 
-'''
-text_clf_svm = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()),
-                         ('clf-svm', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, n_iter=5, random_state=42))])
 
+text_clf_svm = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()),
+                         ('clf-svm', SGDClassifier(loss='hinge', penalty='l2', alpha=1e-3, max_iter=1, random_state=42))])
+'''
 text_clf_svm = text_clf_svm.fit(twenty_train.data, twenty_train.target)
 predicted_svm = text_clf_svm.predict(twenty_test.data)
 print('SVM Prediction: ',np.mean(predicted_svm == twenty_test.target))
-
 '''
+
 
 # In[18]:
 
@@ -103,8 +106,8 @@ gs_clf = gs_clf.fit(twenty_train.data, twenty_train.target)
 
 # To see the best mean score and the params, run the following code
 
-print(gs_clf.best_score_)
-print(gs_clf.best_params_)
+print('The best score is: ',gs_clf.best_score_)
+print('The best params is: ',gs_clf.best_params_)
 
 # Output for above should be: The accuracy has now increased to ~90.6% for the NB classifier (not so naive anymore! 😄)
 # and the corresponding parameters are {‘clf__alpha’: 0.01, ‘tfidf__use_idf’: True, ‘vect__ngram_range’: (1, 2)}.
@@ -120,8 +123,8 @@ parameters_svm = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True
 gs_clf_svm = GridSearchCV(text_clf_svm, parameters_svm, n_jobs=-1)
 gs_clf_svm = gs_clf_svm.fit(twenty_train.data, twenty_train.target)
 
-print(gs_clf_svm.best_score_)
-print(gs_clf_svm.best_params_)
+print('Best Score: ',gs_clf_svm.best_score_)
+print('Best param: ',gs_clf_svm.best_params_)
 
 # In[25]:
 
@@ -157,7 +160,7 @@ text_mnb_stemmed = text_mnb_stemmed.fit(twenty_train.data, twenty_train.target)
 
 predicted_mnb_stemmed = text_mnb_stemmed.predict(twenty_test.data)
 
-np.mean(predicted_mnb_stemmed == twenty_test.target)
+print('Predict Score: ',np.mean(predicted_mnb_stemmed == twenty_test.target))
 
 # In[ ]:
 
