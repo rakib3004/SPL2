@@ -50,9 +50,17 @@ parameters = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True, Fa
 
 gs_clf = GridSearchCV(text_clf, parameters, n_jobs=-1)
 gs_clf = gs_clf.fit(twenty_train.data, twenty_train.target)
+predicted_gs_clf=gs_clf.predict(twenty_test.data)
 
 
+print('Grid Search Prediction: ',predicted_gs_clf)
+print('Testing  value: ',twenty_test.target)
 
+print('Grid Search Accuracy dataset: ', predicted_gs_clf==twenty_test.target)
+
+print('Grid Search Accuracy %: ', np.mean(predicted_gs_clf==twenty_test.target))
+
+'''
 print('The best score is: ',gs_clf.best_score_)
 print('The best params is: ',gs_clf.best_params_)
 
@@ -69,6 +77,10 @@ text_clf_svm = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer
 
 text_clf_svm = text_clf_svm.fit(twenty_train.data, twenty_train.target)
 predicted_svm = text_clf_svm.predict(twenty_test.data)
-print('SVM Prediction: ',np.mean(predicted_svm == twenty_test.target))
+print('SVM Accuracy: ',np.mean(predicted_svm == twenty_test.target))
 
 
+print(predicted_svm)
+
+
+'''
