@@ -16,24 +16,24 @@ from nltk.stem.snowball import SnowballStemmer
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
 
 
-print('20 Train data',twenty_train.target_names)
+#print('20 Train data',twenty_train.target_names)
 
 
 
-print("\n".join(twenty_train.data[0].split("\n")[:3]))
+#print("\n".join(twenty_train.data[0].split("\n")[:3]))
 
 
 count_vect = CountVectorizer()
 X_train_counts = count_vect.fit_transform(twenty_train.data)
-print('Train Set Count: ',X_train_counts.shape)
+#print('Train Set Count: ',X_train_counts.shape)
 
 
 
 
 tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
-print('Term Frequency Data: \n',X_train_tfidf)
-print('Train Text Frequency: ',X_train_tfidf.shape)
+#print('Term Frequency Data: \n',X_train_tfidf)
+#print('Train Text Frequency: ',X_train_tfidf.shape)
 
 
 
@@ -46,6 +46,9 @@ text_clf_svm = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer
 
 parameters = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True, False), 'clf__alpha': (1e-2, 1e-3)}
 
+deployment_set= open("ConvertedText/Language2.txt","r")
+
+deployment_data = deployment_set.read()
 
 
 gs_clf = GridSearchCV(text_clf, parameters, n_jobs=-1)
@@ -53,12 +56,16 @@ gs_clf = gs_clf.fit(twenty_train.data, twenty_train.target)
 predicted_gs_clf=gs_clf.predict(twenty_test.data)
 
 
-print('Grid Search Prediction: ',predicted_gs_clf)
-print('Testing  value: ',twenty_test.target)
+##print('Grid Search Prediction: ',predicted_gs_clf)
+##print('Testing  value: ',twenty_test.target)
 
-print('Grid Search Accuracy dataset: ', predicted_gs_clf==twenty_test.target)
+##print('Grid Search Accuracy dataset: ', predicted_gs_clf==twenty_test.target)
+             
 
-print('Grid Search Accuracy %: ', np.mean(predicted_gs_clf==twenty_test.target))
+
+
+
+##print('Grid Search Accuracy %: ', np.mean(predicted_gs_clf==twenty_test.target))
 
 '''
 print('The best score is: ',gs_clf.best_score_)
