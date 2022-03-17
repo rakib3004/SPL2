@@ -56,6 +56,25 @@ print("Twenty Test Data: ",twenty_test.data)
 print("Twenty Test Target: ",twenty_test.target)
 
 
+testData = open("TestData.txt","a")
+testData.write(twenty_test.data)
+testData.close()
+
+
+testTarget = open("TestTarget.txt","a")
+testTarget.write(twenty_test.target)
+testTarget.close()
+
+trainData = open("TrainData.txt","a")
+trainData.write(twenty_train.data)
+trainData.close()
+
+
+trainTarget = open("TrainTarget.txt","a")
+trainTarget.write(twenty_train.target)
+trainTarget.close()
+
+
 
 #print('Grid Search Prediction: ',predicted_gs_clf)
 #print('Testing  value: ',twenty_test.target)
