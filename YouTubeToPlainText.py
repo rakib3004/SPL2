@@ -15,7 +15,7 @@ import re
 
 #Firebase, Lua, Kotline, Python, C sharp, Html, Go, Rust, GraphQL, NestJS, Javascript
 
-my_file = open("academy.txt", "r")
+my_file = open("youtube_url.txt", "r")
 
 # reading the file
 data = my_file.read()
