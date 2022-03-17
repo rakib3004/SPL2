@@ -69,6 +69,7 @@ text_clf_svm = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer
 
 text_clf_svm = text_clf_svm.fit(twenty_train.data, twenty_train.target)
 predicted_svm = text_clf_svm.predict(twenty_test.data)
-print('SVM Prediction: ',np.mean(predicted_svm == twenty_test.target))
+print('SVM Prediction Accuracy: ',np.mean(predicted_svm == twenty_test.target))
 
+print('Predicted SVM', predicted_svm)
 
