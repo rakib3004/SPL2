@@ -138,7 +138,7 @@ text_clf = Pipeline([('vect', CountVectorizer(stop_words='english')), ('tfidf', 
 
 # Stemming Code
 
-
+'''
 nltk.download()
 
 
@@ -162,6 +162,6 @@ predicted_mnb_stemmed = text_mnb_stemmed.predict(twenty_test.data)
 
 print('Predict Score: ',np.mean(predicted_mnb_stemmed == twenty_test.target))
 
-# In[ ]:
 
 
+'''
