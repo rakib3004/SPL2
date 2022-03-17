@@ -13,6 +13,7 @@ from nltk.stem.snowball import SnowballStemmer
 
 
 
+
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
 
 
@@ -30,14 +31,29 @@ deployment_set= open("ConvertedText/Language2.txt","r")
 deployment_data = deployment_set.read()
 
 deployment_list = list(deployment_data)
-predicted = text_clf.predict(deployment_list)
-print(predicted == twenty_test.target)
+
+predicted = text_clf.predict(twenty_test.data)
 
 
-print(np.mean(predicted == twenty_test.target))
+news='python a high-level interpreted'
 
-print(dir(predicted))
-print(dir(twenty_test))
+computationalNews=[news]
 
-print(type(twenty_test.data))
-print(type(deployment_list))
+
+tagPrediction=text_clf.predict(deployment_list)
+print(twenty_train.target_names[tagPrediction[0]])
+
+tagList = open("TagList.txt", "a")
+
+tagList.write(str(twenty_train.target_names))
+
+tagList.close()
+
+
+
+
+
+
+
+
+
