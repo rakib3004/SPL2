@@ -40,4 +40,4 @@ print(dir(predicted))
 print(dir(twenty_test))
 
 print(type(twenty_test.data))
-print(type(deployment_data))
+print(type(deployment_list))
