@@ -38,7 +38,7 @@ print('Multimonial Naive Bayes Accuracy: ',mnb_accuracy,"%")
 
 tagList = open("NB.txt", "w")
 
-tagList.write(str('Multimonial Naive Bayes Accuracy: ',mnb_accuracy,"%"))
+tagList.write("Multimonial Naive Bayes Accuracy: "+str(mnb_accuracy)+"%")
 
 tagList.close()
 
