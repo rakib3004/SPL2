@@ -45,14 +45,7 @@ print(twenty_train.target_names[tagPrediction[0]])
 tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
 
 print(tagElement[:])
-'''
-tagList = open("TagList.txt", "w")
 
-tagList.write(str(twenty_train.target_names))
-
-tagList.close()
-
-'''
 
 
 
