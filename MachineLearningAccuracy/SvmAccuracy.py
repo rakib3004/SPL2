@@ -26,27 +26,14 @@ text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 
-deployment_set= open("ConvertedText/Language1.txt","r")
-
-deployment_data = deployment_set.read()
-
-deployment_list = list(deployment_data)
 
 predicted = text_clf.predict(twenty_test.data)
 
 
-news='animated historical videos on the modern wars with the Six-Day War'
+svm_accuracy=np.mean(predicted == twenty_test.target)
+svm_accuracy=svm_accuracy*100
 
-computationalNews=[news]
-
-
-tagPrediction=text_clf.predict(deployment_list)
-print(twenty_train.target_names[tagPrediction[0]])
-tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
-
-print(tagElement[:])
-
-
+print('Multimonial Naive Bayes Accuracy: ',svm_accuracy,"%")
 
 
 
