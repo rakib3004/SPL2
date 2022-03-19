@@ -37,6 +37,11 @@ print('Multimonial Naive Bayes Accuracy: ',svm_accuracy,"%")
 
 
 
+tagList = open("SVM.txt", "w")
+
+tagList.write(str('Multimonial Naive Bayes Accuracy: ',svm_accuracy,"%"))
+
+tagList.close()
 
 
 
