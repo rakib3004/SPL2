@@ -42,14 +42,17 @@ computationalNews=[news]
 
 tagPrediction=text_clf.predict(computationalNews)
 print(twenty_train.target_names[tagPrediction[0]])
+tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
 
-tagList = open("TagList.txt", "a")
+print(tagElement[1:])
+'''
+tagList = open("TagList.txt", "w")
 
 tagList.write(str(twenty_train.target_names))
 
 tagList.close()
 
-
+'''
 
 
 
