@@ -35,7 +35,7 @@ deployment_list = list(deployment_data)
 predicted = text_clf.predict(twenty_test.data)
 
 
-news='We are continuing our series of animated historical videos on the modern wars with the Six-Day War of 1967, also known as the Third Arab–Israeli War during which Israel fought the alliance of Egypt, Syria, Jordan, Iraq. This conflict entered history as short, but decisive, as it took less than a '
+news='animated historical videos on the modern wars with the Six-Day War'
 
 computationalNews=[news]
 
