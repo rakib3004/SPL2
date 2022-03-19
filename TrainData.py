@@ -26,7 +26,7 @@ text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 
-deployment_set= open("ConvertedText/Language6.txt","r")
+deployment_set= open("ConvertedText/Language1.txt","r")
 
 deployment_data = deployment_set.read()
 
@@ -40,7 +40,7 @@ news='We are continuing our series of animated historical videos on the modern w
 computationalNews=[news]
 
 
-tagPrediction=text_clf.predict(computationalNews)
+tagPrediction=text_clf.predict(deployment_list)
 print(twenty_train.target_names[tagPrediction[0]])
 tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
 
