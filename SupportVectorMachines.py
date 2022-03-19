@@ -26,7 +26,7 @@ text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 
-deployment_set= open("ConvertedText/Language1.txt","r")
+deployment_set= open("ConvertedText/Language3.txt","r")
 
 deployment_data = deployment_set.read()
 
