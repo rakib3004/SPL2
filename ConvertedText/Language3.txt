@@ -1,100 +1,124 @@
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
-Jinon Dhongso SPL er Ongso
+[Music]
+this microchip can take up to 26 weeks
+to make in its as many as 100 layers
+billions of transistors are packed into
+an area about the size of a fingernail
+they're the brains behind almost
+everything we use in our increasingly
+electronic world here's how these
+complex tiny devices are made
+the process begins with silicon-rich
+sand why silicon
+silicon is a semiconductor it's the
+sweet spot between an insulator and a
+pure conductor that means its properties
+such as its conductivity can be altered
+by adding impurities or doping to meet
+the needs of different electronic
+devices this also allows us to control
+the electrical signals that pass through
+silicon is also abundant it's one of the
+10 most common elements found on earth
+but much of the silicon found in the
+wild is chemically bound to oxygen so
+the two elements must be separated the
+sand is combined with carbon and melted
+in crucibles to produce carbon monoxide
+and 99
+pure silicon after further processing
+ultrapure silicon is produced next a
+seed crystal is placed in contact with
+molten silicon as the seed crystal is
+slowly pulled away silicon atoms are
+deposited on the bottom surface the
+result is a large cylindrical bull or a
+single crystal ingot of pure silicon the
+bull is then thinly sliced into wafers
+silicon wafers typically have diameters
+of 1 to 12 inches with the most
+state-of-the-art facilities being able
+to produce wafers up to 18 inches in
+diameter bigger wafers are of course
+able to yield more microchips
+once the silicon wafers are cut the
+production process begins in full
+microchips are made in extremely sterile
+conditions free from contaminants such
+as dust if even just one particle of
+dust makes its way onto a silicon wafer
+the entire batch is at risk of being
+ruined this would derail a process that
+can take an average of 12 weeks the
+first step of the production process is
+deposition a thin non-conducting layer
+of silicon dioxide is grown or deposited
+on the surface of the wafer then the
+silicon wafer is prepared for
+lithography by coating it with
+photosensitive and light resistant
+materials the next step is very critical
+exposure the prepared silicon wafers
+enter a lithography machine and are
+exposed to uv light passed through a
+reticle containing the chip's blueprint
+the areas exposed to light are hardened
+while unexposed areas are then etched
+away by hot gases to leave a
+three-dimensional microchip the
+electrical conductivity of different
+parts of the chip can also be altered by
+doping them with chemicals under heat
+and pressure this process can be
+repeated hundreds of times for the same
+chip producing a more complex integrated
+circuit at each step to create
+conducting paths between the components
+a thin layer of metal such as aluminum
+is overlaid onto the chip and the
+etching process is used to remove
+everything except the thin conducting
+pathways several layers of conductors
+separated by glass insulators can be
+laid down each chip on the wafer is then
+tested for performance before it's
+separated from other chips on the wafer
+by a saw since microchips are
+essentially circuits built on an
+incredibly small scale they have a basic
+set of components capacitors can
+temporarily store an electrical charge
+resistors help control the electrical
+current transistors can either amplify
+or switch the electrical signals passing
+through for more advanced chips like
+those found on high-end graphics cards
+there can be upwards of 28 billion
+transistors on board more transistors on
+microchips allow them to send out more
+instructions
+increasing the computational power
+moore's law predicts that computer chip
+manufacturing would advance at a steady
+rate allowing transistor counts to
+double every two years
+based on the sheer power of the
+technology we use on a day-to-day basis
+this decade's old prediction seems to
+still be mostly true manufacturers have
+been shrinking down their transistor
+sizes to fit more onto chips each
+breakthrough in transistor size has
+allowed the production of more powerful
+chips for our phones computers and
+gaming consoles in recent years they've
+gotten each transistor down to as small
+as 8 x ten to the power of negative
+eight inches in diameter allowing an
+amazing 50 billion transistors to be
+crammed onto a single chip
+manufacturing microchips is truly one of
+our most complex feats and yet
+innovations are happening every day
+[Music]
+[Music]
+you
