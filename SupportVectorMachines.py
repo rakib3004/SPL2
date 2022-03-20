@@ -28,16 +28,11 @@ twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 deployment_set= open("ConvertedText/Language2.txt", "r")
 
+
 deployment_data = deployment_set.read()
+deployment_list = [deployment_data]
 
-deployment_list = list(deployment_data)
-
-predicted = text_clf.predict(twenty_test.data)
-
-
-news='We are continuing our series of animated historical videos on the modern wars with the Six-Day War '
-
-computationalNews=[news]
+#predicted = text_clf.predict(twenty_test.data)
 
 
 tagPrediction=text_clf.predict(deployment_list)

@@ -35,9 +35,9 @@ deployment_list = list(deployment_data)
 predicted = text_clf.predict(twenty_test.data)
 
 
-news='We are continuing our series of animated historical videos on the modern wars with the Six-Day War '
+#news='We are continuing our series of animated historical videos on the modern wars with the Six-Day War '
 
-computationalNews=[news]
+#computationalNews=[news]
 
 
 tagPrediction=text_clf.predict(deployment_list)
