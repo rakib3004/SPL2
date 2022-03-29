@@ -11,6 +11,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 from nltk.stem.snowball import SnowballStemmer
 import glob
+import os
 
 
 
@@ -36,12 +37,12 @@ for deployment_set in glob.glob(topicSource):
     deployment_data = deployment_list.read()
     deployment_list = [deployment_data]
 
-    #predicted = text_clf.predict(twenty_test.data)
-
+    fileName=os.path.basename(deployment_set)
+    deploymentName=os.path.splitext(fileName)[0]
 
     tagPrediction=text_clf.predict(deployment_list)
     tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
-    print(tagElement[:])
+    print(deploymentName, tagElement[:])
 
 
 
