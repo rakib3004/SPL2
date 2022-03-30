@@ -26,4 +26,9 @@ data = open('Amazon_Instant_Video_5.json')
 data = extractPath(data)
 df = json.loads(data)
 
-print(df.info())
+
+avg_num_reviews = df.groupby('reviewerID')['asin'].count()
+mean_rating_of_user = df.groupby('reviewerID').apply(lambda x: x['overall'].mean())
+
+print(avg_num_reviews,mean_rating_of_user)
+
