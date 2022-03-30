@@ -7,7 +7,15 @@ import matplotlib.pyplot as plt
 
 import json
 import gzip
- 
-df = json.loads('Amazon_Instant_Video_5.json')
+import io
 
-print(df.info())
+
+with open("Amazon_Instant_Video_5.json", "r", encoding='utf-8-sig') as f:
+    data = f.read()
+    df = json.loads(data)
+    print(df.info())
+
+
+'''data = open('Amazon_Instant_Video_5.json')
+data = open('Amazon_Instant_Video_5.json', "r+", encoding='utf-8-sig')'''
+ 
