@@ -1,8 +1,5 @@
-{
-"ratingData": [
 { "reviewerID" : "16d3586" ,
- "rating" : 3
- },
+ "rating" : 3 },
 { "reviewerID" : "@a14482" ,
  "rating" : 4
  },
@@ -150,5 +147,3 @@
 { "reviewerID" : "@17c264" ,
  "rating" : 3
  },
- ],
-}
