@@ -3,11 +3,9 @@ import numpy as np
 from scipy.sparse import csc_matrix
 import json
 
-with open('Amazon_Instant_Video_5.json', 'r') as json_file:
-	json_load = json.load(json_file)
+f = open('BlogRating.json')
 
-parsed_json = (json.loads(json_data))
-print(json.dumps(parsed_json, indent=4, sort_keys=True))
+data = json.load(f)
 
 
 def extractPath(innie):
