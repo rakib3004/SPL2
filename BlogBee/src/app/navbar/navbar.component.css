@@ -1,0 +1,266 @@
+/*nav bar compononent css*/
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'poppins', 'sans-sherif';
+  box-sizing: border-box;
+}
+a{
+  text-decoration: none;
+  color: #5a5a5a;
+}
+img{
+  cursor: pointer;
+}
+
+
+.flex-div{
+  align-items: center;
+  display: flex;
+}
+nav{
+  padding: 10px 2%;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav-right button{
+  margin-right: 25px;
+  background-color: blue;
+  color: aqua;
+  height: 30px;
+  width: 80px;
+}
+.nav-right .user-icon{
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 0;
+}
+
+.nav-left .logo{
+  width: 130px;
+  height: 30px;
+}
+
+/*.nav-middle .mic-icon{
+  width: 16px;
+}*/
+
+.nav-middle .search-box{
+  border: 1px solid #ccc;
+  margin-right: 15px;
+  padding: 8px 12px;
+  border-radius: 25px;
+}
+
+.nav-middle .search-box input{
+  width: 400px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.nav-middle .search-box img{
+  width: 15px;
+}
+
+.nav-left .menu-icon{
+  width: 22px;
+  margin-right: 25px;
+}
+
+
+/*sidebar component css*/
+
+.sidebar{
+  background-color: #fff;
+  width: 15%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  padding-left: 2%;
+  padding-top: 80px;
+}
+
+.shortcut-links a img{
+  width: 20px;
+  margin-right: 20px;
+}
+
+.shortcut-links a{
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  width: fit-content;
+  flex-wrap: wrap;
+}
+
+.shortcut-links a:first-child{
+  color: #ed3833;
+}
+
+.shortcut-links hr{
+  border: 0;
+  height: 1px;
+  background: #5a5a5a;
+  width: 85%;
+}
+
+.small-sidebar{
+  width: 5%;
+}
+
+.small-sidebar a p{
+  display: none;
+}
+
+.small-sidebar hr{
+  width: 50%;
+  margin-top: 25px;
+}
+
+/*
+body {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+
+input[type=text], input[type=password] {
+  width: 300px;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.nav-button{
+  margin: 10px 10px;
+  position: relative;
+}
+
+
+button {
+  background-color: #85dce7;
+  color: rgb(0, 0, 0);
+  padding: 14px -5px;
+  margin: 23px 5px;
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: 40px;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+  color: #474e5d;
+}
+
+
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+
+.container {
+  padding: 16px;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 312px;
+  top: 10px;
+  width: 511px;
+  height: auto;
+  background-color: #474e5d;
+  padding-top: 34px;
+}
+
+
+.modal-content {
+  background-color: #fefefe;
+  margin: -22px 4px; 
+  border: 32px solid #888;
+  width: 100%; 
+}
+
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+     width: 50%;
+     height: 40px;
+     
+  }
+}
+.navbar-brand{
+  color: crimson;
+}
+.search-box{
+  width: 600px;
+  height: 40px;
+  margin: 23px;
+}
+
+.container-fluid{
+  height: 50px;
+  background-color: rgba(120, 112, 226, 0.342);
+}
+#search {
+  background-image: "assets/search.png";
+  background-repeat: no-repeat;
+  
+}
+.nav-icon{
+  width: 25px;
+  height: 25px;
+  margin: 15px 5px;
+} 
+*/
