@@ -158,9 +158,10 @@ data='''
  }
 ]'''
 
-df=json.loads(data)
+#df=json.loads(data)
 
-
+from readFunctions import openFile
+df = openFile('reviews_Amazon_Instant_Video_5.json.gz')
 
 
 avg_num_reviews = df.groupby('reviewerID').count()
