@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 from scipy.sparse import csc_matrix
-import json
-
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 data='''
