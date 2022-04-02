@@ -1,0 +1,30 @@
+import pandas as pd
+import numpy as np
+from scipy.sparse import csr_matrix
+from sklearn.neighbors import NearestNeighbors
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+from google.colab import files
+uploaded = files.upload()
+
+import pandas as pd
+header = ['user_id','item_id','rating','timestamp']
+dataset = pd.read_csv('u.data',sep = 't',names = header)
+print(dataset.head())
+
+
+n_users = dataset.user_id.unique().shape[0]
+n_items = dataset.item_id.unique().shape[0]
+n_items = dataset['item_id'].max()
+A = np.zeros((n_users,n_items))
+for line in dataset.itertuples():
+    A[line[1]-1,line[2]-1] = line[3]
+print("Original rating matrix : ",A)
+
+for i in range(len(A)):
+  for j in range(len(A[0])):
+    if A[i][j]>=3:
+      A[i][j]=1
+    else:
+      A[i][j]=0
