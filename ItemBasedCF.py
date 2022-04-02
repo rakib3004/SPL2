@@ -28,3 +28,28 @@ for i in range(len(A)):
       A[i][j]=1
     else:
       A[i][j]=0
+
+
+csr_sample = csr_matrix(A)
+print(csr_sample)
+
+
+knn = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=3, n_jobs=-1)
+knn.fit(csr_sample)
+
+
+ataset_sort_des = dataset.sort_values(['user_id', 'timestamp'], ascending=[True, False])
+filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
+filter1 = filter1.tolist()
+filter1 = filter1[:20]
+print("Items liked by user: ",filter1)
+
+
+distances1=[]
+indices1=[]
+for i in filter1:
+  distances , indices = knn.kneighbors(csr_sample[i],n_neighbors=3)
+  indices = indices.flatten()
+  indices= indices[1:]
+  indices1.extend(indices)
+print("Items to be recommended: ",indices1)
