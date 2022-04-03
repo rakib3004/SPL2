@@ -8,7 +8,7 @@ import pandas as pd
 
 
 header = ['user_id','item_id','rating','timestamp']
-dataset = pd.read_csv('u.data',sep = 't',names = header)
+dataset = pd.read_csv('u.data',sep = '\t',names = header)
 print(dataset.head())
 
 
@@ -17,9 +17,9 @@ n_items = dataset.item_id.unique().shape[0]
 
 
 
-'''
+
 n_items = dataset['item_id'].max()
-A = np.zeros((n_users,n_items))
+A = np.zeros((n_users,n_items),dtype=int)
 for line in dataset.itertuples():
     A[line[1]-1,line[2]-1] = line[3]
 print("Original rating matrix : ",A)
@@ -41,6 +41,8 @@ knn.fit(csr_sample)
 
 
 ataset_sort_des = dataset.sort_values(['user_id', 'timestamp'], ascending=[True, False])
+print('Turing Tesing: ',ataset_sort_des)
+
 filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
 filter1 = filter1.tolist()
 filter1 = filter1[:20]
@@ -56,4 +58,3 @@ for i in filter1:
   indices1.extend(indices)
 print("Items to be recommended: ",indices1)
 
-'''
