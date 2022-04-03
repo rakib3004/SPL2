@@ -40,13 +40,12 @@ knn = NearestNeighbors(metric='cosine', algorithm='brute', n_neighbors=3, n_jobs
 knn.fit(csr_sample)
 
 
-ataset_sort_des = dataset.sort_values(['user_id', 'timestamp'], ascending=[True, False])
-print('Turing Tesing: ',ataset_sort_des)
+dataset_sort_des = dataset.sort_values(['user_id', 'timestamp'], ascending=[True, False])
+print('Turing Tesing: ',dataset_sort_des)
 
 
-print('Method Testing: ',dataset.sort_values['user_id'])
 
-filter1 = dataset.sort_values[dataset.sort_values['user_id'] == 1].item_id
+filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
 filter1 = filter1.tolist()
 filter1 = filter1[:20]
 print("Items liked by user: ",filter1)
