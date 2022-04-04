@@ -1,8 +1,6 @@
 import pandas as pd
 import numpy as np
-from scipy.sparse import csc_matrix
-import seaborn as sns
-import matplotlib.pyplot as plt
+import json
 
 
 data='''
@@ -158,10 +156,8 @@ data='''
  }
 ]'''
 
-#df=json.loads(data)
+df=json.loads(data)
 
-from readFunctions import openFile
-df = openFile('reviews_Amazon_Instant_Video_5.json.gz')
 
 
 avg_num_reviews = df.groupby('reviewerID').count()
