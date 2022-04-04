@@ -1,29 +1,5 @@
-youTubeVideoUrlList=['57mc7Df7Arw','6aMW5mOKxB8','4x6zzQcMT3w','OmYVHWJf590',
-'PEtal0M6vrE','jAhjPd4uNFY','01QWC-rZcfE','mYhy7eaazIk','mdOJ717PKRc',
-'JhTf7cBeGcs','lrk4oY7UxpQ','O5nskjZ_GoI','FZGugFqdr60','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','',
-'','','','','','','']
+youTubeVideoUrlListFile=open("YouTubePlayList.txt","r")
 
-print(len(youTubeVideoUrlList))
+for videoID in youTubeVideoUrlListFile:
+    if(len(videoID)<12):
+        print(videoID)
