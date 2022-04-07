@@ -12,7 +12,6 @@ from sklearn.model_selection import GridSearchCV
 from nltk.stem.snowball import SnowballStemmer
 
 
-
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
 
 # In[4]:
@@ -23,7 +22,8 @@ print(twenty_train.target_names)
 
 # In[5]:
 
-print("\n".join(twenty_train.data[0].split("\n")[:3]))  # prints first line of the first data file
+# prints first line of the first data file
+print("\n".join(twenty_train.data[0].split("\n")[:3]))
 
 # In[6]:
 
@@ -54,7 +54,8 @@ clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
 # The names ‘vect’ , ‘tfidf’ and ‘clf’ are arbitrary but will be used later.
 # We will be using the 'text_clf' going forward.
 
-text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('clf', MultinomialNB())])
+text_clf = Pipeline([('vect', CountVectorizer()),
+                    ('tfidf', TfidfTransformer()), ('clf', MultinomialNB())])
 
 text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 
@@ -86,7 +87,8 @@ np.mean(predicted_svm == twenty_test.target)
 # E.g. vect__ngram_range; here we are telling to use unigram and bigrams and choose the one which is optimal.
 
 
-parameters = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True, False), 'clf__alpha': (1e-2, 1e-3)}
+parameters = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (
+    True, False), 'clf__alpha': (1e-2, 1e-3)}
 
 # In[19]:
 
@@ -157,4 +159,3 @@ predicted_mnb_stemmed = text_mnb_stemmed.predict(twenty_test.data)
 np.mean(predicted_mnb_stemmed == twenty_test.target)
 
 # In[ ]:
-

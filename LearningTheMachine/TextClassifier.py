@@ -23,9 +23,11 @@ data = pd.DataFrame(json_data)
 stemmer = SnowballStemmer('english')
 words = stopwords.words("english")
 
-data['cleaned'] = data['text'].apply(lambda x: " ".join([stemmer.stem(i) for i in re.sub("[^a-zA-Z]", " ", x).split() if i not in words]).lower())
+data['cleaned'] = data['text'].apply(lambda x: " ".join([stemmer.stem(
+    i) for i in re.sub("[^a-zA-Z]", " ", x).split() if i not in words]).lower())
 
-X_train, X_test, y_train, y_test = train_test_split(data['cleaned'], data.stars, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(
+    data['cleaned'], data.stars, test_size=0.2)
 
 pipeline = Pipeline([('vect', TfidfVectorizer(ngram_range=(1, 2), stop_words="english", sublinear_tf=True)),
                      ('chi',  SelectKBest(chi2, k=10000)),
