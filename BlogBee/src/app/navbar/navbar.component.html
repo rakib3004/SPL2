@@ -1,14 +1,17 @@
-
 <nav class="flex-div">
   <div class="nav-left flex-div">
-    <img src="assets/images/menu.png" class="menu-icon" (click)="menuButtonClickEvent()">
-    <img src="assets/images/logo.png" class="logo" alt="">
+    <img
+      src="assets/images/menu.png"
+      class="menu-icon"
+      (click)="menuButtonClickEvent()"
+    />
+    <img src="assets/images/logo.png" class="logo" alt="" />
   </div>
 
   <div class="nav-middle flex-div">
     <div class="search-box flex-div">
-      <input type="text" placeholder="Search">
-      <img src="assets/images/search.png" alt="">
+      <input type="text" placeholder="Search" />
+      <img src="assets/images/search.png" alt="" />
       <!--img src="assets/images/voice-search.png" class="mic-icon" alt=""> -->
     </div>
   </div>
@@ -16,35 +19,40 @@
   <div class="nav-right flex-div">
     <button routerLink="signin">Sign in</button>
     <button routerLink="signup">Sign up</button>
-    <img src="assets/images/Jack.png" class="user-icon" alt="User-Icon">
+    <img src="assets/images/Jack.png" class="user-icon" alt="User-Icon" />
   </div>
 </nav>
 
 <!--sidebar-->
-<div class="sidebar" [class.small-sidebar]="click==0">
+<div class="sidebar" [class.small-sidebar]="click == 0">
   <div class="shortcut-links">
-      <a href=""><img src="assets/images/home.png"><p>Home</p></a>
-      <a href="#"><img src="assets/images/favicon.png"><p>Favourite List</p></a>
-      <a href="#"><img src="assets/images/playlist.png"><p>Playlist</p></a>
-      <a href="#"><img src="assets/images/history.png"><p>History</p></a>
-      <a href="#"><img src="assets/images/about.png"><p>About</p></a>
-      <a href="#"><img src="assets/images/help.png"><p>Help</p></a>
-      <hr>
+    <a href=""
+      ><img src="assets/images/home.png" />
+      <p>Home</p></a
+    >
+    <a href="#"
+      ><img src="assets/images/favicon.png" />
+      <p>Favourite List</p></a
+    >
+    <a href="#"
+      ><img src="assets/images/playlist.png" />
+      <p>Playlist</p></a
+    >
+    <a href="#"
+      ><img src="assets/images/history.png" />
+      <p>History</p></a
+    >
+    <a href="#"
+      ><img src="assets/images/about.png" />
+      <p>About</p></a
+    >
+    <a href="#"
+      ><img src="assets/images/help.png" />
+      <p>Help</p></a
+    >
+    <hr />
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
@@ -77,11 +85,11 @@
             <button class="nav-button" routerLink="signin" style="width:auto;">Sign in</button>
           </li>
           <!-- This is Signup button part -->
-          <!-- <li class="nav-item">
+<!-- <li class="nav-item">
             <button class="nav-button" routerLink="signup" style="width:auto;">Sign Up</button>
           </li>
         </ul>
       </div>
     </div>
   </nav>
-  <router-outlet></router-outlet> --> 
+  <router-outlet></router-outlet> -->
