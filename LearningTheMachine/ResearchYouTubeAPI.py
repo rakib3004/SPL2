@@ -1,4 +1,4 @@
-import sys;
+import sys
 from googleapiclient.discovery import build
 
 apiKey = 'AIzaSyCDqpvkFcSA2OucamX9Uk429DTXLNAvZkk'
@@ -6,9 +6,9 @@ apiKey = 'AIzaSyCDqpvkFcSA2OucamX9Uk429DTXLNAvZkk'
 
 youtube = build('youtube', 'v2', developerKey=apiKey)
 
-req = youtube.search().list(q='github',part='snippet',type='video')
+req = youtube.search().list(q='github', part='snippet', type='video')
 
-res=req.execute()
+res = req.execute()
 
 
 print(res)
