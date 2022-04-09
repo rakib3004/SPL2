@@ -1,4 +1,4 @@
-youTubeVideoUrlListFile = open("YouTubePlayList.txt", "r")
+youTubeVideoUrlListFile = open("test_yt_url.txt", "r")
 
 for videoID in youTubeVideoUrlListFile:
     if(len(videoID) < 12):
