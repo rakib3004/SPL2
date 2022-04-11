@@ -8,12 +8,9 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
-  createAccount(){
-    this.router.navigate(['signup']);
-  }
-
+ 
   ngOnInit(): void {
   }
 

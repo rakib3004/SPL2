@@ -8,11 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor() { }
 
-  gotoSignIn(){
-    this.router.navigate(['signin']);
-  }
 
   ngOnInit(): void {
   }
