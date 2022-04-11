@@ -14,9 +14,7 @@ import glob
 import os
 
 
-
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
-
 
 
 text_clf = Pipeline([('vect', CountVectorizer(stop_words='english')), ('tfidf', TfidfTransformer()),
@@ -27,7 +25,7 @@ text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 
-topicSource='ConvertedText/*'
+topicSource = 'ConvertedText/*'
 
 for deployment_set in glob.glob(topicSource):
 
@@ -35,14 +33,9 @@ for deployment_set in glob.glob(topicSource):
     deployment_data = deployment_list.read()
     deployment_list = [deployment_data]
 
-    fileName=os.path.basename(deployment_set)
-    deploymentName=os.path.splitext(fileName)[0]
+    fileName = os.path.basename(deployment_set)
+    deploymentName = os.path.splitext(fileName)[0]
 
-    tagPrediction=text_clf.predict(deployment_list)
+    tagPrediction = text_clf.predict(deployment_list)
     tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
     print(deploymentName, tagElement[:])
-
-
-
-
-

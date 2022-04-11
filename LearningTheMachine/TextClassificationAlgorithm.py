@@ -12,18 +12,18 @@ from sklearn.model_selection import GridSearchCV
 from nltk.stem.snowball import SnowballStemmer
 
 
-
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
 
 # In[4]:
 
 # You can check the target names (categories) and some data files by following commands.
-print('',twenty_train.target_names)
+print('', twenty_train.target_names)
 # prints all the categories
 
 # In[5]:
 
-print("\n".join(twenty_train.data[0].split("\n")[:3]))  # prints first line of the first data file
+# prints first line of the first data file
+print("\n".join(twenty_train.data[0].split("\n")[:3]))
 
 # In[6]:
 
@@ -31,7 +31,7 @@ print("\n".join(twenty_train.data[0].split("\n")[:3]))  # prints first line of t
 
 count_vect = CountVectorizer()
 X_train_counts = count_vect.fit_transform(twenty_train.data)
-print('Train Set Count: ',X_train_counts.shape)
+print('Train Set Count: ', X_train_counts.shape)
 
 # In[7]:
 
@@ -39,15 +39,16 @@ print('Train Set Count: ',X_train_counts.shape)
 
 tfidf_transformer = TfidfTransformer()
 X_train_tfidf = tfidf_transformer.fit_transform(X_train_counts)
-print('Term Frequency Data: \n',X_train_tfidf)
-print('Train Text Frequency: ',X_train_tfidf.shape)
+print('Term Frequency Data: \n', X_train_tfidf)
+print('Train Text Frequency: ', X_train_tfidf.shape)
 
 # In[9]:
 
 # Machine Learning
 # Training Naive Bayes (NB) classifier on training data.
 
-text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()), ('clf', MultinomialNB())])
+text_clf = Pipeline([('vect', CountVectorizer()),
+                    ('tfidf', TfidfTransformer()), ('clf', MultinomialNB())])
 
 '''
 clf = MultinomialNB().fit(X_train_tfidf, twenty_train.target)
@@ -92,7 +93,8 @@ print('SVM Prediction: ',np.mean(predicted_svm == twenty_test.target))
 # E.g. vect__ngram_range; here we are telling to use unigram and bigrams and choose the one which is optimal.
 
 
-parameters = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True, False), 'clf__alpha': (1e-2, 1e-3)}
+parameters = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (
+    True, False), 'clf__alpha': (1e-2, 1e-3)}
 
 # In[19]:
 
@@ -106,8 +108,8 @@ gs_clf = gs_clf.fit(twenty_train.data, twenty_train.target)
 
 # To see the best mean score and the params, run the following code
 
-print('The best score is: ',gs_clf.best_score_)
-print('The best params is: ',gs_clf.best_params_)
+print('The best score is: ', gs_clf.best_score_)
+print('The best params is: ', gs_clf.best_params_)
 
 # Output for above should be: The accuracy has now increased to ~90.6% for the NB classifier (not so naive anymore! 😄)
 # and the corresponding parameters are {‘clf__alpha’: 0.01, ‘tfidf__use_idf’: True, ‘vect__ngram_range’: (1, 2)}.
@@ -123,8 +125,8 @@ parameters_svm = {'vect__ngram_range': [(1, 1), (1, 2)], 'tfidf__use_idf': (True
 gs_clf_svm = GridSearchCV(text_clf_svm, parameters_svm, n_jobs=-1)
 gs_clf_svm = gs_clf_svm.fit(twenty_train.data, twenty_train.target)
 
-print('Best Score: ',gs_clf_svm.best_score_)
-print('Best param: ',gs_clf_svm.best_params_)
+print('Best Score: ', gs_clf_svm.best_score_)
+print('Best param: ', gs_clf_svm.best_params_)
 
 # In[25]:
 

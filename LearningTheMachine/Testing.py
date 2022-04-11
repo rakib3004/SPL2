@@ -10,8 +10,7 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import Pipeline
 from sklearn.model_selection import GridSearchCV
 from nltk.stem.snowball import SnowballStemmer
-import sys;
-
+import sys
 
 
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
@@ -19,4 +18,3 @@ twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 print(twenty_train.target_names)
 print(twenty_test.target_names)
-
