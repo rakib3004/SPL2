@@ -29,15 +29,12 @@ for i in range(len(A)):
         else:
             A[i][j] = 0
 
-
 csr_sample = csr_matrix(A)
 print(csr_sample)
-
 
 knn = NearestNeighbors(metric='cosine', algorithm='brute',
                        n_neighbors=3, n_jobs=-1)
 knn.fit(csr_sample)
-
 
 dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
