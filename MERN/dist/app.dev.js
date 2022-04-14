@@ -27,10 +27,10 @@ var port = 3000;
 app.use(cors());
 app.use(bodyparser.json());
 app.use(express["static"](path.join(__dirname, 'public')));
-app.use('/api', route);
 app.get('/', function (req, res) {
   res.send('Ri-Research-Lab--Tarafder-Informatics-Ltd--Techbology-Academy--IEC-R-Foundation');
 });
+app.use('/api', route);
 app.listen(port, function () {
   console.log('Server started at port' + port);
 });
