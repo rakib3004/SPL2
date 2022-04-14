@@ -46,7 +46,7 @@ print('Turing Tesing: ', dataset_sort_des)
 
 filter1 = dataset_sort_des[dataset_sort_des['user_id'] == 1].item_id
 filter1 = filter1.tolist()
-filter1 = filter1[:20]
+filter1 = filter1[:12]
 print("Items liked by user: ", filter1)
 
 
@@ -58,7 +58,7 @@ for i in filter1:
     indices = indices[1:]
     indices1.extend(indices)
 #print("Items to be recommended: ", indices1)
-youTubeVideoUrlListPlainText = open("YouTubePlayList.txt", encoding="utf8")
+youTubeVideoUrlListPlainText = open("YouTubeVideoID.txt", encoding="utf8")
 
 youTubeVideoUrlListFile=youTubeVideoUrlListPlainText.readlines()
 
@@ -66,10 +66,13 @@ youTubeVideoUrlListFile=youTubeVideoUrlListPlainText.readlines()
 videoDataSteam=1
 videoID=1
 
-for videoUrl in youTubeVideoUrlListFile:
-    if(videoDataSteam%2==0):
-        print(videoID, videoUrl, end='')
-        videoID = videoID + 1
+print("Videos which are recommended for you:")
+for f in filter1:
+    print(youTubeVideoUrlListFile[f], end='')
 
-    videoDataSteam=videoDataSteam+1
+'''
+for videoUrl in youTubeVideoUrlListFile:
+    print(videoUrl, end='')
+    videoID = videoID + 1
+'''
 
