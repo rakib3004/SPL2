@@ -18,10 +18,20 @@ export class VideoService {
    
   }
 
-  postVideo(newVideo: Video){
+  addVideo(newVideo:string){
+
     var headers = new Headers();
 
     headers.append('Content-Type', 'application/json');
-    return this.http.append('http://localhost:3000/api/video', "videos");
+    return this.http.append('http://localhost:3000/api/video', newVideo);
+  }
+
+
+  
+  deleteVideo(_id:string){
+
+    var headers = new Headers();
+
+    return this.http.delete('http://localhost:3000/api/video', _id);
   }
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Video} from '../video.service';
+
+import {Video} from '../video';
+
 
 @Component({
   selector: 'app-videos',
