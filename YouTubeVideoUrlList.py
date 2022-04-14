@@ -1,5 +1,15 @@
-youTubeVideoUrlListFile = open("test_yt_url.txt", "r")
+youTubeVideoUrlListPlainText = open("YouTubePlayList.txt", encoding="utf8")
 
-for videoID in youTubeVideoUrlListFile:
-    if(len(videoID) < 12):
-        print(videoID)
+youTubeVideoUrlListFile=youTubeVideoUrlListPlainText.readlines()
+
+
+videoDataSteam=1
+videoID=1
+
+for videoUrl in youTubeVideoUrlListFile:
+    if(videoDataSteam%2==0):
+        print(videoID, videoUrl, end='')
+        videoID = videoID + 1
+
+    videoDataSteam=videoDataSteam+1
+
