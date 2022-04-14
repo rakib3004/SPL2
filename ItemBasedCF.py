@@ -66,10 +66,20 @@ youTubeVideoUrlListTitle = open("YouTubeVideoTitle.txt", encoding="utf8")
 
 youTubeVideoUrlTitleFile=youTubeVideoUrlListTitle.readlines()
 
+youTubeVideoUrlListTopic = open("YouTubeVideoTopic.txt", encoding="utf8")
+
+youTubeVideoUrlTopicFile=youTubeVideoUrlListTopic.readlines()
+
 videoDataSteam=1
 videoID=1
 
 print("Videos which are recommended for you:")
 for f in filter1:
-    print(youTubeVideoUrlListFile[f],youTubeVideoUrlTitleFile[f], end='')
+    #print(youTubeVideoUrlListFile[f], end='')
+    print('"videoID":"'+youTubeVideoUrlListFile[f]+'"'+'"videoTitle":"'+youTubeVideoUrlTitleFile[f]+'"videoTopic":"'+youTubeVideoUrlTopicFile[f]+'"', end = '')
 
+'''
+    print('/"videoID"/:/"+'youTubeVideoUrlListFile[f], end='')
+
+
+'''
