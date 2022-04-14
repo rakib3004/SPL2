@@ -14,7 +14,7 @@ var app = express();
 
 var route = require('./routes/route');
 
-mongoose.connect('mongodb://localhost:2701/MERN');
+mongoose.connect('mongodb://localhost:27017/MERN');
 mongoose.connection.on('connected', function () {
   console.log('Sucessfully connected');
 });
