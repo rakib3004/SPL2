@@ -8,6 +8,7 @@ import { SignInComponent } from './sign-in/sign-in.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
+import { VideosComponent } from './videos/videos.component';
 
 
 
@@ -18,7 +19,8 @@ import { BlogViewComponent } from './blog-view/blog-view.component';
     SignInComponent,
     NavbarComponent,
     SignupComponent,
-    BlogViewComponent
+    BlogViewComponent,
+    VideosComponent
   ],
   imports: [
     BrowserModule,
