@@ -8,16 +8,24 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 exports.__esModule = true;
 exports.VideosComponent = void 0;
 var core_1 = require("@angular/core");
+var video_service_1 = require("../video.service");
 var VideosComponent = /** @class */ (function () {
-    function VideosComponent() {
+    function VideosComponent(videoService) {
+        this.videoService = videoService;
+        this._id = "";
+        this.videoID = "";
+        this.videoTitle = "";
+        this.videoTopic = "";
     }
     VideosComponent.prototype.ngOnInit = function () {
+        this.videoService.getVideos();
     };
     VideosComponent = __decorate([
         core_1.Component({
             selector: 'app-videos',
             templateUrl: './videos.component.html',
-            styleUrls: ['./videos.component.css']
+            styleUrls: ['./videos.component.css'],
+            providers: [video_service_1.VideoService]
         })
     ], VideosComponent);
     return VideosComponent;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Video} from '../video.service';
+import {VideoService} from '../video.service';
 
 import {Video} from '../video';
 
@@ -7,13 +7,21 @@ import {Video} from '../video';
 @Component({
   selector: 'app-videos',
   templateUrl: './videos.component.html',
-  styleUrls: ['./videos.component.css']
+  styleUrls: ['./videos.component.css'],
+  providers: [VideoService]
 })
 export class VideosComponent implements OnInit {
 
-  constructor() { }
+  _id?:string="";
+    videoID:string="";
+    videoTitle:string="";
+    videoTopic:string="";
+
+
+  constructor(private videoService: VideoService) { }
 
   ngOnInit(): void {
+    this.videoService.getVideos();
   }
 
 }
