@@ -26,11 +26,35 @@ let newVideo = new Video(
 
         videoTopic:req.body.videoTopic,
     }
-)
+);
+
+newVideo.save((err,video)=>{
+
+    if(err){
+
+        res.json({msg: 'Failed to add contact'});
+
+    }
+    else{
+        res.json({msg: 'Successfully add contact'});
+
+    }
+});
 
 });
 
 router.delete('/video/:id', (req, res, next)=>{
+    Video.remove({_id:req.params.id}, function(err,result){
+        if(err){
+
+            res.json(err);
+    
+        }
+        else{
+            res.json(result);
+    
+        }
+    })
 
 });
 
