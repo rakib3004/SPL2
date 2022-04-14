@@ -70,9 +70,3 @@ print("Videos which are recommended for you:")
 for f in filter1:
     print(youTubeVideoUrlListFile[f], end='')
 
-'''
-for videoUrl in youTubeVideoUrlListFile:
-    print(videoUrl, end='')
-    videoID = videoID + 1
-'''
-
