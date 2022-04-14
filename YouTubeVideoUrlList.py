@@ -7,8 +7,8 @@ videoDataSteam=1
 videoID=1
 
 for videoUrl in youTubeVideoUrlListFile:
-    if(videoDataSteam%2==0):
-        print(videoID, videoUrl, end='')
+    if(videoDataSteam%2==1):
+        print(videoUrl, end='')
         videoID = videoID + 1
 
     videoDataSteam=videoDataSteam+1
