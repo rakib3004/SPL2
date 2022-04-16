@@ -1,1 +1,15 @@
-<p>videos works!</p>
+
+<h1>BlogBee is not BeeBlog</h1>
+<div class="container">
+    <div *ngFor="let video of videos">
+        <div class="col-md-3">
+            {{video.videoID}}
+        </div>
+        <div class="col-md-3">
+            {{video.videoTitle}}
+        </div>
+        <div class="col-md-3">
+            {{video.videoTopic}}
+        </div>
+    </div>
+</div>

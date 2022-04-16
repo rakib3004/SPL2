@@ -12,7 +12,8 @@ import {Video} from '../video';
 })
 export class VideosComponent implements OnInit {
 
-  _id?:string="";
+  videos:Video[]=[];
+  video: Video = new Video;
     videoID:string="";
     videoTitle:string="";
     videoTopic:string="";

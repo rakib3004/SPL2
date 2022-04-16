@@ -9,10 +9,12 @@ exports.__esModule = true;
 exports.VideosComponent = void 0;
 var core_1 = require("@angular/core");
 var video_service_1 = require("../video.service");
+var video_1 = require("../video");
 var VideosComponent = /** @class */ (function () {
     function VideosComponent(videoService) {
         this.videoService = videoService;
-        this._id = "";
+        this.videos = [];
+        this.video = new video_1.Video;
         this.videoID = "";
         this.videoTitle = "";
         this.videoTopic = "";
