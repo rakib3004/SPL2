@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Video } from '../video';
+import { VideoService } from '../video.service';
 
 @Component({
   selector: 'app-home',
@@ -7,13 +9,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  constructor(private router: Router) {}
+  constructor(private videoService: VideoService, private router: Router) {}
+  videos: Video[] = [];
+  ngOnInit(): void {
+    this.videos = this.videoService.getVideos();
+  }
 
   VideoInfo = [];
   
   showBlog(path: String) {}
 
-  ngOnInit(): void {}
 
   
 }
