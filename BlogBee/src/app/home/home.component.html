@@ -1,17 +1,13 @@
-
 <div class="list-container">
 
-  <div class="vid-list" *ngFor="let file of [].constructor(6); let r = index">
-    <a href=""><img src="assets/images/thumbnail1.png" class="thumbnail" alt="Thumbnail"/></a>
+  <div class="vid-list" *ngFor="let video of videos">
+    <img src="../../assets/images/cameron.png" class="thumbnail" alt="Thumbnail" />
     <div class="flex-div">
 
       <div class="vid-info">
-        <a href="">Best Channel to learn coding that help you to be a web developer</a>
-        
+        <a href="">{{video.videoTitle}}</a>
+
       </div>
     </div>
+    <h1>Ji</h1>
   </div>
-
-
-
- 
