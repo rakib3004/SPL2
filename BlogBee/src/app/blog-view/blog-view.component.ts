@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-blog-view',
   templateUrl: './blog-view.component.html',
@@ -8,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class BlogViewComponent implements OnInit {
   constructor() {}
 
-  fileContent = '';
+  getBlog = JSON.parse('{"id": "KN5Bjh54uB8", "text": "Our environments are filled with information."}')
+
+  blogId=this.getBlog.id;
+  blogText=this.getBlog.text;
+
 
   ngOnInit(): void {}
 }
