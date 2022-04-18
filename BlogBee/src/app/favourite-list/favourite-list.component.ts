@@ -12,22 +12,22 @@ export class FavouriteListComponent implements OnInit {
 
   constructor(private videoService: VideoService, private router: Router) {}
   videos: Video[] = [];
-  favVideoOne:Video | undefined;
-  favVideoOne:Video | undefined;
-  favVideoOne:Video | undefined;
-  favVideoOne:Video | undefined;
-  favVideoOne:Video | undefined;
-  favVideoOne:Video | undefined;
+  favVideoOne=new Video() ;
+  favVideoTwo=new Video() ;
+  favVideoThree=new Video() ;
+  favVideoFour=new Video() ;
+  favVideoFive=new Video() ;
+  favVideoSix=new Video() ;
 
 
   ngOnInit(): void {
     this.videos = this.videoService.getVideos();
-    favVideoOne=this.videos[0];
-    favVideoTwo=this.videos[1];
-    favVideoThree=this.videos[2];
-    favVideoFour=this.videos[3];
-    favVideoFive=this.videos[4];
-    favVideoSix=this.videos[5];
+    this.favVideoOne=this.videos[4];
+    this.favVideoTwo=this.videos[11];
+    this.favVideoThree=this.videos[5];
+    this.favVideoFour=this.videos[3];
+    this.favVideoFive=this.videos[0];
+    this.favVideoSix=this.videos[9];
   }
  
 
