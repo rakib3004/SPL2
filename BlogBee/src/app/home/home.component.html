@@ -1,7 +1,7 @@
 <div>
   <div class="list-container">
     <div class="vid-list" *ngFor="let video of videos">
-      <img src="{{'https://img.youtube.com/vi/' + video.videoID+'/0.jpg'}}" class="thumbnail" alt="Thumbnail" />
+      <img src="{{'https://img.youtube.com/vi/' + video.videoID+'/0.jpg'}}" routerLink="blogView" class="thumbnail" alt="Thumbnail" />
       <div class="flex-div">
 
         <div class="vid-info">

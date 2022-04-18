@@ -9,6 +9,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SignupComponent } from './signup/signup.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
 import { VideosComponent } from './videos/videos.component';
+import { FavouriteListComponent } from './favourite-list/favourite-list.component';
 
 
 
@@ -20,7 +21,8 @@ import { VideosComponent } from './videos/videos.component';
     NavbarComponent,
     SignupComponent,
     BlogViewComponent,
-    VideosComponent
+    VideosComponent,
+    FavouriteListComponent
   ],
   imports: [
     BrowserModule,
