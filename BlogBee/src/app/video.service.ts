@@ -26,7 +26,6 @@ export class VideoService {
     { videoID:"6c4deRAhqcA", videoTitle:"Understanding your motorcycle's brake | Disc Brake" , videoTopic:"Gun Crime" },
     { videoID:"lrk4oY7UxpQ", videoTitle:"Introduction: Crash Course U.S. Government and Politics" , videoTopic:"Baseball" },
     { videoID:"kBpQiJt3MUQ", videoTitle:"Pre-Islamic history of the Middle East" , videoTopic:"Mac" },
-    { videoID:"kBpQiJt3MUQ", videoTitle:"Pre-Islamic history of the Middle East" , videoTopic:"Mac" },
 
   ];
 

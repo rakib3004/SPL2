@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class BlogViewComponent implements OnInit {
   constructor() {}
 
-  getBlog = JSON.parse('{"id": "KN5Bjh54uB8", "text": "Our environments are filled with information."}')
+  getBlog = JSON.parse('{"id": "KN5Bjh54uB8", "text": "Our environments are filled with information. ng study, his experimental design was revolutionary"}')
 
   blogId=this.getBlog.id;
   blogText=this.getBlog.text;
