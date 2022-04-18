@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,7 +11,8 @@ import { SignupComponent } from './signup/signup.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
 import { VideosComponent } from './videos/videos.component';
 import { FavouriteListComponent } from './favourite-list/favourite-list.component';
-
+import {HttpClientModule} from '@angular/common/http';
+import { AccountService } from './account.service';
 
 
 @NgModule({
@@ -26,9 +28,11 @@ import { FavouriteListComponent } from './favourite-list/favourite-list.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AccountService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
