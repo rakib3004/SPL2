@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Video} from './video';
-
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { catchError, map, Observable, throwError } from 'rxjs';
 
 
  
@@ -9,7 +10,6 @@ import {Video} from './video';
 })
 export class VideoService {
 
-  constructor() { }
 
 
 
@@ -47,27 +47,60 @@ export class VideoService {
     return this.videos;
   }
 
-  /*
-  getVideos(){
-    return this.http.get('http://localhost:3000/api/videos');
-   
+  REST_API: string = 'http://localhost:3000/';
+
+  constructor(private httpClient: HttpClient) { }
+
+
+  httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
+  // Add
+  AddUser(data: Video): Observable<any> {
+    let API_URL = `${this.REST_API}/add-video`;
+    return this.httpClient.post(API_URL, data)
+      .pipe(
+        catchError(this.handleError)
+      )
   }
-
-  addVideo(newVideo:string){
-
-    var headers = new Headers();
-
-    headers.append('Content-Type', 'application/json');
-    return this.http.append('http://localhost:3000/api/video', newVideo);
+  // Get all objects
+  GetUsers() {
+    return this.httpClient.get(`${this.REST_API}/videos`);
   }
-
-
-  
-  deleteVideo(_id:string){
-
-    var headers = new Headers();
-
-    return this.http.delete('http://localhost:3000/api/video', _id);
+  // Get single object
+  GetUser(id:any): Observable<any> {
+    let API_URL = `${this.REST_API}/video/${id}`;
+    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+      .pipe(map((res: any) => {
+          return res || {}
+        }),
+        catchError(this.handleError)
+      )
   }
-  */
+  // Update
+  updateUser(id:any, data:any): Observable<any> {
+    let API_URL = `${this.REST_API}/update-video/${id}`;
+    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
+      .pipe(
+        catchError(this.handleError)
+      )
+  }
+  // Delete
+  deleteUser(id:any): Observable<any> {
+    let API_URL = `${this.REST_API}/delete-video/${id}`;
+    return this.httpClient.delete(API_URL, { headers: this.httpHeaders}).pipe(
+        catchError(this.handleError)
+      )
+  }
+  // Error 
+  handleError(error: HttpErrorResponse) {
+    let errorMessage = '';
+    if (error.error instanceof ErrorEvent) {
+      // Handle client error
+      errorMessage = error.error.message;
+    } else {
+      // Handle server error
+      errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+    }
+    console.log(errorMessage);
+    return throwError(errorMessage);
+  }
 }
