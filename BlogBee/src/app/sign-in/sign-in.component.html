@@ -12,7 +12,6 @@
               alt="profile"
             />
           </div>
-
           <div class="mb-3">
             <input
               type="text"
@@ -20,6 +19,7 @@
               id="Username"
               aria-describedby="emailHelp"
               placeholder="User Name"
+              [(ngModel)] = "logInfo.userName" [ngModelOptions]="{standalone: true}"
             />
           </div>
           <div class="mb-3">
@@ -28,11 +28,12 @@
               class="form-control"
               id="password"
               placeholder="password"
+              [(ngModel)] = "logInfo.password" [ngModelOptions]="{standalone: true}"
             />
           </div>
 
           <div class="text-center">
-            <button type="submit" class="btn btn-color px-5 mb-5 w-100">
+            <button type="submit" class="btn btn-color px-5 mb-5 w-100" (click)="loginButtonAction()">
               Login
             </button>
           </div>

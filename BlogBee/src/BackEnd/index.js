@@ -52,6 +52,20 @@ app.get('/userInfo',(req,res)=>{
 
 app.post('/userInfo',(req,res)=>{
     console.log(req.body);
+    let userName = req.body.userName;
+    let password = req.body.password;
+
+    let sql = `SELECT * FROM userInfo WHERE name = ? AND password = ?`;
+    db.query(sql, [ userName, password ],(err, result)=> {
+    if(err)
+    {
+        console.log(err,'errs');
+    }
+    res.send(result);
+
+    });
+
+
 });
 
 

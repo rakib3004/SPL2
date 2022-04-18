@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { ActivatedRoute } from '@angular/router';
+import { AccountService } from '../account.service';
 
 
 @Component({
@@ -9,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignInComponent implements OnInit {
 
-  constructor() { }
+  constructor(private accService:AccountService) { }
+
+  logInfo = this.accService.getLogInfo();
+
+  loginButtonAction(){
+    console.log(this.logInfo);
+    this.accService.loginValidation();
+  }
  
   ngOnInit(): void {
     
