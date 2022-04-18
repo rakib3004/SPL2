@@ -1,52 +1,3 @@
-// var express = require('express');
-// var mongoose = require('mongoose');
-// var bodyparser = require('body-parser');
-// var cors = require('cors');
-// var path = require('path');
-
-
-// var app = express();
-
-// const route = require('./routes/route');
-
-// mongoose.connect('mongodb://localhost:27017/MERN');
-
-// mongoose.connection.on('connected', () => {
-
-//     console.log('Sucessfully connected');
-
-// });
-
-// mongoose.connection.on('error', (err)=>{
-//     if(err){
-//         console.log('Connection is unsuccessful!'+err);
-//     }
-// });
-
-// const port = 3000;
-
-
-// app.use(cors());
-
-// app.use(bodyparser.json())
-
-// app.use(express.static(path.join(__dirname, 'public')));
-
-// app.get('/', (req, res) => {
-
-//     res.send('Ri-Research-Lab--Tarafder-Informatics-Ltd--Techbology-Academy--IEC-R-Foundation');
-// });
-
-// app.use('/api', route);
-
-
-
-// app.listen(port, () => {
-//     console.log('Server started at port' + port)
-// });
-
-
-  
 const express = require('express');
 const bodyparser = require('body-parser');
 const cors = require('cors');
@@ -66,7 +17,7 @@ const db = mysql.createConnection({
     videos: 'root',
     password: '',
     database: 'account',
-    port:7070
+    port:3306
 });
 
 //check database connection
@@ -99,7 +50,7 @@ app.get('/videos',(req,res)=>{
 });
 
 //get single data
-app.get('/videos/:id',(req,res)=>{
+app.get('/video/:id',(req,res)=>{
 
     let gID = req.params.id;
 
@@ -124,12 +75,50 @@ app.get('/videos/:id',(req,res)=>{
         }
     })
 })
-
-app.post('/videos',(req,res)=>{
-    console.log(req.body);
+ 
+app.post('/add-video', function (req, res) {
+ 
+    let id = req.body.id;
+ 
+    if (!id) {
+        return res.status(400).send({ error:true, message: 'Please provide video' });
+    }
+ 
+    dbConn.query("INSERT INTO videos SET ? ", { id: id }, function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'New user has been created successfully.' });
+    });
 });
-
-
-app.listen(3000,()=>{
-    console.log('server running......')
+//  Update user with id
+app.put('/update-video', function (req, res) {
+ 
+    let id = req.body.id;
+    let title = req.body.title;
+ 
+    if (!id || !title) {
+        return res.status(400).send({ error: user, message: 'Please provide video & id' });
+    }
+ 
+    dbConn.query("UPDATE videos SET title = ? WHERE id = ?", [title, id], function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'user has been updated successfully.' });
+    });
 });
+//  Delete user
+app.delete('/delete-video', function (req, res) {
+ 
+    let id = req.body.id;
+ 
+    if (!id) {
+        return res.status(400).send({ error: true, message: 'Please provide id' });
+    }
+    dbConn.query('DELETE FROM videos WHERE id = ?', [id], function (error, results, fields) {
+        if (error) throw error;
+        return res.send({ error: false, data: results, message: 'User has been updated successfully.' });
+    });
+}); 
+// set port
+// app.listen(3000, function () {
+//     console.log('Node app is running on port 3000');
+// });
+module.exports = app;
