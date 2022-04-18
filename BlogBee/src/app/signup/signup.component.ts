@@ -12,9 +12,20 @@ export class SignupComponent implements OnInit {
   constructor(private accService: AccountService) {}
 
   userData = this.accService.getUserData();
+  mismatch:boolean = false;
 
   signUpButtonAction(){
-    this.accService.saveUserData();
+    if(this.userData.password==this.userData.rpassword)
+    {
+      this.mismatch=false;
+      this.accService.saveUserData();
+      console.log(this.userData);
+    }
+
+    else
+    {
+      this.mismatch = true;
+    }
   }
 
   ngOnInit(): void {

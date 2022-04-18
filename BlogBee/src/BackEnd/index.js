@@ -28,11 +28,13 @@ db.connect(err=>{
 
 
 //get all data
-app.get('/userInfo',(req,res)=>{
+app.post('/signup',(req,res)=>{
 
-    let qr = `select * from userInfo`;
+    let userName = req.body.userName;
 
-    db.query(qr,(err,result)=>{
+    let qr = `SELECT * FROM userInfo WHERE name = ?`;
+
+    db.query(qr,userName,(err,result)=>{
 
         if(err)
         {
@@ -41,22 +43,32 @@ app.get('/userInfo',(req,res)=>{
 
         if(result.length>0)
         {
-            res.send({
-                message:'all user data',
-                data:result
-            })
+            res.send(result);
+        }
+        else
+        {
+            
+            let name = req.body.userName;
+            let email = req.body.email;
+            let password = req.body.password;
+            let qr = "INSERT INTO userInfo (name, email, password) VALUES (?, ?, ?)";
+            db.query(qr,[name,email,password],(err,result)=>{
+
+            });
+
+            console.log("HI");
         }
     });
 });
 
 
-app.post('/userInfo',(req,res)=>{
+app.post('/login',(req,res)=>{
     console.log(req.body);
     let userName = req.body.userName;
     let password = req.body.password;
 
-    let sql = `SELECT * FROM userInfo WHERE name = ? AND password = ?`;
-    db.query(sql, [ userName, password ],(err, result)=> {
+    let qr = `SELECT * FROM userInfo WHERE name = ? AND password = ?`;
+    db.query(qr, [ userName, password ],(err, result)=> {
     if(err)
     {
         console.log(err,'errs');

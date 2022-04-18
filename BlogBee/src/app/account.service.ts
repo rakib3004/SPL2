@@ -23,17 +23,21 @@ export class AccountService {
   }
 
   //get all data
-  apiUrl = 'http://localhost:3000/userInfo';
+  apiUrl = 'http://localhost:3000/login';
+  
 
 
   saveUserData(){
-    this._http.post(`${this.apiUrl}`,this.userData);
+    this._http.post('http://localhost:3000/signup',this.userData).subscribe(data => {
+      console.log(data);
+    });
   }
 
   loginValidation(){
     console.log(this.logInfo);
     this._http.post(this.apiUrl, this.logInfo).subscribe(data => {
-      console.log(data);
+      if(JSON.stringify(data)=="[]") console.log("Invaid");
+      else console.log("valid");
     });
   }
 
