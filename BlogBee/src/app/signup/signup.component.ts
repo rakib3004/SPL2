@@ -9,7 +9,7 @@ import { UserData } from '../user-data';
   styleUrls: ['./signup.component.css'],
 })
 export class SignupComponent implements OnInit {
-  constructor(private accService: AccountService) {}
+  constructor(private accService: AccountService,private router:Router) {}
 
   userData = this.accService.getUserData();
   mismatch:boolean = false;
@@ -26,6 +26,10 @@ export class SignupComponent implements OnInit {
     {
       this.mismatch = true;
     }
+  }
+
+  signin(){
+    this.router.navigateByUrl('signin');
   }
 
   ngOnInit(): void {
