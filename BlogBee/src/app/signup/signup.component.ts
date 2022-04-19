@@ -20,10 +20,15 @@ export class SignupComponent implements OnInit {
       this.mismatch=false;
       this.accService.saveUserData();
       console.log(this.userData);
+      alert("Sign up Seccessfull");
+      this.router.navigateByUrl('');
+      
     }
 
     else
     {
+      this.userData.password="";
+      this.userData.rpassword="";
       this.mismatch = true;
     }
   }

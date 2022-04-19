@@ -18,7 +18,5 @@ export class HomeComponent implements OnInit {
   VideoInfo = [];
   
   showBlog(path: String) {}
-
-
   
 }

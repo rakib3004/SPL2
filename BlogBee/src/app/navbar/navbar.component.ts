@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router:Router,private accService:AccountService) {}
 
   click = 0;
-  loginSuccess=this.accService.loginSuccess;
+  loginSuccess=this.accService.loginObject;
 
   menuButtonClickEvent() {
     if (this.click == 0) this.click = 1;

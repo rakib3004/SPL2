@@ -1,36 +1,29 @@
-<div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{'https://img.youtube.com/vi/' + favVideoOne.videoID+'/0.jpg'}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{favVideoOne.videoTitle}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Remove from Favourite List</a>
-    </div>
-  </div>
+<div>
+  <div class="list-container">
+    <div class="vid-list" *ngFor="let video of favVideo">
+      <img src="{{'https://img.youtube.com/vi/' + video.videoID+'/0.jpg'}}" routerLink="blogView" class="thumbnail" alt="Thumbnail" />
+      <div class="flex-div">
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{'https://img.youtube.com/vi/' + favVideoTwo.videoID+'/0.jpg'}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{favVideoTwo.videoTitle}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Remove from Favourite List</a>
+        <div class="vid-info">
+          <a href="" routerLink="blogView">{{video.videoTitle}}</a>
+          <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Remove</a> -->
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{'https://img.youtube.com/vi/' + favVideoThree.videoID+'/0.jpg'}}" alt="Card image cap">
+
+
+
+  <!-- <div class="card" style="width: 18rem;" *ngFor="let video of favVideo">
+    <img class="card-img-top" src="{{'https://img.youtube.com/vi/' + video.videoID+'/0.jpg'}}" alt="Card image cap">
     <div class="card-body">
-      <h5 class="card-title">{{favVideoThree.videoTitle}}</h5>
+      <h5 class="card-title">{{video.videoTitle}}</h5>
       <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
       <a href="#" class="btn btn-primary">Remove from Favourite List</a>
     </div>
-  </div>
-  
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="{{'https://img.youtube.com/vi/' + favVideoFive.videoID+'/0.jpg'}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{favVideoFive.videoTitle}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Remove from Favourite List</a>
-    </div>
-  </div>
-  
+  </div> -->
+
+ 

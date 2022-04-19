@@ -1,3 +1,3 @@
 export class Boolean {
-    value:boolean=false;
+    state:boolean=false;
 }
