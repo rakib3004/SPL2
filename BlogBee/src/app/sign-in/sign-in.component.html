@@ -36,9 +36,8 @@
             <button type="submit" class="btn btn-color px-5 mb-5 w-100" (click)="loginButtonAction()">
               Login
             </button>
+            <span *ngIf="success" style="color:green">Log in Successful</span>
           </div>
-
-          <span *ngIf="success" style="color:green">Password Mismatch</span>
 
           <div id="emailHelp" class="form-text text-center mb-5 text-dark">
             Not Registered?

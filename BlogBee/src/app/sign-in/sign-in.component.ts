@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from '../account.service';
 
 
@@ -10,7 +10,7 @@ import { AccountService } from '../account.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private accService:AccountService) { }
+  constructor(private accService:AccountService,private router:Router) { }
 
   logInfo = this.accService.getLogInfo();
 
@@ -18,7 +18,7 @@ export class SignInComponent implements OnInit {
 
   loginButtonAction(){
     console.log(this.logInfo);
-    this.success = this.accService.loginValidation();
+    this.accService.loginValidation();
   }
  
   ngOnInit(): void {
