@@ -8,7 +8,7 @@ import pandas as pd
 
 
 header = ['user_id', 'item_id', 'rating', 'timestamp']
-dataset = pd.read_csv('rating.data', sep='\t', names=header)
+dataset = pd.read_csv('Source/rating.data', sep='\t', names=header)
 print(dataset.head())
 
 
