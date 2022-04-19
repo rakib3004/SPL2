@@ -2,7 +2,7 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 
 import re
 
-my_file = open("YouTubeURL.txt", "r")
+my_file = open("YouTubeData/YouTubeURL.txt", "r")
 
 data = my_file.read()
 
