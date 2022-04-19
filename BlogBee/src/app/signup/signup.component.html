@@ -29,7 +29,7 @@
                             [(ngModel)] = "userData.rpassword" [ngModelOptions]="{standalone: true}"
                             required="required" type="password" placeholder="eg. X8df!90EO"/>
                         </p>
-                        <span *ngIF="mismatch" style="color:red">Password Mismatch</span> 
+                        <span *ngIf="mismatch" style="color:red">Password Mismatch</span> 
                         <p class="signin button"> 
                             <button type="submit" (click)="signUpButtonAction()">Sign up</button>
                         </p>
