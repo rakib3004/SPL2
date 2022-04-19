@@ -1,275 +1,114 @@
-Our environments are filled with information.
-Just think of all the stuff that comes at
-us each day, like light and sound and even
-objects.
-It’s almost overwhelming when you think
-about it, but animals are pretty resourceful
-at figuring out how to take it all in -- and
-weed out what’s not important.
-In fact we and other animals often put our
-whole bodies into it.
-Like heads, knees, legs, abdomens, antennae,
-wings, they’re all body parts animals use
-to learn about their environment -- just through
-hearing!
-So let’s talk about what an ear even is,
-how ears evolved, how they work, and some
-of the cool ways animals have tweaked their
-ears to work for their lifestyle.
-Perk up whatever you use for hearing because
-I’m going to be sending vibrations your
-way for the next 10-ish minutes.
-I’m Rae Wynn-Grant, and this is Crash Course
-Zoology.
-Like all senses, hearing involves collecting
-information from the environment and processing
-that information into signals that the brain
-can understand.
-Specifically, hearing is the ability to interpret
-your environment using vibrations that move
-through air, water, or even solid objects.
-Hearing organs like ears are just one way
-animals can interpret the sounds in their
-environment.
-And while we vertebrates trace all our ears
-to one ancestor, invertebrates have independently
-evolved ears over and over again -- over 24
-times in just insects alone!
-So like vision, hearing is a spectrum: some
-animals have very sensitive hearing and some
-don’t hear at all.
-For those of us whose hearing organs are ears,
-ears have two minimum requirements to work:
-a sensor that turns vibrations into nerve
-signals, and the brainpower to interpret those
-signals into different sound qualities.
-Most animals that hear -- even if they don’t
-have what we’d call ears -- rely on special
-hair cells, which are named for the little
-hair-like tufts that come off them called
-stereocilia.
-Sound vibrations cause the stereocilia to
-sway, which leads to the hair cell sending
-signals to nearby neurons that relay information
-to the brain.
-Our hair cells are in our internal ear, the
-part that does the actual hearing that sits
-behind a thin membrane or eardrum.
-The outside part, called the pinna, works
-like a satellite dish to amplify and direct
-sounds into our internal ear.
-Pinna are very much a Mammal Thing; some species’
-pinna even move to track sounds!
-Many other vertebrates, like most reptiles
-and amphibians, don’t have pinna.
-Their external ears are simple openings.
-And some animals like fish have no external
-ears at all, hearing only the sounds that
-reach their internal ear after moving through
-their body.
-But some animals have gone a different route.
-Frogs and toads usually have internal ears,
-but there are over 200 species that have reduced
-or even lost many internal ear parts.
-These mostly-earless toads can still hear
-some sounds -- like a croak! -- by feeling
-vibrations.
-Which might be all they need to chat with
-their friends and detect predators.
-Like I said before -- and like we learned
-about vision -- hearing and the organs we
-use to do it come in a whole spectrum.
-And also like eyes, we can compare hearing
-organs based on what they can do.
-Most of our understanding of hearing is about
-how big-ish animals handle far-field sounds.
-Far-field sounds are sounds that have travelled
-far enough away from the thing making the
-noise that they act like a typical wave.
-Very close to the sound source, the sound
-waves push on the air or water particles around
-them, so you get weird auditory effects as
-the particles bump into each other.
-Some invertebrates use this kind of sound,
-called near-field sound, to communicate with
-each other and detect predators.
-Though the two aren’t mutually exclusive
--- some arthropods can also make and hear
-far-field sounds.
-We can also compare different animals’ hearing
-ranges, which is the range of frequencies
-that an animal can detect.
-Frequencies are the number of times particles
-of a material vibrate in a certain time period
-when a sound wave passes through it.
-One cycle of vibration in one second is called
-one hertz.
-Us humans have a decent hearing range of about
-20 to 20,000 hertz.
-We experience frequency as pitch, or the low-ness
-or high-ness of a sound, which we can also
-compare.
-But many animals can hear sounds under 20
-hertz -- which we call infrasound -- or above
-20,000 hertz, which we call ultrasound.
-Like wax moths can hear 300,000 hertz sounds
--- squeakier than any bat!
-Of course, like “best eyes” or “best
-brain,” “best ears or hearing” isn’t
-really an award we can give out.
-Animal hearing has evolved to pick up on the
-type, range, and pitch of sounds that they
-encounter and need to respond to in their
-environment.
-And as we’ll see, how animals hear has changed
-a lot in the hundreds of millions of years
-they’ve been around.
-But as for who can hear...
-Well, it depends what you call “hearing”,
-and what you call an “ear”.
-For us humans, hearing usually means sounds
-moving in air, but there are other ways vibrations
-can travel.
-As of 2021 we know a lot of arthropods keep
-their ears to the ground, literally, by sensing
-vibrations as they move through the Earth.
-And that’s pretty much hearing, even though
-they don’t have ears that look anything
-like ours.
-Other invertebrates, like jellyfish are trickier.
-They definitely have sensors that could detect
-sound waves, but since they live underwater,
-we can’t tell if they’re responding to
-sound waves or like… normal water waves.
-So for a long time, zoologists thought that
-only vertebrates could hear airborne sounds,
-since invertebrates don’t have ears like
-ours.
-But that got thrown out with a series of meticulously
-designed experiments by high school teacher
-Charles H. Turner.
-Let’s go to the Thought Bubble.
-It’s standard these days to account for
-extra factors that might influence research
-results, but in 1907 when Turner published
-his first hearing study, his experimental
-design was revolutionary.
-First, he insulated ant nests from ground
-vibrations with cotton batting, and carefully
-controlled the lighting in the room.
-Then he used a dog whistle, organ pipes, and
-his own voice from different distances, and
-he repeated the experiment many times, and
-even used heat filters to keep the animals
-from sensing the warmth of the lights.
-With all those controls, the ants scuttled
-away when he made noise, which Turner interpreted
-as evidence that his ants could hear!
-Turner then investigated hearing in moths
-using a dog whistle, again taking precautions
-that the animals weren’t just responding
-to the sight of the whistle or air movement.
-According to his results, moths could hear
-too!
-He reported in 1914 that the moths responded
-to high, but not low frequency sounds and
-mused that moths might still be able to hear
-the lower sounds, but only responded to sounds
-that were important.
-Like the high pitched whistle that sounded
-a bit like a bat.
-So he tested this idea by jostling the moths
-when he made a low frequency sound.
-Soon the moths learned that low pitched noises
-were dangerous, and fluttered their wings
-in response to just the low frequency sound.
-So not only did he prove moths could hear
-sounds even if they didn’t respond to them,
-but also that moths could learn!
-Thanks, Thought Bubble.
-Turner was a brilliant and productive scientist.
-He was the first African American to earn
-a PhD from the University of Chicago, but
-was excluded from professorships at white
-universities.
-Even today, many black entomologists face
-similar barriers.
-But Turner's work with moths was one of the
-earliest examples of conditioning in insects
-and foundational to the work of many later
-scientists studying insect learning and behavior.
-In addition to Turner’s moths and ants,
-since 1907 we’ve learned that lots of insects
-and at least some arachnids, like spiders,
-can hear airborne sounds thanks to the work
-of many other scientists.
-Many insects even use hairs tuned to particular
-frequencies, sort of like stereocilia!
-Other insects have a tympanal organ, in their
-legs, wings, abdomen, and other places, that
-vibrates and ends up sending signals to the
-brain.
-Invertebrate hearing evolved dozens of times
-in lots of different ways -- which makes sense
-since there are 34ish phyla of invertebrates
-out there.
-But vertebrate-style hearing only evolved
-once in a fish ancestor, which was passed
-on to all tetrapods, or animals with four
-limbs like mammals, birds, reptiles, and amphibians.
-We know that because even though vertebrate
-ears vary widely, they always use the same
-hair cell centered mechanism.
-Based on fossil evidence, we think that the
-earliest vertebrate ears were entirely internal,
-like fish ears are today, and evolved over
-500 million years ago.
-Which is probably why fish hear low frequency
-sounds best -- they pass through the body
-more easily than high frequency sounds.
-Then as vertebrates moved onto land roughly
-400 million years ago, things got more complicated.
-Like if you’ve ever been swimming at a public
-pool, you might’ve noticed how much quieter
-everything seems underwater.
-That’s because a lot of airborne sounds
-bounce off the water surface instead of traveling
-through the water.
-The same thing happened to those early land
-vertebrates that only had internal ears: the
-sounds in the air bounced off their denser
-ear tissue, and didn’t reach the hair cells.
-So they probably only heard very loud, low
-frequency sounds.
-That is, until tympanic middle ears, or ears
-with an eardrum and ossicles, evolved -- which
-they did independently at least three times.
-These external ears allowed sounds in the
-air to come into direct contact with the inner
-ear without traveling through the skull and
-other tissues.
-This made a huge difference in how well land
-animals could hear!
-Ears spread across Metazoa because just like
-eyes, they’re super useful.
-Vertebrates probably first evolved hearing
-to gather more information about their environment
-and avoid hazards, whereas insects evolved
-hearing so they could keep an ear out for
-vertebrate predators.
-Except for those noisy cicadas -- they just
-wanted a way to talk to each other.
-Some of our biggest leaps in understanding
-how animals interact with sound all happened
-very recently, and I’m sure we’ll learn
-even more interesting stuff soon!
-Next episode we’ll get into the really old
-and weird ways animals sense their environment!
-Thanks for watching this episode of Crash
-Course Zoology which was produced by Complexly
-in partnership with PBS and NATURE.
-It’s shot on the Team Sandoval Pierce stage
-and made with the help of all these nice people.
-If you’d like to help keep Crash Course
-free for everyone, forever, you can join our
-community on Patreon.
+[Music]
+how to play baseball
+hello friends today we'll learn the
+rules of baseball baseball is a team
+sport played between two teams of nine
+players baseball is played on a diamond
+shaped playing field
+four corners of the diamond are the home
+plate first base second base and third
+base
+the object of baseball is to score more
+runs than your opponent
+by hitting a ball as far as you can
+before running around four bases to
+complete a run
+the team that scores the most runs by
+the end of the ninth inning wins the
+game
+rules of baseball
+one the game lasts for nine innings with
+each team alternating between batting
+and feeling in each inning
+two if the game is a tie after nine
+innings then an extra inning will be
+played until a winner is found three if
+the team batting second in the bottom of
+the ninth inning is already ahead in
+points they do not need to complete
+their batting innings four
+once a batting order is picked then it
+cannot be changed throughout the game
+5.
+if the batter manages to hit the ball
+from the pitcher they must make an
+effort to run to first base
+6. each base must be touched by some
+part of the batter's body when running
+past it
+seven
+batter can run to as many bases as he
+wishes before being tagged out eight a
+battery is out if he or she fails to hit
+the ball three times after three good
+pitches
+9. the batter can leave the ball if it's
+within a strike zone
+10. if four balls miss the strike zone
+and the batter does not swing their back
+they can walk to first base
+11. a pinch hitter only comes into the
+game when the batter whose turn he's
+taking is due to bat 12. substitutes are
+permitted however they must bat in the
+order of the previous player whom they
+have replaced 13. to score a batter must
+hit the ball with the bat and make it
+around all four bases before the
+fielding team is able to collect the
+ball and throw it to the base the batter
+is running to
+14. a maximum of four points can be
+scored on one hit fifteen a single hit
+is worth one point
+sixteen home run equals four points
+seventeen teams can score multiple
+points from one hit if more than one
+player is already on one of the bases
+players dismissal players in baseball
+can be dismissed or out in four ways
+strikeout when a batter misses the ball
+three times
+force out when a player fails to make
+the base before the defensive player
+fly out when the ball is hit in the air
+and caught without it bouncing
+tag outs when a defensive player touches
+the runner with the ball or with the
+hand or glove holding the ball while the
+ball is live while the runner is not
+touching a base baseball player
+positions pitcher the pitcher is the
+player who stands in the middle of the
+field and throws the ball to the batter
+catcher the catcher will be squatting
+just behind the batter at home plate to
+catch the ball if the batter doesn't hit
+it
+basement the three players in the
+diamond protecting first second and
+third base are referred to as basement
+shortstop this is a roving position that
+helps back up the basement and helps
+catch balls in the diamond
+outfielders
+an outfielder is a player playing in one
+of these three defensive positions the
+right feeler the center fielder and the
+left fielder they're responsible for
+catching balls into chasing down ground
+balls that make it past the diamond
+batter or hitter
+a player whose turn it is to go to bat
+facing the pitcher
+pinch hitter a pinch hitter is a batter
+used as a substitute for another batter
+pinch runner a pinch runner is a player
+substituted for the specific purpose of
+replacing a player on base we hope
+you've learned baseball rules and now
+you know how to play baseball properly
+have fun
+if you like the video hit the like
+button and don't forget to subscribe to
+our youtube channel
