@@ -14,9 +14,11 @@ export class SignInComponent implements OnInit {
 
   logInfo = this.accService.getLogInfo();
 
+  success: boolean=false;
+
   loginButtonAction(){
     console.log(this.logInfo);
-    this.accService.loginValidation();
+    this.success = this.accService.loginValidation();
   }
  
   ngOnInit(): void {
