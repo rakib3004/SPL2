@@ -2,7 +2,7 @@ import random
 from datetime import datetime
 
 
-dataFileName=open("rating.data","w")
+dataFileName=open("../Source/rating.data","w")
 for i in range(7500):
     dt = datetime.now()
 
