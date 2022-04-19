@@ -55,15 +55,15 @@ for i in filter1:
     indices = indices[1:]
     indices1.extend(indices)
 #print("Items to be recommended: ", indices1)
-youTubeVideoUrlListPlainText = open("YouTubeVideoID.txt", encoding="utf8")
+youTubeVideoUrlListPlainText = open("YouTubeData/YouTubeVideoID.txt", encoding="utf8")
 
 youTubeVideoUrlListFile=youTubeVideoUrlListPlainText.readlines()
 
-youTubeVideoUrlListTitle = open("YouTubeVideoTitle.txt", encoding="utf8")
+youTubeVideoUrlListTitle = open("YouTubeData/YouTubeVideoTitle.txt", encoding="utf8")
 
 youTubeVideoUrlTitleFile=youTubeVideoUrlListTitle.readlines()
 
-youTubeVideoUrlListTopic = open("YouTubeVideoTopic.txt", encoding="utf8")
+youTubeVideoUrlListTopic = open("YouTubeData/YouTubeVideoTopic.txt", encoding="utf8")
 
 youTubeVideoUrlTopicFile=youTubeVideoUrlListTopic.readlines()
 
