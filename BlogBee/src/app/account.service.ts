@@ -34,7 +34,6 @@ export class AccountService {
   saveUserData(){
     this._http.post('http://localhost:3000/signup',this.userData).subscribe(data => {
       console.log(data);
-      
     });
   }
 
