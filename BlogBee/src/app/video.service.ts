@@ -17,7 +17,7 @@ export class VideoService {
 { videoID:"OmYVHWJf590", videoTitle:"Merry and gesus explained" , videoTopic:"Electronics" },
 { videoID:"mYhy7eaazIk", videoTitle:"Telescope" , videoTopic:"Medical Science" },
 { videoID:"4x6zzQcMT3w", videoTitle:"Mysterious Nation religion" , videoTopic:"Gun Crime" },
-{ videoID:"qf49ZFIIGlk", videoTitle:"Early Computing: Crash" , videoTopic:"Gun Crime" },
+{ videoID:"qf49ZFIIGlk", videoTitle:"Early Computing: Crash Course" , videoTopic:"Gun Crime" },
 { videoID:"LvL3YXa0n2M", videoTitle:"Christianity 101 | National Geographic" , videoTopic:"CryptCryptMac" },
 { videoID:"veMFCFyOwFI", videoTitle:"The Middle East's cold war, explained" , videoTopic:"IBM" },
 { videoID:"gQGWqA22s5s", videoTitle:"Biomedicine: Crash Course History of Science #34" , videoTopic:"Electronics" },
@@ -25,11 +25,11 @@ export class VideoService {
 { videoID:"l128tW1H5a8", videoTitle:"Urinary System, Part 1: Crash Course A&P #38" , videoTopic:"Hockey" },
 { videoID:"wOclF9eP5uM", videoTitle:"The Age of Exploration: Crash Course European History #4" , videoTopic:"MiddleEast" },
 { videoID:"XjgfnS7qKCI", videoTitle:"Five reasons the Middle East is in crisis - Newsnight" , videoTopic:"Religion" },
-{ videoID:"jAhjPd4uNFY", videoTitle:"Genetic Engineering" , videoTopic:"Politics" },
+{ videoID:"jAhjPd4uNFY", videoTitle:"Genetic Engineering Crash Course" , videoTopic:"Politics" },
 { videoID:"O5nskjZ_GoI", videoTitle:"Course Computer Science #1" , videoTopic:"Gun Crime" },
 { videoID:"aJKkUFR4eDA", videoTitle:"How & What Animals Eat: Crash Course Zoology #4" , videoTopic:"Politics" },
 { videoID:"lrk4oY7UxpQ", videoTitle:"Introduction: Crash Course U.S. Government and Politics" , videoTopic:"Baseball" },
-{ videoID:"mYhy7eaazIk", videoTitle:"Telescope" , videoTopic:"Medical Science" },
+{ videoID:"GPOv72Awo68", videoTitle:"How it Happened - The 2008 Financial Crisis: Crash Course Economics #12" , videoTopic:"Medical Science" },
 { videoID:"kBpQiJt3MUQ", videoTitle:"Pre-Islamic history of the Middle East" , videoTopic:"Mac" },
 { videoID:"6aMW5mOKxB8", videoTitle:"history of hockey game" , videoTopic:"Gun Crime" },
 { videoID:"tecocKSclwc", videoTitle:"Florence and the Renaissance: Crash Course European History #2" , videoTopic:"Motorcycles" },
@@ -75,6 +75,8 @@ export class VideoService {
 { videoID:"DEYoAkjN_yc", videoTitle:"Does Windows 11 Gaming Suck" , videoTopic:"Science" }, 
 { videoID:"YqQx75OPRa0", videoTitle:"Beginning Graphic Design: Fundamentals" , videoTopic:"Science" }, 
 { videoID:"r6g6_CJZI_c", videoTitle:"The Best Beginner Motorcycles - Review" , videoTopic:"Science" }, 
+{ videoID:"L-Uo3c62a8Q", videoTitle:"Using artificial intelligence to help detect breast cancer | Google Health" , videoTopic:"Science" }, 
+{ videoID:"dFCbJmgeHmA", videoTitle:"The Day the Dinosaurs Died – Minute by Minute" , videoTopic:"Science" }, 
 
   ];
 
