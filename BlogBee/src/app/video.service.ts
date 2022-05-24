@@ -34,109 +34,48 @@ export class VideoService {
 { videoID:"6aMW5mOKxB8", videoTitle:"history of hockey game" , videoTopic:"Gun Crime" },
 { videoID:"tecocKSclwc", videoTitle:"Florence and the Renaissance: Crash Course European History #2" , videoTopic:"Motorcycles" },
 { videoID:"_r9kSA3s2fQ", videoTitle:"Brainy & Brainless Animals: Crash Course Zoology #5" , videoTopic:"Autos" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
-{ videoID:"", videoTitle:"" , videoTopic:"" },
 
 
-/*m6dCxo7t_aE, The five major world religions - John Bellamy
-TpcbfxtdoI8, Islam, the Quran, and the Five Pillars: Crash Course World History #13
-ka8csjsmX6I, Islam and Politics: Crash Course World History 216
-xlBEEuYIWwY, What Is Hinduism??
-JOWFPTzK7D4, The Mecca Mystery: Are Muslims Praying In The Wrong Direction? | Sacred City | Timeline
-4aXtAWOxBNA, ASK DR ZAKIR - AN EXCLUSIVE OPEN QUESTION & ANSWER SESSION - 1 | DUBAI | DR ZAKIR NAIK
-E6cKvPo4Dv8, John L. Esposito - The Future of Islam
-INIG636SnU4, Islam, Judaism, and Christianity - A Conversation
-Q_szgVMAC-E, 10 Biggest Differences Between ISLAM & JUDAISM
-9nZHT0yStEc, Is it the same God for Muslims, Christians, and Jews?
-oylHszMFlgg, What if: America's Four Political Parties | Meet The Press | NBC News
-dh3mKgkgWFc, Trudeau: Canada-U.S. Successful Alliance In History Of The Modern World | Meet The Press | NBC News
-aBglxa6K8gc, President Trump's Full, Unedited Interview With Meet The Press | NBC News
-K8Z9Kqhrh5c, Watch In Full: Trump versus Biden in the first US Presidential election debate
-4Ro9H6bmdOg, Digital oppression in Bangladesh | The Listening Post feature
-9qRxNYuR2c4, Dictator's Dilemma (Full Episode) | North Korea: Inside the Mind of a Dictator
-NIgqhU4lkgo, Putin's Way (full documentary) | FRONTLINE
-GC_FFIYz4G0, Financial Secrecy Index U.S. Launch with FACT
-Gwr7dpyA7qM, Pelosi's Power (full documentary) | FRONTLINE
-5IBa88VkM6g, The Crown Prince of Saudi Arabia (full film) | FRONTLINE
-9Hxt3GttF38, 8 INVENTIONS AND TECHNOLOGIES THAT WILL CHANGE OUR WORLD
-Q1mZ4ADUEZs, Elon Musk's Future City
-SGP6Y0Pnhe4, HOW IT WORKS: The International Space Station
-5KygwcZ545U, Shuttle Atlantis STS-132 - Amazing Shuttle Launch Experience
-P4boyXQuUIw, Mars Science Laboratory Curiosity Rover Animation
-1tOx_Vh5diE, 2021's Breakthroughs in Neuroscience and Other Biology
-nlSL7Qg7-Po, Intro to Neuroscience
-X3TAROotFfM, Human digestive system - How it works! (Animation)
-_VhcZTGv0CU, Immunology in the skin
-yqLlgIaz1L0, Have you ever seen an atom?
-77FkWW75dX4, Top 5 Simple Electronics projects
-pSFkiqtGgjs, simple clap control home-automation.....#clapswitch
-d5lEkz3Bomc, The Rise and Stagnation of IBM
-LDSiR024aKk, 12 Mac Apps Worth Getting Right Away 2022
-ttjPZufCeno, Portable Mac Desk Setup 2022 - the Power of the Apple Ecosystem
-Uh9643c2P6k, Introducing Windows 11
-TGe3djKdblQ, Windows Insider Webcast - The #BeamMachine
-DEYoAkjN_yc, Does Windows 11 Gaming Suck
-YqQx75OPRa0, Beginning Graphic Design: Fundamentals
-r6g6_CJZI_c, The Best Beginner Motorcycles - Review
-*/
+{ videoID:"m6dCxo7t_aE", videoTitle:"The five major world religions - John Bellamy" , videoTopic:"Science" }, 
+{ videoID:"TpcbfxtdoI8", videoTitle:"Islam, the Quran, and the Five Pillars: Crash Course World History #13" , videoTopic:"Science" }, 
+{ videoID:"xlBEEuYIWwY", videoTitle:"What Is Hinduism??" , videoTopic:"Science" }, 
+{ videoID:"JOWFPTzK7D4", videoTitle:"The Mecca Mystery: Are Muslims Praying In The Wrong Direction? | Sacred City | Timeline" , videoTopic:"Science" }, 
+{ videoID:"4aXtAWOxBNA", videoTitle:"ASK DR ZAKIR - AN EXCLUSIVE OPEN QUESTION & ANSWER SESSION - 1 | DUBAI | DR ZAKIR NAIK" , videoTopic:"Science" }, 
+{ videoID:"E6cKvPo4Dv8", videoTitle:"John L. Esposito - The Future of Islam" , videoTopic:"Science" }, 
+{ videoID:"INIG636SnU4", videoTitle:"Islam, Judaism, and Christianity - A Conversation" , videoTopic:"Science" }, 
+{ videoID:"Q_szgVMAC-E", videoTitle:"10 Biggest Differences Between ISLAM & JUDAISM" , videoTopic:"Science" },  
+{ videoID:"9nZHT0yStEc", videoTitle:"Is it the same God for Muslims, Christians, and Jews?" , videoTopic:"Science" }, 
+{ videoID:"oylHszMFlgg", videoTitle:"What if: America's Four Political Parties | Meet The Press | NBC News" , videoTopic:"Science" }, 
+{ videoID:"dh3mKgkgWFc", videoTitle:"Trudeau: Canada-U.S. Successful Alliance In History Of The Modern World | Meet The Press | NBC News" , videoTopic:"Science" }, 
+{ videoID:"aBglxa6K8gc", videoTitle:"President Trump's Full, Unedited Interview With Meet The Press | NBC News" , videoTopic:"Science" }, 
+{ videoID:"K8Z9Kqhrh5c", videoTitle:"Watch In Full: Trump versus Biden in the first US Presidential election debate" , videoTopic:"Science" }, 
+{ videoID:"4Ro9H6bmdOg", videoTitle:"Digital oppression in Bangladesh | The Listening Post feature" , videoTopic:"Science" }, 
+{ videoID:"9qRxNYuR2c4", videoTitle:"Dictator's Dilemma (Full Episode) | North Korea: Inside the Mind of a Dictator" , videoTopic:"Science" }, 
+{ videoID:"NIgqhU4lkgo", videoTitle:"Putin's Way (full documentary) | FRONTLINE" , videoTopic:"Science" }, 
+{ videoID:"GC_FFIYz4G0", videoTitle:"Financial Secrecy Index U.S. Launch with FACT" , videoTopic:"Science" }, 
+{ videoID:"Gwr7dpyA7qM", videoTitle:"Pelosi's Power (full documentary) | FRONTLINE" , videoTopic:"Science" }, 
+{ videoID:"5IBa88VkM6g", videoTitle:"The Crown Prince of Saudi Arabia (full film) | FRONTLINE" , videoTopic:"Science" }, 
+{ videoID:"9Hxt3GttF38", videoTitle:"8 INVENTIONS AND TECHNOLOGIES THAT WILL CHANGE OUR WORLD" , videoTopic:"Science" }, 
+{ videoID:"Q1mZ4ADUEZs", videoTitle:"Elon Musk's Future City" , videoTopic:"Science" }, 
+{ videoID:"SGP6Y0Pnhe4", videoTitle:"HOW IT WORKS: The International Space Station" , videoTopic:"Science" }, 
+{ videoID:"5KygwcZ545U", videoTitle:"Shuttle Atlantis STS-132 - Amazing Shuttle Launch Experience" , videoTopic:"Science" }, 
+{ videoID:"P4boyXQuUIw", videoTitle:"Mars Science Laboratory Curiosity Rover Animation" , videoTopic:"Science" }, 
+{ videoID:"1tOx_Vh5diE", videoTitle:"2021's Breakthroughs in Neuroscience and Other Biology" , videoTopic:"Science" }, 
+{ videoID:"nlSL7Qg7-Po", videoTitle:"Intro to Neuroscience" , videoTopic:"Science" }, 
+{ videoID:"X3TAROotFfM", videoTitle:"Human digestive system - How it works! (Animation)" , videoTopic:"Science" }, 
+{ videoID:"_VhcZTGv0CU", videoTitle:"Immunology in the skin" , videoTopic:"Science" }, 
+{ videoID:"yqLlgIaz1L0", videoTitle:"Have you ever seen an atom?" , videoTopic:"Science" }, 
+{ videoID:"77FkWW75dX4", videoTitle:"Top 5 Simple Electronics projects" , videoTopic:"Science" }, 
+{ videoID:"pSFkiqtGgjs", videoTitle:"simple clap control home-automation.....#clapswitch" , videoTopic:"Science" }, 
+{ videoID:"d5lEkz3Bomc", videoTitle:"The Rise and Stagnation of IBM" , videoTopic:"Science" }, 
+{ videoID:"LDSiR024aKk", videoTitle:"12 Mac Apps Worth Getting Right Away 2022" , videoTopic:"Science" }, 
+{ videoID:"ttjPZufCeno", videoTitle:"Portable Mac Desk Setup 2022 - the Power of the Apple Ecosystem" , videoTopic:"Science" }, 
+{ videoID:"Uh9643c2P6k", videoTitle:"Introducing Windows 11" , videoTopic:"Science" }, 
+{ videoID:"TGe3djKdblQ", videoTitle:"Windows Insider Webcast - The #BeamMachine" , videoTopic:"Science" }, 
+{ videoID:"DEYoAkjN_yc", videoTitle:"Does Windows 11 Gaming Suck" , videoTopic:"Science" }, 
+{ videoID:"YqQx75OPRa0", videoTitle:"Beginning Graphic Design: Fundamentals" , videoTopic:"Science" }, 
+{ videoID:"r6g6_CJZI_c", videoTitle:"The Best Beginner Motorcycles - Review" , videoTopic:"Science" }, 
+
   ];
 
   getVideos() : Video[]{
