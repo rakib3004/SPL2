@@ -16,6 +16,12 @@ export class HomeComponent implements OnInit {
   }
 
   VideoInfo = [];
+
+  targetVideo = new Video();
+  compileVideoToText(targetVideoID: String) {
+    this.VideoService.addMember(newMember);
+    this.route.navigate(['']);
+  }
   
   showBlog(path: String) {}
   
