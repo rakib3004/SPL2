@@ -80,6 +80,10 @@ export class VideoService {
 
   ];
 
+  compileVideoToText(targetVideo: Video) {
+
+  }
+
   getVideos() : Video[]{
     return this.videos;
   }
