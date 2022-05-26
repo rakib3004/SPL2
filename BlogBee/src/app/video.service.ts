@@ -80,8 +80,10 @@ export class VideoService {
 
   ];
 
-  compileVideoToText(targetVideo: Video) {
+  
 
+  compileVideoToText(targetVideo: Video) {
+    
   }
 
   getVideos() : Video[]{
@@ -90,14 +92,13 @@ export class VideoService {
 
   REST_API: string = 'http://localhost:3000/';
 
-  constructor(private httpClient: HttpClient) { }
-
+  constructor(private _http:HttpClient) { }
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   // Add
   AddUser(data: Video): Observable<any> {
     let API_URL = `${this.REST_API}/add-video`;
-    return this.httpClient.post(API_URL, data)
+    return this._http.post(API_URL, data)
       .pipe(
         catchError(this.handleError)
       )
