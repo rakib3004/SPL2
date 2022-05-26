@@ -80,8 +80,8 @@ export class VideoService {
 
   ];
 
+  constructor(private _http:HttpClient) { }
   
-
   compileVideoToText(targetVideo: Video) {
     
   }
@@ -92,7 +92,7 @@ export class VideoService {
 
   REST_API: string = 'http://localhost:3000/';
 
-  constructor(private _http:HttpClient) { }
+  
 
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
   // Add
@@ -105,12 +105,12 @@ export class VideoService {
   }
   // Get all objects
   GetUsers() {
-    return this.httpClient.get(`${this.REST_API}/videos`);
+    return this._http.get(`${this.REST_API}/videos`);
   }
   // Get single object
   GetUser(id:any): Observable<any> {
     let API_URL = `${this.REST_API}/video/${id}`;
-    return this.httpClient.get(API_URL, { headers: this.httpHeaders })
+    return this._http.get(API_URL, { headers: this.httpHeaders })
       .pipe(map((res: any) => {
           return res || {}
         }),
@@ -120,7 +120,7 @@ export class VideoService {
   // Update
   updateUser(id:any, data:any): Observable<any> {
     let API_URL = `${this.REST_API}/update-video/${id}`;
-    return this.httpClient.put(API_URL, data, { headers: this.httpHeaders })
+    return this._http.put(API_URL, data, { headers: this.httpHeaders })
       .pipe(
         catchError(this.handleError)
       )
@@ -128,7 +128,7 @@ export class VideoService {
   // Delete
   deleteUser(id:any): Observable<any> {
     let API_URL = `${this.REST_API}/delete-video/${id}`;
-    return this.httpClient.delete(API_URL, { headers: this.httpHeaders}).pipe(
+    return this._http.delete(API_URL, { headers: this.httpHeaders}).pipe(
         catchError(this.handleError)
       )
   }

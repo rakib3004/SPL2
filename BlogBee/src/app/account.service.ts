@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { UserData } from './user-data';
 import { LogInfo } from './log-info';
 import { Router } from '@angular/router';
