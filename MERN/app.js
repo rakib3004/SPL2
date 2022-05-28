@@ -4,6 +4,14 @@ const cors = require('cors');
 const mysql = require('mysql2');
 const { send } = require('process');
 
+let {Pythonshell} = require('python-shell');
+
+Pythonshell.run('AudioToText.py',null,function(err,results){
+
+    console.log(results);
+    console.log("--Finish--");
+})
+
 const app = express();
 
 app.use(cors());
