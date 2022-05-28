@@ -3,6 +3,9 @@
 var _require = require('python-shell'),
     PythonShell = _require.PythonShell;
 
-PythonShell.runString('AudioToText.py', null, function (err) {
-  console.log('finished');
+var videoInfo = {
+  args: ["tecocKSclwc", "ToDo"]
+};
+PythonShell.run('AudioToText.py', videoInfo, function (err, results) {
+  console.log(results);
 });

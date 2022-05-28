@@ -1,5 +1,9 @@
 let {PythonShell} = require('python-shell')
 
-PythonShell.runString('AudioToText.py', null, function (err) {
-  console.log('finished');
+let videoInfo={
+  args:["tecocKSclwc","ToDo"]
+}
+
+PythonShell.run('AudioToText.py', videoInfo, function(err,results) {
+  console.log(results);
 });
