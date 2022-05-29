@@ -20,7 +20,7 @@ for value in data:
         if key == 'text':
             val=str(val)
             newVal=val.strip('\n')
-            print("---"+newVal+"---")
+            print(newVal,end="")
             transcript += newVal+" "
 
 
