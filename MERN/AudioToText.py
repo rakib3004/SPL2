@@ -16,14 +16,14 @@ transcript = ''
 for value in data:
     for key, val in value.items():
         if key == 'text':
-            transcript += val+"\\n"
+            transcript += val+" "
 
 
 
 
 print(transcript)
 
-blogJSON = "Blog.json"
+blogJSON = "../BlogBee/src/app/blog-view/Blog.json"
 file = open(blogJSON, "w")
 
 file.write('{"id": "'+video_id+'", "text": "')
