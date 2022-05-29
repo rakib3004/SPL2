@@ -16,8 +16,17 @@ transcript = ''
 for value in data:
     for key, val in value.items():
         if key == 'text':
-            transcript += val+"\n"
+            transcript += val+"\\n"
+
 
 
 
 print(transcript)
+
+blogJSON = "Blog.json"
+file = open(blogJSON, "w")
+
+file.write('{"id": "'+video_id+'", "text": "')
+
+file.write(transcript+'"}')
+file.close()
