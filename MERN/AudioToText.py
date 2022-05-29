@@ -25,7 +25,7 @@ for value in data:
 
 
 
-
+transcript=transcript.strip()
 
 blogJSON = "../BlogBee/src/app/blog-view/Blog.json"
 textBlog="Text.txt"
