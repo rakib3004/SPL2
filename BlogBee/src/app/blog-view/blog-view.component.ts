@@ -12,6 +12,7 @@ export class BlogViewComponent implements OnInit {
   getBlog = JSON.parse('Blog.json')
   //extraBlog = JSON.parse('{"id": "KN5Bjh54uB8", "text": "Our environments are filled with information. ng study, his experimental design was revolutionary 21 years old to drink alcohol but only 18 Wall Street regulations, or Obamacare, or if there are any limits on when, where, and nd probably the most important, have you"}')
 
+
   blogId=this.getBlog.id;
   blogText=this.getBlog.text;
 
