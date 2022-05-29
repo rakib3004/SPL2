@@ -1,3 +1,4 @@
+from re import T
 import sys
 from youtube_transcript_api import YouTubeTranscriptApi as yta
 
@@ -15,18 +16,25 @@ data = yta.get_transcript(video_id)
 transcript = ''
 for value in data:
     for key, val in value.items():
+
         if key == 'text':
-            transcript += val+" "
+            val=str(val)
+            newVal=val.strip('\n')
+            print("---"+newVal+"---")
+            transcript += newVal+" "
 
 
 
 
-print(transcript)
 
 blogJSON = "../BlogBee/src/app/blog-view/Blog.json"
+textBlog="Text.txt"
+t_file=open(textBlog, "w")
+t_file.writelines(transcript)
+t_file.close()
 file = open(blogJSON, "w")
 
 file.write('{"id": "'+video_id+'", "text": "')
 
-file.write(transcript+'"}')
+file.writelines(transcript+'"}')
 file.close()
