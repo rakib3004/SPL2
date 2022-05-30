@@ -19,4 +19,9 @@ def getVideoMetaData(url):
     print(videoMeta)
 
 
-getVideoMetaData("https://www.youtube.com/watch?v=xA4QWwaweWA")
+
+videoID="xA4QWwaweWA"
+url="https://www.youtube.com/watch?v="+videoID
+
+
+getVideoMetaData(url)
