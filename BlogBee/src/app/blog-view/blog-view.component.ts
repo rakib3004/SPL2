@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import blog from './Blog.json';
+
+
 
 
 @Component({
@@ -9,12 +12,19 @@ import { Component, OnInit } from '@angular/core';
 export class BlogViewComponent implements OnInit {
   constructor() {}
 
-  getBlog = JSON.parse('Blog.json')
-  //extraBlog = JSON.parse('{"id": "KN5Bjh54uB8", "text": "Our environments are filled with information. ng study, his experimental design was revolutionary 21 years old to drink alcohol but only 18 Wall Street regulations, or Obamacare, or if there are any limits on when, where, and nd probably the most important, have you"}')
+  getBlog:{id:String,text:String}=blog;
+  //getBlog = JSON.parse('Blog.json')
+  //getBlog = JSON.parse('{"id": "KN5Bjh54uB8", "text": "Our environments are filled with information. ng study, his experimental design was revolutionary 21 years old to drink alcohol but only 18 Wall Street regulations, or Obamacare, or if there are any limits on when, where, and nd probably the most important, have you"}')
 
 
   blogId=this.getBlog.id;
   blogText=this.getBlog.text;
+
+
+  /*
+  blogId=getBlog[0].value;
+  blogText=getBlog[1].value;
+  */
 
 
   ngOnInit(): void {}
