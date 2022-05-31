@@ -18,8 +18,8 @@ export class HomeComponent implements OnInit {
   VideoInfo = [];
 
   targetVideo = new Video();
-  compileVideoToText(targetVideo: Video) {
-    this.videoService.compileVideoToText(targetVideo);
+  compileVideoToText(targetVideoID: String) {
+    this.videoService.compileVideoToText(targetVideoID);
     this.router.navigate(['blogView']);
   }
   

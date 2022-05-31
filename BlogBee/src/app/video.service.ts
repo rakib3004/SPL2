@@ -82,7 +82,7 @@ export class VideoService {
 
   constructor(private _http:HttpClient) { }
   
-  compileVideoToText(targetVideo: Video) {
+  compileVideoToText(targetVideoID: String) {
     
   }
 
