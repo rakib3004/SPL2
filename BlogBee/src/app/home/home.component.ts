@@ -20,9 +20,9 @@ export class HomeComponent implements OnInit {
   targetVideo = new Video();
   compileVideoToText(targetVideoID: String) {
     this.videoService.compileVideoToText(targetVideoID);
+    
     this.router.navigate(['blogView']);
   }
-  
+
   showBlog(path: String) {}
-  
 }
