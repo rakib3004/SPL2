@@ -1,19 +1,14 @@
 <div>
   <div class="list-container">
     <div class="vid-list" *ngFor="let video of videos">
-      <img
-        src="{{ 'https://img.youtube.com/vi/' + video.videoID + '/0.jpg' }}"
-        routerLink="blogView"
-        class="thumbnail"
-        alt="Thumbnail"
-      />
+      <img src="{{'https://img.youtube.com/vi/' + video.videoId+'/0.jpg'}}" routerLink="blogView" class="thumbnail" alt="Thumbnail" />
       <div class="flex-div">
+
         <div class="vid-info">
-         <p (click)="compileVideoToText(video.videoID)">{{
-            video.videoTitle
-          }}</p>
-          <!-- <a href="" routerLink="blogView" >{{video.videoTitle}}</a> -->
+          <!--<a href="" (click)="compileVideoToText(video)">{{video.videoTitle}}</a>-->
+          <a href="" routerLink="blogView" >{{video.title}}</a>
         </div>
+        
       </div>
     </div>
   </div>
