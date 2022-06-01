@@ -8,21 +8,26 @@ import { VideoService } from '../video.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
 })
+
 export class HomeComponent implements OnInit {
   constructor(private videoService: VideoService, private router: Router) {}
-  videos: Video[] = [];
+  videos: any = [];
+
   ngOnInit(): void {
-    this.videos = this.videoService.getVideos();
+      //this.videoService.addAllVideos();
+      this.videoService.getVideos().subscribe(data=>{
+      this.videos = data;
+    })
   }
 
   VideoInfo = [];
 
   targetVideo = new Video();
-  compileVideoToText(targetVideoID: String) {
-    this.videoService.compileVideoToText(targetVideoID);
-    
+  compileVideoToText(targetVideo: Video) {
+    this.videoService.compileVideoToText(targetVideo);
     this.router.navigate(['blogView']);
   }
-
+  
   showBlog(path: String) {}
+  
 }
