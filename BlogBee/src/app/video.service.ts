@@ -80,7 +80,7 @@ export class VideoService {
 
 //   ];
 
-  constructor(private _http:HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
   videos: any = [];
   
