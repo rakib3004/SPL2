@@ -85,7 +85,6 @@ app.get('/videoInfo',(req,res)=>{
         {
             console.log(err,'errs');
         }
-        console.log(result);
         res.send(result);
     });
 });
@@ -93,14 +92,14 @@ app.get('/videoInfo',(req,res)=>{
 
 //temp python calling method
 app.get('/test/:videoId', (req, res) => {
-    console.log("Backend Blog id: "+req.params.videoId);
+    let videoId = req.params.videoId;
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
     db.query(qr,videoId,(err,result)=>{
 
         if(err)
         {
-            console.log(err,'errs');
+            console.log(err,'error occured');
         }
 
         if(result.length>0)
