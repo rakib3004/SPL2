@@ -11,7 +11,6 @@ app.use(bodyparser.json());
 
 
 //database connection
-
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -27,7 +26,7 @@ db.connect(err=>{
 })
 
 
-//get all data
+//post singup data into database
 app.post('/signup',(req,res)=>{
 
     let userName = req.body.userName;
@@ -61,7 +60,7 @@ app.post('/signup',(req,res)=>{
     });
 });
 
-
+//post login data
 app.post('/login',(req,res)=>{
     console.log(req.body);
     let userName = req.body.userName;
@@ -78,8 +77,40 @@ app.post('/login',(req,res)=>{
     });
 });
 
+//get all video data
+app.get('/videoInfo',(req,res)=>{
+    let qr = "select * from videoInfo";
+    db.query(qr,(err,result)=>{
+        if(err)
+        {
+            console.log(err,'errs');
+        }
+        console.log(result);
+        res.send(result);
+    });
+});
+
+//temp video inserting 
+app.post('/videoInfo',(req,res)=>{
+    console.log("post");
+    console.log(req.body);
+    req.body.forEach(video => {
+        let videoId = video.videoId;
+        let title = video.title;
+        let topic = video.topic;
+        let rating = video.rating;
+        let qr = "INSERT INTO videoInfo (videoId, title, topic, rating) VALUES (?, ?, ?, ?)";
+        db.query(qr,[videoId, title, topic, rating],(err,result)=>{
+            if(err)
+            {
+                console.log(err,'errs');
+            }
+        });
+    });
+    console.log('successfully inserted videos');        
+});
+
 
 app.listen(3000,()=>{
     console.log('server running......')
 });
-
