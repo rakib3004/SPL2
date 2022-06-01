@@ -90,6 +90,41 @@ app.get('/videoInfo',(req,res)=>{
     });
 });
 
+
+//temp python calling method
+app.get('/test/:videoId', (req, res) => {
+    console.log("Backend Blog id: "+req.params.videoId);
+    let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
+
+    db.query(qr,videoId,(err,result)=>{
+
+        if(err)
+        {
+            console.log(err,'errs');
+        }
+
+        if(result.length>0)
+        {
+            res.send(result);
+        }
+        else{
+            const { spawn } = require('child_process');
+            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py']);
+
+            pyProg.stdout.on('data', function(data) {
+                console.log(data.toString());
+                res.send(data.toString());
+                res.end('end');
+            });
+        }
+    });
+
+    
+})
+
+
+
+
 //temp video inserting 
 app.post('/videoInfo',(req,res)=>{
     console.log("post");
