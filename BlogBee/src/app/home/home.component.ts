@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
+import {BlogService} from '../blog.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { VideoService } from '../video.service';
 })
 
 export class HomeComponent implements OnInit {
-  constructor(private videoService: VideoService, private router: Router) {}
+  constructor(private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
   videos: any = [];
 
   ngOnInit(): void {
@@ -20,14 +21,10 @@ export class HomeComponent implements OnInit {
     })
   }
 
-  VideoInfo = [];
 
-  targetVideo = new Video();
-  compileVideoToText(targetVideo: Video) {
-    this.videoService.compileVideoToText(targetVideo);
+  showBlog(targetId: any) {
+    this.blogService.showBlog(targetId);
     this.router.navigate(['blogView']);
   }
-  
-  showBlog(path: String) {}
   
 }

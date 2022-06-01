@@ -30,12 +30,13 @@ def create_emp():
         cursor.close() 
         conn.close()          
      
-@app.route('/emp')
+@app.route('/emp',methods=['GET'])
 def emp():
+    print("Here ")
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute("SELECT id, name, email, phone, address FROM emp")
+        cursor.execute("SELECT * FROM emp")
         empRows = cursor.fetchall()
         respone = jsonify(empRows)
         respone.status_code = 200
@@ -47,11 +48,11 @@ def emp():
         conn.close()  
 
 @app.route('/emp/')
-def emp_details(emp_id):
+def emp_details(videoId):
     try:
         conn = mysql.connect()
         cursor = conn.cursor(pymysql.cursors.DictCursor)
-        cursor.execute("SELECT id, name, email, phone, address FROM emp WHERE id =%s", emp_id)
+        cursor.execute("SELECT * FROM emp WHERE videoId =%s", videoId)
         empRow = cursor.fetchone()
         respone = jsonify(empRow)
         respone.status_code = 200
