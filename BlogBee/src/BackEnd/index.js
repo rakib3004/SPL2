@@ -3,6 +3,7 @@ const bodyparser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql2');
 const { send } = require('process');
+const { query } = require('express');
 
 const app = express();
 
@@ -94,7 +95,7 @@ app.get('/test/:videoId/:title', (req, res) => {
 
     let videoId = req.params.videoId;
     let title = req.params.title;
-    let text = "";
+
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
     db.query(qr,videoId,(err,result)=>{
@@ -116,16 +117,14 @@ app.get('/test/:videoId/:title', (req, res) => {
             pyProg.stdout.on('data', function(data) {
                 let text = data.toString();
                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
-                res.send(text);
                 db.query(query,[videoId,title,text],(err,result)=>{
                 });
-                res.end('end');
-                //console.log(data.toString());
-                
+                res.end('end');  
+                let query2 = "SELECT * FROM Blogs WHERE videoId = ?"
+                db.query(query2,videoId,(err,res1)=>{
+                res.send(res1);
+            })  
             });
-
-            
-
             
         }
     });

@@ -11,7 +11,7 @@ import { BlogService } from '../blog.service';
 })
 export class BlogViewComponent{
 
-  blog: Blog[] = [];
+  blogs: Blog[] = [];
 
   constructor(private blogService:BlogService) {}
   
@@ -19,7 +19,7 @@ export class BlogViewComponent{
   ngOnInit(): void {
     this.blogService.showBlog().subscribe(
       (res: any) => {
-        this.blog = res as Blog[];
+        this.blogs = res as Blog[];
       },
         (err) => console.log('error')
     )

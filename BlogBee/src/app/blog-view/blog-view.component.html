@@ -1,4 +1,4 @@
-<h1>{{blog[0].title}}</h1>
+<h1>{{blogs[0].title}}</h1>
 
-<p>{{blog[0].text}}</p>
+<p *ngFor="let blog of blogs">{{blog.text}}</p>
 
