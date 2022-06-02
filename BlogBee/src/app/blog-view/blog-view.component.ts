@@ -20,6 +20,7 @@ export class BlogViewComponent{
     this.blogService.showBlog().subscribe(
       (res: any) => {
         this.blogs = res as Blog[];
+        console.log(this.blogs);
       },
         (err) => console.log('error')
     )

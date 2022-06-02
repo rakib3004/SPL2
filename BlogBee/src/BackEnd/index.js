@@ -119,20 +119,18 @@ app.get('/test/:videoId/:title', (req, res) => {
                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
                 db.query(query,[videoId,title,text],(err,result)=>{
                 });
-                res.end('end');  
+
                 let query2 = "SELECT * FROM Blogs WHERE videoId = ?"
-                db.query(query2,videoId,(err,res1)=>{
-                res.send(res1);
-            })  
+                db.query(query2,videoId,(err,result2)=>{
+                    console.log(result2);
+                    res.send(result2);
+                });
             });
-            
+   
         }
     });
-
-    
+ 
 })
-
-
 
 
 //temp video inserting 
