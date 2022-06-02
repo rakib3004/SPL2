@@ -28,7 +28,6 @@ db.connect(err=>{
 
 //post singup data into database
 app.post('/signup',(req,res)=>{
-
     let userName = req.body.userName;
 
     let qr = `SELECT * FROM userInfo WHERE name = ?`;
@@ -91,10 +90,11 @@ app.get('/videoInfo',(req,res)=>{
 
 
 //temp python calling method
-app.get('/test/:videoId', (req, res) => {
-    console.log("Backend ");
+app.get('/test/:videoId/:title', (req, res) => {
+
     let videoId = req.params.videoId;
-    
+    let title = req.params.title;
+    let text = "";
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
     db.query(qr,videoId,(err,result)=>{
@@ -108,17 +108,25 @@ app.get('/test/:videoId', (req, res) => {
         {
             res.send(result);
         }
-        else{
+        else
+        {
             const { spawn } = require('child_process');
             const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
+                let text = data.toString();
                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
-
-                console.log(data.toString());
-                res.send(data.toString());
+                res.send(text);
+                db.query(query,[videoId,title,text],(err,result)=>{
+                });
                 res.end('end');
+                //console.log(data.toString());
+                
             });
+
+            
+
+            
         }
     });
 

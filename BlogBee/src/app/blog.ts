@@ -1,5 +1,5 @@
 export class Blog {
-    videoId:String="";
-    title:String="";
-    text:String="";
+    videoId:string="demoid";
+    title:string="demotitle";
+    text:string="demotext";
 }
