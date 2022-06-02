@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Blog } from './blog';
 
 @Injectable({
   providedIn: 'root'
@@ -8,13 +9,17 @@ import { Observable } from 'rxjs';
 export class BlogService {
 
   constructor(private _http:HttpClient) {}
-  blogTitle:String = "";
-  blogText:String = "";
+  blog: Blog = new Blog();
 
   showBlog(targetId: any){
     this._http.get("http://localhost:3000/test/"+targetId).subscribe(data=>{
-      const blog = JSON.stringify(data);
+      this.blog = data as Blog;
       console.log(data);
     });
   }
+
+  getBlogToShow():Blog{
+    return this.blog;
+  }
+
 }

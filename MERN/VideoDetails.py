@@ -17,8 +17,7 @@ def getVideoMetaData(url):
     videoMeta["title"] = soup.find('title').text.strip()
 
     print(videoMeta)
-
-
+    
 
 videoID="xA4QWwaweWA"
 url="https://www.youtube.com/watch?v="+videoID

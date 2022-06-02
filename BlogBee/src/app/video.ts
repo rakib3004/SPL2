@@ -1,6 +1,6 @@
 export class Video{
-    _id?:string="";
-    videoID:string="";
-    videoTitle:string="";
-    videoTopic:string="";
+    videoId:string="";
+    title:string="";
+    topic:string="";
+    rating:number=0;
 }

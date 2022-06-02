@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Blog } from '../blog';
 import { BlogService } from '../blog.service';
 import blog from './Blog.json';
 
@@ -10,12 +11,9 @@ import blog from './Blog.json';
 export class BlogViewComponent{
 
   constructor(private blogService:BlogService) {}
-
-  ngOnInit(): void {}
-  blogTitle:String = this.blogService.blogTitle;
-  blogText: String = this.blogService.blogText;
-
-  getBlog: { id: String; title: String; text: Text } = blog;
-
+  blog: Blog = new Blog();
+  ngOnInit(): void {
+    this.blog = this.blogService.getBlogToShow();
+  }
   
 }

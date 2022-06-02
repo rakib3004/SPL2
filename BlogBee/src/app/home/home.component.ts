@@ -12,12 +12,11 @@ import {BlogService} from '../blog.service';
 
 export class HomeComponent implements OnInit {
   constructor(private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
-  videos: any = [];
+  videos: Video[] = [];
   
   ngOnInit(): void {
-      //this.videoService.addAllVideos();
-      this.videoService.getVideos().subscribe(data=>{
-      this.videos = data;
+      this.videoService.getVideos().subscribe(res=>{
+      this.videos = res as Video[];
     })
   }
 
