@@ -112,7 +112,7 @@ app.get('/test/:videoId', (req, res) => {
         }
         else{
             const { spawn } = require('child_process');
-            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py'],videoIdArg);
+            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
                 console.log(data.toString());
