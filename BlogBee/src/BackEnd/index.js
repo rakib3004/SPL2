@@ -92,7 +92,11 @@ app.get('/videoInfo',(req,res)=>{
 
 //temp python calling method
 app.get('/test/:videoId', (req, res) => {
+    console.log("Backend ");
     let videoId = req.params.videoId;
+    let videoIdArg = {
+        args: [videoId]
+    }
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
     db.query(qr,videoId,(err,result)=>{
@@ -108,7 +112,7 @@ app.get('/test/:videoId', (req, res) => {
         }
         else{
             const { spawn } = require('child_process');
-            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py']);
+            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py'],videoIdArg);
 
             pyProg.stdout.on('data', function(data) {
                 console.log(data.toString());

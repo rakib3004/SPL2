@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from '../blog';
 import { BlogService } from '../blog.service';
-import blog from './Blog.json';
+
 
 @Component({
   selector: 'app-blog-view',
@@ -10,10 +10,23 @@ import blog from './Blog.json';
 })
 export class BlogViewComponent{
 
-  constructor(private blogService:BlogService) {}
   blog: Blog = new Blog();
-  ngOnInit(): void {
+  
+  title:String = this.blog.title;
+  text:String = this.blog.text;
+  
+  //title:String = this.blogService.getBlogToShow().title;
+  //text: String = this.blogService.getBlogToShow().text;
+
+  constructor(private blogService:BlogService) {
     this.blog = this.blogService.getBlogToShow();
+    console.log("This is from blog-view constructior: ");
+    console.log(this.blog);
+  }
+  
+
+  ngOnInit(): void {
+    
   }
   
 }
