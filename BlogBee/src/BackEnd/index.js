@@ -94,9 +94,7 @@ app.get('/videoInfo',(req,res)=>{
 app.get('/test/:videoId', (req, res) => {
     console.log("Backend ");
     let videoId = req.params.videoId;
-    let videoIdArg = {
-        args: [videoId]
-    }
+    
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
     db.query(qr,videoId,(err,result)=>{
@@ -115,6 +113,8 @@ app.get('/test/:videoId', (req, res) => {
             const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
+                let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
+
                 console.log(data.toString());
                 res.send(data.toString());
                 res.end('end');

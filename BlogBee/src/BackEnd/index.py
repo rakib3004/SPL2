@@ -8,7 +8,6 @@ from requests_html import HTMLSession
 from bs4 import BeautifulSoup as bs
 
 
-
 session = HTMLSession()
 
 video_id = sys.argv[1]
@@ -31,9 +30,6 @@ def getVideoMetaData(url):
 
 
 
-
-
-
 data = yta.get_transcript(video_id)
 transcript = ''
 for value in data:
@@ -49,7 +45,7 @@ for value in data:
 url="https://www.youtube.com/watch?v="+video_id
 
 
-videoTitle=getVideoMetaData(url)
+#videoTitle=getVideoMetaData(url)
 
 transcript=transcript.strip()
 transcript=transcript.replace("\n","").replace("\r","")
@@ -67,11 +63,6 @@ file.write(transcript+'"}')
 file.close()
 
 
-
-
-
-
-
-
+print(transcript)
 
 sys.stdout.flush()

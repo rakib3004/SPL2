@@ -14,8 +14,8 @@ export class BlogService {
 
   constructor(private _http:HttpClient) { }
   
-  showBlog(targetId: any){
-    this._http.get("http://localhost:3000/test/"+targetId).subscribe(data=>{
+  showBlog(targetVideo: any){
+    this._http.get("http://localhost:3000/test/"+targetVideo.videoId).subscribe(data=>{
       this.blog = data as Blog;
       console.log("This is from service file: ");
       console.log(this.blog);

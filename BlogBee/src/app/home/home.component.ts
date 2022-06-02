@@ -21,8 +21,8 @@ export class HomeComponent implements OnInit {
   }
 
 
-  showBlog(targetId: any) {
-    this.blogService.showBlog(targetId);
+  showBlog(targetVideo: any) {
+    this.blogService.showBlog(targetVideo);
     this.router.navigate(['blogView']);
   }
   
