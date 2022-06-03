@@ -45,8 +45,7 @@ app.post('/signup',(req,res)=>{
             res.send(result);
         }
         else
-        {
-            
+        { 
             let name = req.body.userName;
             let email = req.body.email;
             let password = req.body.password;
@@ -112,7 +111,7 @@ app.get('/test/:videoId/:title', (req, res) => {
         else
         {
             const { spawn } = require('child_process');
-            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/index.py',videoId]);
+            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
                 let text = data.toString();
@@ -126,7 +125,6 @@ app.get('/test/:videoId/:title', (req, res) => {
                     res.send(result2);
                 });
             });
-   
         }
     });
  
