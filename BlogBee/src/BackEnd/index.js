@@ -94,6 +94,7 @@ app.get('/test/:videoId/:title', (req, res) => {
 
     let videoId = req.params.videoId;
     let title = req.params.title;
+    let text = "";
 
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
@@ -114,17 +115,21 @@ app.get('/test/:videoId/:title', (req, res) => {
             const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
-                let text = data.toString();
+                text = data.toString();
+                myarray =[]
+                myarray.push({videoId, title, text})
+                res.send(myarray)
+         
                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
-                db.query(query,[videoId,title,text],(err,result)=>{
-                });
-
-                let query2 = "SELECT * FROM Blogs WHERE videoId = ?"
-                db.query(query2,videoId,(err,result2)=>{
-                    console.log(result2);
-                    res.send(result2);
-                });
-            });
+                db.query(query,[videoId,title,text]);
+    
+                // let query2 = "SELECT * FROM Blogs WHERE videoId = ?"
+                // db.query(query2,videoId,(err,result2)=>{
+                //     res.send(result2);
+                // });
+            })
+            
+            
         }
     });
  
