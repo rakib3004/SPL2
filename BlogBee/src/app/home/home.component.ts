@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor(private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
   videos: Video[] = [];
   recommendedVideos: Video[] = [];
-  recommendedIndex  = [5, 7, 3, 9, 10, 34, 25, 36, 64,32,54];
+  recommendedIndex  = [5, 7, 3, 9, 10, 34, 25, 36, 63, 32, 54];
   
   ngOnInit(): void {
     //this.videoService.addAllVideos();

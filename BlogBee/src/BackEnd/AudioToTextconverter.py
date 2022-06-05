@@ -13,23 +13,6 @@ session = HTMLSession()
 video_id = sys.argv[1]
 
 
-# def getVideoMetaData(url):
-#     response = session.get(url)
-#     response.html.render(sleep=1)
-#     soup = bs(response.html.html, "html.parser")
-#     replacable="{'title': '"
-
-#     videoMeta = {}
-
-#     videoMeta["title"] = soup.find('title').text.strip()
-
-#     videoMeta=str(videoMeta)
-#     videoMeta=videoMeta.replace(replacable,"")
-#     videoMeta=videoMeta[:-12]
-#     return videoMeta
-
-
-
 data = yta.get_transcript(video_id)
 transcript = ''
 for value in data:
@@ -44,8 +27,6 @@ for value in data:
 
 url="https://www.youtube.com/watch?v="+video_id
 
-
-#videoTitle=getVideoMetaData(url)
 
 transcript=transcript.strip()
 transcript=transcript.replace("\n","").replace("\r","")
