@@ -1,3 +1,4 @@
+import random
 import sys
 import pandas as pd
 import numpy as np
@@ -6,11 +7,27 @@ from sklearn.neighbors import NearestNeighbors
 import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
-import sys
+
+userId=sys.argv[1]
+userId=int(userId)
 
 
-user_ID=17
-#user_ID=int(user_ID)
+
+
+def dataFormatting(recommendedItems):
+    recommendedItems=set(recommendedItems)
+    recommendedItems=list(recommendedItems)
+    itemIterator=0
+    for r in recommendedItems:
+        itemIterator=itemIterator+1
+        if(r>56):
+            recommendedItems.pop(itemIterator-1)
+        
+    random.shuffle(recommendedItems)
+
+    return recommendedItems
+
+
 
 header = ['user_id', 'item_id', 'rating', 'timestamp']
 dataset = pd.read_csv('user.data', sep='\t', names=header)
@@ -35,7 +52,6 @@ for i in range(len(A)):
             A[i][j] = 0
 
 csr_sample = csr_matrix(A)
-#print(csr_sample)
 
 knn = NearestNeighbors(metric='cosine', algorithm='brute',
                        n_neighbors=3, n_jobs=-1)
@@ -45,27 +61,29 @@ dataset_sort_des = dataset.sort_values(
     ['user_id', 'timestamp'], ascending=[True, False])
 
 
-userBasedItem = dataset_sort_des[dataset_sort_des['user_id'] == user_ID].item_id
-userBasedItem = userBasedItem.tolist()
-userBasedItem = userBasedItem[:20]
+itemsLikedByUser = dataset_sort_des[dataset_sort_des['user_id'] == userId].item_id
+itemsLikedByUser = itemsLikedByUser.tolist()
 
 
 
+#print("Items liked by user: ", itemsLikedByUser)
 
 
-
-
-
-indexList = []
-for i in userBasedItem:
+distances1 = []
+recommendedItems = []
+for i in itemsLikedByUser:
     distances, indices = knn.kneighbors(csr_sample[i], n_neighbors=3)
     indices = indices.flatten()
     indices = indices[1:]
-    indexList.extend(indices)
+    recommendedItems.extend(indices)
 
-indexList=set(indexList)
-print("Items to be recommended: ",indexList)
 
+
+   
+recommendedItems=dataFormatting(recommendedItems)
+print("Items to be recommended: ",recommendedItems)
+
+'''
 youTubeVideoUrlListPlainText = open("YouTubeData/YouTubeVideoID.txt", encoding="utf8")
 
 youTubeVideoUrlListFile=youTubeVideoUrlListPlainText.readlines()
@@ -82,14 +100,9 @@ videoDataSteam=1
 videoID=1
 
 print("Videos which are recommended for you:")
-for f in indexList:
+for f in recommendedItems:
     if(f>60):
         continue
     #print(youTubeVideoUrlListFile[f], end='')
     print('{ "videoID":"'+youTubeVideoUrlListFile[f].strip()+'"'+', "videoTitle":"'+youTubeVideoUrlTitleFile[f].strip()+'" , "videoTopic":"'+youTubeVideoUrlTopicFile[f].strip()+'" },')
-
-'''
-    print('/"videoID"/:/"+'youTubeVideoUrlListFile[f], end='')
-
-
 '''
