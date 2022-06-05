@@ -13,12 +13,19 @@ import {BlogService} from '../blog.service';
 export class HomeComponent implements OnInit {
   constructor(private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
   videos: Video[] = [];
+  recommendedVideos: Video[] = [];
+  recommendedIndex  = [5, 7, 3, 9, 10, 34, 25, 36, 64,32,54];
   
   ngOnInit(): void {
-      this.videoService.getVideos().subscribe(res=>{
-      this.videos = res as Video[];
-    })
-  }
+    //this.videoService.addAllVideos();
+    this.videoService.getVideos().subscribe(res=>{
+    this.videos = res as Video[];
+
+    this.recommendedIndex.forEach(index => {
+      this.recommendedVideos.push(this.videos[index]);
+    });
+  })
+}
 
 
   showBlog(targetVideo: Video) {

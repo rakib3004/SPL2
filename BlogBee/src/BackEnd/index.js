@@ -154,16 +154,16 @@ app.get('/test/:videoId/:title',(req,res)=>{
 
 
 //temp video inserting 
-app.post('/videoInfo',(req,res)=>{
+app.post('/insertVideos',(req,res)=>{
     console.log("post");
     console.log(req.body);
     req.body.forEach(video => {
         let videoId = video.videoId;
         let title = video.title;
-        let topic = video.topic;
-        let rating = video.rating;
-        let qr = "INSERT INTO videoInfo (videoId, title, topic, rating) VALUES (?, ?, ?, ?)";
-        db.query(qr,[videoId, title, topic, rating],(err,result)=>{
+        let videoNo = video.videoNo;
+        
+        let qr = "INSERT INTO videoInfo (videoId, title, videoNo) VALUES (?, ?, ?)";
+        db.query(qr,[videoId, title, videoNo],(err,result)=>{
             if(err)
             {
                 console.log(err,'errs');
