@@ -24,6 +24,10 @@ export class BlogService {
     return this._http.get("http://localhost:3000/test/"+this.video.videoId+"/"+this.video.title);
   }
 
+  getRecommendedItem(userId:any){
+    return this._http.get("http://localhost:3000/recommendation/"+userId);
+  }
+
   getBlogToShow():Blog{
     console.log("This is from getBlogToShow functin : ");
     console.log(this.blog);

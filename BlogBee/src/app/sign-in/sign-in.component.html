@@ -51,7 +51,7 @@
 
 <div class="wrapper">
   <div class="logo">
-    <img src="\assets\images\user.png" alt="">
+      <img src="assets/images/user.png" alt="">
   </div>
   <div class="text-center mt-4 name">
       BlogBee
@@ -59,15 +59,17 @@
   <form class="p-3 mt-3">
       <div class="form-field d-flex align-items-center">
           <span class="far fa-user"></span>
-          <input type="text" name="userName" id="userName" placeholder="Username/Email">
+          <input type="text" name="userName" id="userName" placeholder="Username/email"
+          [(ngModel)] = "logInfo.userName" [ngModelOptions]="{standalone: true}" >
       </div>
       <div class="form-field d-flex align-items-center">
           <span class="fas fa-key"></span>
-          <input type="password" name="password" id="pwd" placeholder="Password">
+          <input type="password" name="password" id="pwd" placeholder="Password"
+          [(ngModel)] = "logInfo.userName" [ngModelOptions]="{standalone: true}">
       </div>
       <button class="btn mt-3">Login</button>
   </form>
   <div class="text-center fs-6">
-      <a href="#">Forget password?</a> or <a routerLink="signup">Sign up</a>
+      <a href="#">Forget password?</a> or <a href="#">Sign up</a>
   </div>
 </div>
