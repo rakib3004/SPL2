@@ -88,52 +88,69 @@ app.get('/videoInfo',(req,res)=>{
     });
 });
 
-
-//temp python calling method
-app.get('/test/:videoId/:title', (req, res) => {
-
+app.get('/test/:videoId/:title',(req,res)=>{
     let videoId = req.params.videoId;
     let title = req.params.title;
     let text = "";
+    const { spawn } = require('child_process');
+    const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
 
-    let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
-
-    db.query(qr,videoId,(err,result)=>{
-
-        if(err)
-        {
-            console.log(err,'error occured');
-        }
-
-        if(result.length>0)
-        {
-            res.send(result);
-        }
-        else
-        {
-            const { spawn } = require('child_process');
-            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
-
-            pyProg.stdout.on('data', function(data) {
-                text = data.toString();
-                myarray =[]
-                myarray.push({videoId, title, text})
-                res.send(myarray)
-         
-                let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
-                db.query(query,[videoId,title,text]);
-    
-                // let query2 = "SELECT * FROM Blogs WHERE videoId = ?"
-                // db.query(query2,videoId,(err,result2)=>{
-                //     res.send(result2);
-                // });
-            })
-            
-            
-        }
-    });
- 
+    pyProg.stdout.on('data', function(data) {
+        text = data.toString();
+        myarray =[]
+        myarray.push({videoId, title, text})
+        return res.send(myarray)
+        //console.log(text);
+        // let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
+        // db.query(query,[videoId,title,text]);
+    })
 })
+
+
+//temp python calling method
+// app.get('/test/:videoId/:title', (req, res) => {
+
+//     let videoId = req.params.videoId;
+//     let title = req.params.title;
+//     let text = "";
+
+//     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
+
+//     db.query(qr,videoId,(err,result)=>{
+
+//         if(err)
+//         {
+//             console.log(err,'error occured');
+//         }
+
+//         if(result.length>0)
+//         {
+//             res.send(result);
+//         }
+//         else
+//         {
+//             const { spawn } = require('child_process');
+//             const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
+
+//             pyProg.stdout.on('data', function(data) {
+//                 text = data.toString();
+//                 myarray =[]
+//                 myarray.push({videoId, title, text})
+//                 res.send(myarray)
+//                 console.log(text);
+//                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
+//                 db.query(query,[videoId,title,text]);
+    
+//                 // let query2 = "SELECT * FROM Blogs WHERE videoId = ?"
+//                 // db.query(query2,videoId,(err,result2)=>{
+//                 //     res.send(result2);
+//                 // });
+//             })
+            
+//         }
+//     });
+ 
+// })
 
 
 //temp video inserting 
