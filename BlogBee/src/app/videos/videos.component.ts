@@ -14,15 +14,12 @@ export class VideosComponent implements OnInit {
 
   videos:Video[]=[];
   video: Video = new Video;
-    videoID:string="";
-    videoTitle:string="";
-    videoTopic:string="";
 
 
   constructor(private videoService: VideoService) { }
 
   ngOnInit(): void {
-    this.videoService.getVideos();
+    //this.videoService.getVideos();
   }
 
 }
