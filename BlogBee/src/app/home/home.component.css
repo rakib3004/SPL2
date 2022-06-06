@@ -13,13 +13,14 @@
  .list-container{
      display: grid;
      grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-     grid-column-gap: 40px;
+     grid-column-gap: 10px;
      grid-row-gap: 30px;
      margin-top: 15px;
  }
 
  .vid-list{
     border-radius: 15px;
+    color: #181818;
  }
 
  .vid-list .thumbnail{
@@ -31,6 +32,7 @@
  .vid-list .flex-div{
     align-items: flex-start;
     margin-top: 7px;
+  
  }
 
  .vid-list .flex-div img{
@@ -40,13 +42,14 @@
  }
 
  .vid-info{
-     color: #5a5a5a;
-     font-size: 13px;
+     color: rgb(255, 255, 255);
+     font-size: 15px;
+     font-family: sans-serif;
  }
 
  .vid-info a{
      color:#000;
-     font-weight: 600;
+     font-weight: 1000;
      display: block;
      margin-bottom: 5px;
  }
