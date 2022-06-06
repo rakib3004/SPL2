@@ -6,6 +6,8 @@ import { SignupComponent } from './signup/signup.component';
 import { BlogViewComponent } from './blog-view/blog-view.component';
 import { HomeComponent } from './home/home.component';
 import { FavouriteListComponent } from './favourite-list/favourite-list.component';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { HistoryComponent } from './history/history.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -14,6 +16,8 @@ const routes: Routes = [
   { path: 'signup', component: SignupComponent },
   { path: 'blogView', component: BlogViewComponent },
   { path: 'favList', component: FavouriteListComponent },
+  { path: 'about-us', component: AboutUsComponent },
+  { path: 'history', component: HistoryComponent },
 ];
 
 @NgModule({

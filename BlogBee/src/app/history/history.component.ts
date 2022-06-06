@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { History } from '../history';
 
 @Component({
   selector: 'app-history',
