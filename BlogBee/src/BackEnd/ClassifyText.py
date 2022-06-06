@@ -29,15 +29,9 @@ twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 topicSource = 'ConvertedText/*'
 
-for deployment_set in glob.glob(topicSource):
 
-    deployment_list = open(deployment_set)
-    deployment_data = deployment_list.read()
-    deployment_list = [deployment_data]
 
-    fileName = os.path.basename(deployment_set)
-    deploymentName = os.path.splitext(fileName)[0]
 
-    tagPrediction = text_clf.predict(deployment_list)
-    tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
-    print(deploymentName, tagElement[:])
+tagPrediction = text_clf.predict(topicSource)
+tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
+print(tagElement[:])
