@@ -9,13 +9,9 @@ import { catchError, map, Observable, throwError } from 'rxjs';
 })
 export class VideoService {
 
-
-
-      
       
   constructor(private _http: HttpClient) { }
 
-  //videos: any = [];
   
   compileVideoToText(targetVideo: Video) {
     
@@ -31,7 +27,7 @@ export class VideoService {
   // temporary function to add videos into database
   // addAllVideos() {
   //     //console.log(this.Videos);
-  //     this._http.post('http://localhost:3000/insertRatings',this.ratings).subscribe(data=>{
+  //     this._http.post('http://localhost:3000/insertRatings',this.users).subscribe(data=>{
   //       console.log(data);
   //     })
   // }

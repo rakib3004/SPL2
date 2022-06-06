@@ -176,16 +176,15 @@ app.get('/test/:videoId/:title', (req, res) => {
 app.post('/insertRatings',(req,res)=>{
     console.log("post");
     console.log(req.body);
-    req.body.forEach(rating => {
-        let userId = rating.userId;
-        let userNo = rating.userNo;
-        let videoId = rating.videoId;
-        let videoNo = rating.videoNo;
-        let rate = rating.rating;
-        let timestamp = rating.timestamp;
+    req.body.forEach(user => {
+        let userName = user.name;
+        let userId = user.userId;
+        let email = user.email;
+        let password = user.password;
         
-        let qr = "INSERT INTO RatingData (userId, userNo, videoId,videoNo, rating, timestamp) VALUES (?, ?, ?, ?, ?, ?)";
-        db.query(qr,[userId, userNo, videoId,videoNo, rate, timestamp],(err,result)=>{
+        
+        let qr = "INSERT INTO userInfo (userName, userId, email, password) VALUES (?, ?, ?, ?)";
+        db.query(qr,[userName, userId, email, password],(err,result)=>{
             if(err)
             {
                 console.log(err,'errs');
