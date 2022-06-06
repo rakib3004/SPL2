@@ -29,33 +29,25 @@ db.connect(err=>{
 
 
 //post singup data into database
-app.post('/signup',(req,res)=>{
+app.post('/signupUsers',(req,res)=>{
     let userName = req.body.userName;
+    let email = req.body.email;
+    let password = req.body.password;
 
-    let qr = `SELECT * FROM userInfo WHERE name = ?`;
+    let qr = `SELECT * FROM users WHERE userName = ? or email = ?`;
 
-    db.query(qr,userName,(err,result)=>{
-
-        if(err)
-        {
+    db.query(qr,[userName,email],(err,result)=>{
+        if(err){
             console.log(err,'errs');
         }
 
-        if(result.length>0)
-        {
-            res.send(result);
+        if(result.length>0){
+            res.send(false);
         }
-        else
-        { 
-            let name = req.body.userName;
-            let email = req.body.email;
-            let password = req.body.password;
-            let qr = "INSERT INTO userInfo (name, email, password) VALUES (?, ?, ?)";
-            db.query(qr,[name,email,password],(err,result)=>{
-
-            });
-
-            console.log("HI");
+        else{             
+            let qr = "INSERT INTO users (userName, email, password) VALUES (?, ?, ?)";
+            db.query(qr,[userName,email,password]);
+            res.send(true);
         }
     });
 });
