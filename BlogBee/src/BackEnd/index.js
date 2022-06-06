@@ -173,23 +173,26 @@ app.get('/test/:videoId/:title', (req, res) => {
 
 
 //temp video inserting 
-app.post('/insertVideos',(req,res)=>{
+app.post('/insertRatings',(req,res)=>{
     console.log("post");
     console.log(req.body);
-    req.body.forEach(video => {
-        let videoId = video.videoId;
-        let title = video.title;
-        let videoNo = video.videoNo;
+    req.body.forEach(rating => {
+        let userId = rating.userId;
+        let userNo = rating.userNo;
+        let videoId = rating.videoId;
+        let videoNo = rating.videoNo;
+        let rating = rating.rating;
+        let timestamp = rating.timestamp;
         
-        let qr = "INSERT INTO videoInfo (videoId, title, videoNo) VALUES (?, ?, ?)";
-        db.query(qr,[videoId, title, videoNo],(err,result)=>{
+        let qr = "INSERT INTO RatingData (userId, userNo, videoId,videoNo, rating, timestamp) VALUES (?, ?, ?, ?, ?, ?)";
+        db.query(qr,[userId, userNo, videoId,videoNo, rating, timestamp],(err,result)=>{
             if(err)
             {
                 console.log(err,'errs');
             }
         });
     });
-    console.log('successfully inserted videos');        
+    console.log('successfully inserted RatingData');        
 });
 
 
