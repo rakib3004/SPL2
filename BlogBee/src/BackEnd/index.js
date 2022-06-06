@@ -144,7 +144,7 @@ app.get('/test/:videoId/:title', (req, res) => {
 
         if(result.length>0)
         {
-            res.send(result);
+            return res.send(result);
         }
         else
         {
@@ -155,15 +155,10 @@ app.get('/test/:videoId/:title', (req, res) => {
                 text = data.toString();
                 myarray =[]
                 myarray.push({videoId, title, text})
-                res.send(myarray)
                 console.log(text);
                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
                 db.query(query,[videoId,title,text]);
-    
-                // let query2 = "SELECT * FROM Blogs WHERE videoId = ?"
-                // db.query(query2,videoId,(err,result2)=>{
-                //     res.send(result2);
-                // });
+                return res.send(myarray)
             })
             
         }
