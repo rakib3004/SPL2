@@ -1,7 +1,7 @@
 <div>
   <div class="list-container">
     <div class="vid-list shadow p-3 mb-5 bg-white rounded" *ngFor="let video of recommendedVideos">
-      <div>
+      <div class="group1">
       <img src="{{'https://img.youtube.com/vi/' + video.videoId+'/0.jpg'}}" (click)="showBlog(video)" class="thumbnail" alt="Thumbnail" />
       <div class="flex-div">
         <div class="vid-info">
@@ -11,12 +11,12 @@
       </div>
     </div>
 
-    <div>
-    <div>
-      <button class="btn bg-primary mr-4">Favourite</button>
-      <button class="btn bg-warning ml-4">Rate</button>
+
+    <div class="group2">
+      <button  class="btn bg-primary mr-4 btngrp">Favourite</button>
+      <button class="btn bg-warning ml-4 btngrp">Rate</button>
     </div>
-  </div>
+
 
   </div>
 

@@ -22,7 +22,7 @@ nav{
   padding: 10px 2%;
   justify-content: space-between;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background: #fff;
+  background: rgb(68, 64, 64);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -76,7 +76,7 @@ nav{
 /*sidebar component css*/
 
 .sidebar{
-  background-color: #fff;
+  background-color: rgb(68, 64, 64);
   width: 15%;
   height: 100vh;
   position: fixed;
