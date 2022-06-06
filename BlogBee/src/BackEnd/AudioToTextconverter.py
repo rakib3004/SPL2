@@ -25,23 +25,23 @@ for value in data:
             transcript += newVal+" "
 
 
-url="https://www.youtube.com/watch?v="+video_id
+#url="https://www.youtube.com/watch?v="+video_id
 
 
 transcript=transcript.strip()
-transcript=transcript.replace("\n","").replace("\r","")
+transcript=transcript.replace("\n"," ").replace("\r"," ")
 
-blogJSON = "../BlogBee/src/app/blog-view/Blog.json"
-textBlog="Text.txt"
-t_file=open(textBlog, "w")
-t_file.write(transcript)
-t_file.close()
-file = open(blogJSON, "w")
+# blogJSON = "../BlogBee/src/app/blog-view/Blog.json"
+# textBlog="Text.txt"
+# t_file=open(textBlog, "w")
+# t_file.write(transcript)
+# t_file.close()
+# file = open(blogJSON, "w")
 
-file.write('{"id": "'+video_id+'", "title": "'+videoTitle+'", "text": "')
+# file.write('{"id": "'+video_id+'", "title": "'+videoTitle+'", "text": "')
 
-file.write(transcript+'"}')
-file.close()
+# file.write(transcript+'"}')
+# file.close()
 
 
 print(transcript)

@@ -18,7 +18,7 @@
           <input type="password" name="password" id="pwd" placeholder="Password"
           [(ngModel)] = "logInfo.password" [ngModelOptions]="{standalone: true}">
       </div>
-      <button class="btn mt-3">Login</button>
+      <button class="btn mt-3" (click)="loginButtonAction()">Login</button>
   </form>
   <div class="text-center fs-6">
       <a href="#">Forget password?</a> or <a href="" routerLink="signup" (click)="signUp()">Sign up</a>

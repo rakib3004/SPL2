@@ -4,6 +4,7 @@ const cors = require('cors');
 const mysql = require('mysql2');
 const { send } = require('process');
 const { query } = require('express');
+const { clear } = require('console');
 
 const app = express();
 
@@ -100,7 +101,7 @@ app.get('/recommendation/:userId',(req,res)=>{
     const pyProg = spawn('python3', ['./recommendationSystem.py',userId]);
 
     pyProg.stdout.on('data', function(data) {
-        console.log(data.toString());
+        //console.log(data.toString());
         // myarray =[]
         // myarray.push({videoId, title, text})
         return res.send(data.toString());
@@ -129,9 +130,11 @@ app.get('/recommendation/:userId',(req,res)=>{
 //temp python calling method
 app.get('/test/:videoId/:title', (req, res) => {
 
+
     let videoId = req.params.videoId;
     let title = req.params.title;
     let text = "";
+    console.log(videoId)
 
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
@@ -148,17 +151,23 @@ app.get('/test/:videoId/:title', (req, res) => {
         }
         else
         {
+            console.log("here")
             const { spawn } = require('child_process');
-            const pyProg = spawn('python3', ['./AudioToTextconverter.py',videoId]);
+            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
+                console.log("here2")
                 text = data.toString();
-                myarray =[]
+                console.log(data.toString())
+                //myarray =[{videoId:string ="",title:string="",text:string=""}]
+                myarray = [];
                 myarray.push({videoId, title, text})
                 console.log(text);
+                res.send(myarray);
+
                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
                 db.query(query,[videoId,title,text]);
-                return res.send(myarray)
+                clear(myarray);
             })
             
         }
