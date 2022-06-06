@@ -181,11 +181,11 @@ app.post('/insertRatings',(req,res)=>{
         let userNo = rating.userNo;
         let videoId = rating.videoId;
         let videoNo = rating.videoNo;
-        let rating = rating.rating;
+        let rate = rating.rating;
         let timestamp = rating.timestamp;
         
         let qr = "INSERT INTO RatingData (userId, userNo, videoId,videoNo, rating, timestamp) VALUES (?, ?, ?, ?, ?, ?)";
-        db.query(qr,[userId, userNo, videoId,videoNo, rating, timestamp],(err,result)=>{
+        db.query(qr,[userId, userNo, videoId,videoNo, rate, timestamp],(err,result)=>{
             if(err)
             {
                 console.log(err,'errs');
