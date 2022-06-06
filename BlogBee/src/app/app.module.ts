@@ -13,6 +13,7 @@ import { VideosComponent } from './videos/videos.component';
 import { FavouriteListComponent } from './favourite-list/favourite-list.component';
 import {HttpClientModule} from '@angular/common/http';
 import { AccountService } from './account.service';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AccountService } from './account.service';
     SignupComponent,
     BlogViewComponent,
     VideosComponent,
-    FavouriteListComponent
+    FavouriteListComponent,
+    AboutUsComponent
   ],
   imports: [
     BrowserModule,
