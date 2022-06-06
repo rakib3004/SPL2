@@ -20,6 +20,10 @@ export class SignInComponent implements OnInit {
     console.log(this.logInfo);
     this.accService.loginValidation();
   }
+
+  signUp(){
+    this.router.navigate(['signup']);
+  }
  
   ngOnInit(): void {
     
