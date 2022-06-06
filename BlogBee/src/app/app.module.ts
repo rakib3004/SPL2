@@ -14,6 +14,7 @@ import { FavouriteListComponent } from './favourite-list/favourite-list.componen
 import {HttpClientModule} from '@angular/common/http';
 import { AccountService } from './account.service';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { HistoryComponent } from './history/history.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     BlogViewComponent,
     VideosComponent,
     FavouriteListComponent,
-    AboutUsComponent
+    AboutUsComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,
