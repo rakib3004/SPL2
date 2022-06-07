@@ -8,7 +8,7 @@
 
  .vid-list{
     border-radius: 15px;
-    color: white;
+    color: black;
  }
 
  .vid-list .thumbnail{
@@ -30,7 +30,7 @@
  }
 
  .vid-info{
-     color: rgb(255, 255, 255);
+     color: rgb(0, 0, 0);
      font-size: 15px;
      font-family: sans-serif;
  }
