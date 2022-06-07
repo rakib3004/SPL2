@@ -40,4 +40,9 @@ export class BlogService {
     return this.blog;
   }
 
+  addToFavouriteList(favVideo:any){
+    console.log(favVideo);
+    this._http.post("http://localhost:3000/favourite",favVideo);
+  }
+
 }

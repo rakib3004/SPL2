@@ -102,6 +102,11 @@ app.post('/rating',(req,result)=>{
     })
 })
 
+//add to favourite list
+app.post('/favourite',(req,result)=>{
+
+})
+
 //get all video data
 app.get('/videoInfo',(req,res)=>{
     let qr = "select * from videoInfo";

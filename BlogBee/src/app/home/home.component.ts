@@ -48,5 +48,16 @@ export class HomeComponent implements OnInit {
     this.blogService.setVideo(targetVideo);
     this.router.navigate(['blogView']);
   }
+
+  tempFav = {
+    videoId: "",
+    userNo: 0
+  }
+
+  addToFavouriteButton(videoId:string){
+    this.tempFav.videoId = videoId;
+    this.tempFav.userNo= this.accService.currentUserNo;
+    this.blogService.addToFavouriteList(this.tempFav);
+  }
   
 }
