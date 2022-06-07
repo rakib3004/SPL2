@@ -8,7 +8,7 @@ import { AccountService } from '../account.service';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent implements OnInit {
-  constructor(private router:Router,private accService:AccountService) {}
+  constructor(private router:Router,public accService:AccountService) {}
 
   click = 1;
   loggedIn = this.accService.loginObject;
@@ -29,9 +29,8 @@ export class NavbarComponent implements OnInit {
   signout(){
     this.accService.loginObject = false;
     console.log(this.accService.loginObject);
-    this.router.navigate(['']);
+    this.router.navigate(['#']);
   }
-
 
 
   ngOnInit(): void {}

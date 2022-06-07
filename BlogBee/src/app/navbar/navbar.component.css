@@ -29,8 +29,8 @@ nav{
 }
 .nav-right button{
   margin-right: 25px;
-  background-color: blue;
-  color: aqua;
+  background-color: rgb(112, 112, 125);
+  color: rgb(189, 221, 221);
   height: 30px;
   width: 80px;
 }

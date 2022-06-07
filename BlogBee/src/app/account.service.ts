@@ -13,7 +13,8 @@ export class AccountService {
 
   userData = new UserData();
   logInfo = new LogInfo();
-  loginObject=new Boolean();
+  loginObject=false;
+  currentUserId = 17;
 
   getUserData(){
     return this.userData;

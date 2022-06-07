@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
 import {BlogService} from '../blog.service';
+import { AccountService } from '../account.service';
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,11 @@ import {BlogService} from '../blog.service';
 })
 
 export class HomeComponent implements OnInit {
-  constructor(private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
+  constructor(private accService: AccountService, private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
   videos: Video[] = [];
   userId:number = 10;
   recommendedVideos: Video[] = [];
   recommendedIndex: number[] = [];
-  //recommendedIndex  = [38, 4, 9, 25, 1, 13, 58, 0, 6, 40, 19, 32, 24, 47, 3, 5, 48, 8, 31, 24, 23, 43, 36, 61, 16, 44];
   
   ngOnInit(): void {
     //this.videoService.addAllVideos();
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
   })
 
 
-  this.blogService.getRecommendedItem(this.userId).subscribe(res=>{
+  this.blogService.getRecommendedItem(this.accService.currentUserId).subscribe(res=>{
     this.recommendedIndex = res as Array<number>;
     this.recommendedIndex.forEach(index => {
       if(index<64)
