@@ -40,7 +40,8 @@ export class SignupComponent implements OnInit {
           }
           
         },err=>{
-          alert("Something went wrong");
+          console.log("Something went wrong")
+         // alert("Something went wrong");
         }) 
       }
   

@@ -1,11 +1,12 @@
 .heading{
-    color: white;
+    color: black;
     text-align: center;
 }
 .text{
     text-align: justify;
-    color: white;
+    color: black;
     line-height: 40px;
+    font-size: large;
 }
 
 .stand{

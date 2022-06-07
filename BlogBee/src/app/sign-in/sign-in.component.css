@@ -1,11 +1,9 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
 /* Reseting */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
+    color: rgb(0, 0, 0);
 }
 
 
@@ -14,7 +12,7 @@
     min-height: 500px;
     margin: 30px auto;
     padding: 40px 30px 30px 30px;
-    background-color: #333b41;
+    background-color: #f9f9f9;
     border-radius: 15px;
     
 }

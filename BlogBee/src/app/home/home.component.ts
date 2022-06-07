@@ -13,9 +13,9 @@ import { timestamp } from 'rxjs';
 })
 
 export class HomeComponent implements OnInit {
-  constructor(private accService: AccountService, private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
+  constructor(public accService: AccountService, private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
   videos: Video[] = [];
-  userId:number = 10;
+  //userId:number = 0;
   recommendedVideos: Video[] = [];
   recommendedIndex: number[] = [];
   
@@ -51,12 +51,17 @@ export class HomeComponent implements OnInit {
 
   tempFav = {
     videoId: "",
-    userNo: 0
+    userNo: 0,
+    title:""
   }
-  addToFavouriteButton(videoId:string){
+
+  addToFavouriteButton(videoId:string,title:string){
     this.tempFav.videoId = videoId;
+    this.tempFav.title = title;
     this.tempFav.userNo= this.accService.currentUserNo;
-    this.blogService.addToFavouriteList(this.tempFav);
+    this.blogService.addToFavouriteList(this.tempFav).subscribe(data=>{
+      console.log("Successfully added to Favorite list");
+    },err=>{console.log(err)});
   }
 
   

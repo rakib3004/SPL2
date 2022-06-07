@@ -1,31 +1,23 @@
 <div>
   <div class="list-container">
-    <div class="vid-list" *ngFor="let video of favVideo">
-      <img src="{{'https://img.youtube.com/vi/' + video.videoId+'/0.jpg'}}" routerLink="blogView" class="thumbnail" alt="Thumbnail" />
+    <div class="vid-list shadow p-3 mb-5 rounded" *ngFor="let video of favVideo">
+      <div class="group1">
+      <img src="{{'https://img.youtube.com/vi/' + video.videoId+'/0.jpg'}}" (click)="showBlog(video)" class="thumbnail" alt="Thumbnail" />
       <div class="flex-div">
-
         <div class="vid-info">
-          <div class="title-box">
-          <a href="" routerLink="blogView">{{video.title}}</a>
-        </div>
-         <span > <button type="button" style="margin-right: 65px;margin-top: 20px;" class="btn btn-success">Remove(-)</button>
-          
-          <button type="button" class="btn btn-primary" style="margin-top: 20px;">Rating</button>
-         </span>
-        </div>
+          <p (click)="showBlog(video)">{{video.title}}</p>
+        </div> 
       </div>
     </div>
+
+    <div class="group2">
+
+      <span > <button (click)="removeFromFavouriteList(video.videoId)"  type="button" style="margin-right: 24px;margin-top: 20px;" class="btn btn-success">Favourite(-)</button>
+          
+        <button (click)="ratingButton(video.videoId)" type="button" class="btn btn-primary" style="margin-top: 20px;">Rate</button></span>
+    </div>
+
+  </div>
+
   </div>
 </div>
-
-
-
-
-  <!-- <div class="card" style="width: 18rem;" *ngFor="let video of favVideo">
-    <img class="card-img-top" src="{{'https://img.youtube.com/vi/' + video.videoID+'/0.jpg'}}" alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{video.videoTitle}}</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="btn btn-primary">Remove from Favourite List</a>
-    </div>
-  </div> -->

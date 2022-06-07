@@ -66,11 +66,10 @@ app.post('/login',(req,res1)=>{
     let userName = req.body.userName;
     let password = req.body.password;
 
-    let qr = `SELECT password, userId FROM users WHERE userName = ?`;
+    let qr = "SELECT password, userName FROM users WHERE userName = ?";
 
     db.query(qr,userName,(err,res)=>{
-        console.log(res[0].password,res[0].userId);
-        if(res.length>0){
+        if(res && res.length>0){
             bcrypt.compare(password, res[0].password).then(function(result) {
                 if(result==true) res1.send(res);
                 else res1.send(false);
@@ -91,19 +90,23 @@ app.post('/rating',(req,result)=>{
     let videoId = req.body.videoId;
     let timestamp = req.body.timeStamp;
 
-    let qr = "SELECT userId FROM Users WHERE userNo = ?";
-    db.query(qr,userNo,(err,res1)=>{
-        console.log(res1);
-        let userId = res1[0].userId.toString();
-        db.query("SELECT videoNo FROM videoInfo WHERE videoId = ?",videoId,(err,res2)=>{
-            let videoNo = res2[0].videoNo;
-            let qr1 = "INSERT INTO RatingData (userId, userNo, videoId, videoNo, rating, timestamp) VALUES (?, ?, ?, ?, ?, ?)";
-            db.query(qr1,[userId, userNo, videoId, videoNo, rating, timestamp],(err,res3)=>{
-
-            });
-        })
+    let qr = "SELECT * FROM Users WHERE userNo=?";
+    db.query(qr,userNo,(err1,res1)=>{
+        if(res1.length>0){
+                let email = res1[0].email;
+                db.query("SELECT videoNo FROM videoInfo WHERE videoId = ?",videoId,(err,res2)=>{
+                if(res2.length>0){
+                    let videoNo = res2[0].videoNo;
+                    let qr1 = "INSERT INTO RatingData (email, userNo, videoId, videoNo, rating, timestamp) VALUES (?, ?, ?, ?, ?, ?)";
+                    db.query(qr1,[email, userNo, videoId, videoNo, rating, timestamp],(err,res3)=>{
+                        result.send(res3);
+                    },err=>{console.log(err)});
+                }
+            })
+        }
     })
-})
+
+ })
 
 //get Favourite List
 app.get('/favouriteList/:userNo',(req,result)=>{
@@ -119,20 +122,33 @@ app.get('/favouriteList/:userNo',(req,result)=>{
 
 //add to favourite list
 app.post('/favourite',(req,result)=>{
-    console.log(req.body);
     let videoId = req.body.videoId;
     let userNo = req.body.userNo;
+    let title = req.body.title;
+
     let qr = "Select * from FavouriteList where userNo=? and videoId=?";
     db.query(qr,[userNo,videoId],(err,res)=>{
         if(res.length>0){
             result.send(false);
         }
         else{
-            db.query("Insert into FavouriteList (userNo,videoId) values(?,?)",[userNo,videoId],(err,res2)=>{
-                result.send(true);
-            })
+            db.query("Insert into FavouriteList (userNo,videoId,title) values(?,?,?)",[userNo,videoId,title],(err,res2)=>{
+                result.send(res2);
+            },err=>{console.log(err)})
         }
-    })
+    },err=>{console.log(err)})
+})
+
+//delete from fav list
+app.put('/remove',(req,result)=>{
+    console.log("Remove from favlist");
+    console.log(req.body);
+    let videoId = req.body.videoId;
+    let userNo = req.body.userNo;
+    let qr = "Delete From FavouriteList Where videoId=? and userNo=?";
+    db.query(qr,[videoId,userNo],(err,res)=>{
+        result.send(res);
+    },err=>{console.log(err)})
 })
 
 //get all video data

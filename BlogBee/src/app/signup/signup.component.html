@@ -1,184 +1,69 @@
- <section class="vh-100" style="background-color: #eee">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px">
-            <div class="card-body p-md-5">
-              <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
-                    Sign up
+<section class="vh-100" style="background-color: #eee">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">
+                  Sign up
+                </p>
+
+                <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="mx-1 mx-md-4">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">User Name</label>
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="userName"/>
+                        <span class="text-danger" *ngIf="signupForm.controls['userName'].dirty && signupForm.hasError('required','userName')">*User Name is Required</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example3c">Email</label>                       
+                      <input type="email" id="form3Example3c" class="form-control" formControlName="email"/>
+                      <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')">*Email is Required</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example4c">Password</label>
+                      <input type="password" id="form3Example4c" class="form-control" formControlName="password"/>
+                      <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">*Password is Required</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <label class="form-label" for="form3Example4cd">Repeat password</label>
+                      <input type="password" id="form3Example4cd" class="form-control" formControlName="rpassword"/>
+                      <span *ngIf="mismatch==1" style="color:red">*Password Mismatch</span>
+                      <span class="text-danger" *ngIf="signupForm.controls['rpassword'].dirty && signupForm.hasError('required','rpassword')">*Repeat password is Required</span>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <input [disabled]="!signupForm.valid" type="submit" class="btn btn-primary">
+                  </div>
+
+
+                  <p class="text-center text-muted mt-5 mb-0">Have already an account? 
+                    <a routerLink="/signin" href="#!" class="fw-bold text-body"><u>Signin here</u></a>
                   </p>
-  
-                  <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="mx-1 mx-md-4">
 
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                        <div class="form-outline flex-fill mb-0">
-                          <label class="form-label" for="form3Example1c">User Name</label>
-                          <input type="text" id="form3Example1c" class="form-control" formControlName="userName"/>
-                          <span class="text-danger" *ngIf="signupForm.controls['userName'].dirty && signupForm.hasError('required','userName')">*User Name is Required</span>
-                      </div>
-                    </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example3c">Email</label>                       
-                        <input type="email" id="form3Example3c" class="form-control" formControlName="email"/>
-                        <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required','email')">*Email is Required</span>
-                      </div>
-                    </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4c">Password</label>
-                        <input type="password" id="form3Example4c" class="form-control" formControlName="password"/>
-                        <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required','password')">*Password is Required</span>
-                      </div>
-                    </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <label class="form-label" for="form3Example4cd">Repeat password</label>
-                        <input type="password" id="form3Example4cd" class="form-control" formControlName="rpassword"/>
-                        <span *ngIf="mismatch==1" style="color:red">*Password Mismatch</span>
-                        <span class="text-danger" *ngIf="signupForm.controls['rpassword'].dirty && signupForm.hasError('required','rpassword')">*Repeat password is Required</span>
-                      </div>
-                    </div>
-  
-                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <input [disabled]="!signupForm.valid" type="submit" class="btn btn-primary">
-                    </div>
+                </form>
 
-
-                    <p class="text-center text-muted mt-5 mb-0">Have already an account? 
-                      <a routerLink="/signin" href="#!" class="fw-bold text-body"><u>Signin here</u></a>
-                    </p>
-
-                  </form>
-
-                </div>
-                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid"/>
-                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-
-
-
-<!--
-
-
-
- <div class="container">
-    <section>				
-        <div id="container_demo" >
-            <div id="wrapper">
-                <div id="login" class="animate form">
-                    <form  action="mysuperscript.php" autocomplete="on"> 
-                    <h1> Sign up </h1> 
-                        <p> 
-                            <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-                            <input id="usernamesignup" name="usernamesignup"
-                            [(ngModel)] = "userData.userName" [ngModelOptions]="{standalone: true}"
-                            required="required" type="text" placeholder="mysuperusername690" />
-                        </p>
-                        <p> 
-                            <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-                            <input id="emailsignup" name="emailsignup" 
-                            [(ngModel)] = "userData.email" [ngModelOptions]="{standalone: true}"
-                            required="required" type="email" placeholder="mysupermail@mail.com"/> 
-                        </p>
-                        <p> 
-                            <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-                            <input id="passwordsignup" name="passwordsignup" 
-                            [(ngModel)] = "userData.password" [ngModelOptions]="{standalone: true}"
-                            required="required" type="password" placeholder="eg. X8df!90EO"/>
-                        </p>
-                        <p> 
-                            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-                            <input id="passwordsignup_confirm" name="passwordsignup_confirm"
-                            [(ngModel)] = "userData.rpassword" [ngModelOptions]="{standalone: true}"
-                            required="required" type="password" placeholder="eg. X8df!90EO"/>
-                        </p>
-                        <span *ngIf="mismatch" style="color:red">Password Mismatch</span> 
-                        <p class="signin button"> 
-                            <button type="submit" (click)="signUpButtonAction()">Sign up</button>
-                        </p>
-                        <p class="change_link">  
-                            Already a member ?
-                            <button type="button" (click)="signin()" class="to_register"> Sign in </button>
-                        </p>
-                     </form>
-                </div>
-
-            <div id="register" class="animate form">
-                  
-        </div>
-  
-    </div>
-</div>  
-</section>
-</div> 
-
-
--->
-<!--
-
-
-  <section class=" bg-image"
-  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
-  <div class=" d-flex align-items-center h-100 gradient-custom-3">
-    <div class="container h-100">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
-          <div class="card " style="border-radius: 15px;">
-            <div class="front-form">
-              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
-
-              <form>
-
-                <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example1cg">Your Name</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example3cg">Your Email</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cg">Password</label>
-                </div>
-
-                <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
-                  <label class="form-label" for="form3Example4cdg">Repeat your password</label>
-                </div>
-
-
-                <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
-                </div>
-
-                <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
-                    class="fw-bold text-body"><u>Login here</u></a></p>
-
-              </form>
-
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" class="img-fluid"/>
+              </div>
             </div>
           </div>
         </div>
@@ -187,6 +72,100 @@
   </div>
 </section>
 
+
+
+
+
+<!--
+<div class="container">
+  <section>				
+      <div id="container_demo" >
+          <div id="wrapper">
+              <div id="login" class="animate form">
+                  <form  action="mysuperscript.php" autocomplete="on"> 
+                  <h1> Sign up </h1> 
+                      <p> 
+                          <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
+                          <input id="usernamesignup" name="usernamesignup"
+                          [(ngModel)] = "userData.userName" [ngModelOptions]="{standalone: true}"
+                          required="required" type="text" placeholder="mysuperusername690" />
+                      </p>
+                      <p> 
+                          <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
+                          <input id="emailsignup" name="emailsignup" 
+                          [(ngModel)] = "userData.email" [ngModelOptions]="{standalone: true}"
+                          required="required" type="email" placeholder="mysupermail@mail.com"/> 
+                      </p>
+                      <p> 
+                          <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
+                          <input id="passwordsignup" name="passwordsignup" 
+                          [(ngModel)] = "userData.password" [ngModelOptions]="{standalone: true}"
+                          required="required" type="password" placeholder="eg. X8df!90EO"/>
+                      </p>
+                      <p> 
+                          <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
+                          <input id="passwordsignup_confirm" name="passwordsignup_confirm"
+                          [(ngModel)] = "userData.rpassword" [ngModelOptions]="{standalone: true}"
+                          required="required" type="password" placeholder="eg. X8df!90EO"/>
+                      </p>
+                      <span *ngIf="mismatch" style="color:red">Password Mismatch</span> 
+                      <p class="signin button"> 
+                          <button type="submit" (click)="signUpButtonAction()">Sign up</button>
+                      </p>
+                      <p class="change_link">  
+                          Already a member ?
+                          <button type="button" (click)="signin()" class="to_register"> Sign in </button>
+                      </p>
+                   </form>
+              </div>
+          <div id="register" class="animate form">
+                
+      </div>
+
+  </div>
+</div>  
+</section>
+</div> 
 -->
-
-
+<!--
+<section class=" bg-image"
+style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+<div class=" d-flex align-items-center h-100 gradient-custom-3">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+        <div class="card " style="border-radius: 15px;">
+          <div class="front-form">
+            <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+            <form>
+              <div class="form-outline mb-4">
+                <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                <label class="form-label" for="form3Example1cg">Your Name</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                <label class="form-label" for="form3Example3cg">Your Email</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                <label class="form-label" for="form3Example4cg">Password</label>
+              </div>
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4cdg" class="form-control form-control-lg" />
+                <label class="form-label" for="form3Example4cdg">Repeat your password</label>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="button"
+                  class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+              </div>
+              <p class="text-center text-muted mt-5 mb-0">Have already an account? <a href="#!"
+                  class="fw-bold text-body"><u>Login here</u></a></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+-->

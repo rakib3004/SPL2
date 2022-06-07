@@ -28,8 +28,7 @@ export class NavbarComponent implements OnInit {
 
   signout(){
     this.accService.loginObject = false;
-    console.log(this.accService.loginObject);
-    this.router.navigate(['#']);
+    this.router.navigate(['signin']);
   }
 
 

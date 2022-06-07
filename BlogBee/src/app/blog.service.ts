@@ -34,6 +34,7 @@ export class BlogService {
   }
 
   addNewRating(ratingInfo:any){
+    console.log(ratingInfo);
     return this._http.post("http://localhost:3000/rating",ratingInfo);
   }
 
@@ -46,10 +47,12 @@ export class BlogService {
   }
 
   addToFavouriteList(favVideo:any){
-    console.log(favVideo);
-    this._http.post("http://localhost:3000/favourite",favVideo).subscribe(res=>{
-      if(res==true) console.log("successfully added to favlist");
-    });
+   return this._http.post("http://localhost:3000/favourite",favVideo);
   }
+
+  removeFromFavouriteList(favVideo:any){
+    console.log(favVideo);
+    return this._http.put("http://localhost:3000/remove",favVideo);
+   }
 
 }
