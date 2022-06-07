@@ -16,6 +16,7 @@ import { AccountService } from './account.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HistoryComponent } from './history/history.component';
 import { RatingComponent } from './rating/rating.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -40,6 +41,7 @@ import { RatingComponent } from './rating/rating.component';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
+    NgbModule,
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]

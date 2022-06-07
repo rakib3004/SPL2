@@ -1,0 +1,11 @@
+.size{
+
+    border-top: 100px;
+    height: 500px;
+    border-style: solid;
+    border-color: white;
+    
+    background-color: white;
+
+    text-align: center;
+}

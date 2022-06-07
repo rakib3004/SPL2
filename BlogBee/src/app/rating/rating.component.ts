@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,32 +10,23 @@ import { Component, OnInit } from '@angular/core';
 export class RatingComponent implements OnInit {
 
 
-rating=0;
-starCount=5;
-ratingArr:boolean[]=[];
+  starRating:Array<Number> | any;
 
-snackBarDuration=1000;
 
-response=['Very poor',
-          'Poor',
-          'Neutral',
-          'Good',
-          'Excellent',
-        ]
-
-  constructor() { 
+  constructor(private router:Router) { 
     
   
   }
 
- 
+  returnToHome(){
 
+    this.router.navigateByUrl('');
+  }
+
+ 
   ngOnInit(): void {
   }
 
  
-
-    
-  
 
 }
