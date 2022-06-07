@@ -13,6 +13,7 @@ export class BlogService {
 
   blog: Blog = new Blog();
   video: Video = new Video()
+  ratingVideoId = "";
 
   setVideo(video: Video){
     this.video = video
@@ -33,7 +34,7 @@ export class BlogService {
   }
 
   addNewRating(ratingInfo:any){
-    this._http.post("http://localhost:3000/rating",ratingInfo);
+    return this._http.post("http://localhost:3000/rating",ratingInfo);
   }
 
   getBlogToShow():Blog{

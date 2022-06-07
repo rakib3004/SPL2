@@ -85,13 +85,14 @@ app.post('/login',(req,res1)=>{
 
 //add new rating data
 app.post('/rating',(req,result)=>{
+    console.log(req.body);
     let userNo = req.body.userNo;
     let rating = req.body.rating;
     let videoId = req.body.videoId;
     let timestamp = req.body.timeStamp;
 
-    db.query("SELECT userId FROM users WHERE userN0 = ?",userNo, (err,res1)=>{
-        let userId = res1[0].userId;
+    db.query("SELECT userId FROM users WHERE userNo = ?",userNo, (err,res1)=>{
+        let userId = res1[0].userId.toString();
         db.query("SELECT videoNo FROM videoInfo WHERE videoId = ?",videoId,(err,res2)=>{
             let videoNo = res2[0].videoNo;
             let qr1 = "INSERT INTO RatingData (userId, userNo, videoId, videoNo, rating, timestamp) VALUES (?, ?, ?, ?, ?, ?)";

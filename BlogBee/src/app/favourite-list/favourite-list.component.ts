@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
 import {MatDialog} from '@angular/material/dialog'
-import { RatingComponent } from '../rating/rating.component';
+
 
 @Component({
   selector: 'app-favourite-list',
@@ -12,7 +12,7 @@ import { RatingComponent } from '../rating/rating.component';
 })
 export class FavouriteListComponent implements OnInit {
 
-  constructor(private videoService: VideoService,private matDialog: MatDialog, private router: Router) {}
+  constructor(private videoService: VideoService, private router: Router) {}
   videos: any = [];
   favVideo: Video[] =[
 
@@ -88,8 +88,5 @@ export class FavouriteListComponent implements OnInit {
     this.favVideo[5]=this.videos[9];*/
   }
 
-  ratingContent()
- {
-    // this.matDialog.open(RatingComponent);
-   }
+ 
 }

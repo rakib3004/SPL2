@@ -35,12 +35,11 @@ export class HomeComponent implements OnInit {
   })  
 }
 
-  ratingInfo:any;
-  ratingButton(rating:any,videoId:any){
-    this.ratingInfo.timestamp = new Date();
-    this.ratingInfo.userNo = this.accService.currentUserNo;
-    this.ratingInfo.rating = rating;
-    this.ratingInfo.videoId = videoId;
+ 
+
+  ratingButton(videoId:any){
+    this.blogService.ratingVideoId = videoId;
+    this.router.navigate(['rating']);
   }
 
 
@@ -49,15 +48,16 @@ export class HomeComponent implements OnInit {
     this.router.navigate(['blogView']);
   }
 
+
   tempFav = {
     videoId: "",
     userNo: 0
   }
-
   addToFavouriteButton(videoId:string){
     this.tempFav.videoId = videoId;
     this.tempFav.userNo= this.accService.currentUserNo;
     this.blogService.addToFavouriteList(this.tempFav);
   }
+
   
 }
