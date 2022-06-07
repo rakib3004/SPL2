@@ -13,7 +13,7 @@ import { Tags } from '../tags';
 export class BlogViewComponent{
 
   blogs:Blog[] = new Array();
-  //blogs: Blog[] = [];
+
   tags = new Tags();
 
   constructor(private blogService:BlogService) {}
@@ -26,12 +26,5 @@ export class BlogViewComponent{
         (err) => console.log('error occured')
     );
 
-    // this.blogService.getBlogTags().subscribe((tagsRes:any)=>{
-    //   console.log("tags")
-    //   console.log(tagsRes);
-    //   this.tags = tagsRes as Tags;
-    //   console.log(this.tags);
-    // })
-    
   }
 }
