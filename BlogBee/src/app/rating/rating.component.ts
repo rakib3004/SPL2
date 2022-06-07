@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {MatSnackBar} from '@angular/material/snack-bar'
-import {MatDialog} from '@angular/material/dialog'
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @Component({
   selector: 'app-rating',
@@ -23,9 +23,8 @@ response=['Very poor',
           'Excellent',
         ]
 
-  constructor(private snackBar:MatSnackBar, private matDialog: MatDialog) { 
+  constructor() { 
     
-  this.ratingArr= Array(this.starCount).fill(false);
   
   }
 
@@ -34,23 +33,9 @@ response=['Very poor',
   ngOnInit(): void {
   }
 
-  returnStar(i: number){
-    if(this.rating>=i+1){
-      return 'star';
-    }
-    else{
-      return 'star_border';
-    }
-  }
-
-  onClick(i:number){
-    this.rating=i+1;
-    this.snackBar.open(this.response[i],'',{
-      duration:this.snackBarDuration,
-      panelClass: ['snack-bar']
-    });
+ 
 
     
-  }
+  
 
 }
