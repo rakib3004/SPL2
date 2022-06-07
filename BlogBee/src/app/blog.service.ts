@@ -42,7 +42,9 @@ export class BlogService {
 
   addToFavouriteList(favVideo:any){
     console.log(favVideo);
-    this._http.post("http://localhost:3000/favourite",favVideo);
+    this._http.post("http://localhost:3000/favourite",favVideo).subscribe(res=>{
+      if(res==true) console.log("successfully added to favlist");
+    });
   }
 
 }

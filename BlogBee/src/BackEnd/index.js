@@ -104,7 +104,20 @@ app.post('/rating',(req,result)=>{
 
 //add to favourite list
 app.post('/favourite',(req,result)=>{
-
+    console.log(req.body);
+    let videoId = req.body.videoId;
+    let userNo = req.body.userNo;
+    let qr = "Select * from FavouriteList where userNo=? and videoId=?";
+    db.query(qr,[userNo,videoId],(err,res)=>{
+        if(res.length>0){
+            result.send(false);
+        }
+        else{
+            db.query("Insert into FavouriteList (userNo,videoId) values(?,?)",[userNo,videoId],(err,res2)=>{
+                result.send(true);
+            })
+        }
+    })
 })
 
 //get all video data
