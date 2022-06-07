@@ -6,14 +6,13 @@
       <div class="flex-div">
         <div class="vid-info">
           <p (click)="showBlog(video)">{{video.title}}</p>
-          <!--<a href="" routerLink="blogView" >{{video.title}}</a>-->
         </div> 
       </div>
     </div>
 
     <div class="group2">
 
-      <span > <button (click)="addToFavouriteButton(video.videoId)"  type="button" style="margin-right: 24px;margin-top: 20px;" class="btn btn-success">Add To Favourite</button>
+      <span > <button (click)="addToFavouriteButton(video.videoId)"  type="button" style="margin-right: 24px;margin-top: 20px;" class="btn btn-success">Favourite(+)</button>
           
         <button (click)="ratingButton(video.videoId)" type="button" class="btn btn-primary" style="margin-top: 20px;">Rate</button></span>
     </div>
