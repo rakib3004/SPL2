@@ -91,7 +91,9 @@ app.post('/rating',(req,result)=>{
     let videoId = req.body.videoId;
     let timestamp = req.body.timeStamp;
 
-    db.query("SELECT userId FROM users WHERE userNo = ?",userNo, (err,res1)=>{
+    let qr = "SELECT userId FROM Users WHERE userNo = ?";
+    db.query(qr,userNo,(err,res1)=>{
+        console.log(res1);
         let userId = res1[0].userId.toString();
         db.query("SELECT videoNo FROM videoInfo WHERE videoId = ?",videoId,(err,res2)=>{
             let videoNo = res2[0].videoNo;
@@ -100,6 +102,18 @@ app.post('/rating',(req,result)=>{
 
             });
         })
+    })
+})
+
+//get Favourite List
+app.get('/favouriteList/:userNo',(req,result)=>{
+    let userNo = req.params.userNo;
+    let qr = "SELECT * FROM FavouriteList where userNo=?";
+    db.query(qr,userNo,(err,res)=>{
+        if(err) console.log(err);
+        if(res.length>0){
+            result.send(res);
+        }
     })
 })
 

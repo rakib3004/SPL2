@@ -41,6 +41,10 @@ export class BlogService {
     return this.blog;
   }
 
+  getFavouritelist(userNo:number){
+    return this._http.get("http://localhost:3000/favouriteList/"+userNo);
+  }
+
   addToFavouriteList(favVideo:any){
     console.log(favVideo);
     this._http.post("http://localhost:3000/favourite",favVideo).subscribe(res=>{

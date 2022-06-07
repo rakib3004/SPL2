@@ -31,13 +31,13 @@ export class RatingComponent implements OnInit {
   };
 
   addToRatingData(){
-    this.ratingInfo.timestamp = String(Date.now());
+    this.ratingInfo.timestamp = String(Date.now()/1000);
     this.ratingInfo.userNo = this.accService.currentUserNo;
     this.ratingInfo.rating = this.starRating;
     this.ratingInfo.videoId = this.blogService.ratingVideoId;
     //console.log(this.ratingInfo);
     this.blogService.addNewRating(this.ratingInfo).subscribe(res=>{
-      
+
     });
     this.router.navigateByUrl('');
   }
