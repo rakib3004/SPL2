@@ -86,6 +86,8 @@ export class FavouriteListComponent implements OnInit {
     this.favVideo[5]=this.videos[9];*/
   }
 
-  
- 
+  ratingContent()
+ {
+   
+ }
 }
