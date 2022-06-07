@@ -19,7 +19,7 @@ export class RatingComponent implements OnInit {
   }
 
   returnToHome(){
-
+    console.log(this.starRating)
     this.router.navigateByUrl('');
   }
 
