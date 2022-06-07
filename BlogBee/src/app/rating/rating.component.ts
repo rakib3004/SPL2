@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {MatSnackBar} from '@angular/material/snack-bar'
+import {MatDialog} from '@angular/material/dialog'
 
 @Component({
   selector: 'app-rating',
@@ -22,11 +23,13 @@ response=['Very poor',
           'Excellent',
         ]
 
-  constructor(private snackBar:MatSnackBar) { 
+  constructor(private snackBar:MatSnackBar, private matDialog: MatDialog) { 
     
   this.ratingArr= Array(this.starCount).fill(false);
   
   }
+
+ 
 
   ngOnInit(): void {
   }

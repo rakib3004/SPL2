@@ -1,9 +1,7 @@
-<h2>Please This Blog</h2>
+<h2>Please Rate This Blog</h2>
 
-<button mat-icon-button color="accent" *ngFor="let r of ratingArr; index as i"
+<button  *ngFor="let r of ratingArr; index as i"
 (click)="onClick(i)"
 >
-
-
-    {{returnStar(i)}}
+Rate
 </button>
