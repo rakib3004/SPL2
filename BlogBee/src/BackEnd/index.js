@@ -65,17 +65,13 @@ app.post('/signupUsers',(req,res)=>{
 app.post('/login',(req,res1)=>{
     let userName = req.body.userName;
     let password = req.body.password;
-    console.log(req.body.password);
-    console.log(req.body.userName);
 
     let qr = `SELECT password FROM users WHERE userName = ?`;
 
     db.query(qr,userName,(err,res)=>{
-        console.log("hi")
         console.log(res[0].password);
         if(res.length>0){
             bcrypt.compare(password, res[0].password).then(function(result) {
-                console.log(result);
                 res1.send(result);
             });
         }
@@ -83,18 +79,6 @@ app.post('/login',(req,res1)=>{
             res1.send(false);
         }
     })
-
-    
-
-    // let qr = `SELECT * FROM users WHERE (userName = ? or userName = ?)  AND password = ?`;
-    // db.query(qr, [ userName, email, password ],(err, result)=> {
-    // if(err)
-    // {
-    //     console.log(err,'errs');
-    // }
-    // res.send(result);
-
-    // });
 });
 
 
@@ -109,8 +93,6 @@ app.get('/videoInfo',(req,res)=>{
         res.send(result);
     });
 });
-
-
 
 
 //recommendation algorithm 
@@ -128,41 +110,20 @@ app.get('/recommendation/:userId',(req,res)=>{
 //classify text
 app.get('/classify/:text',(req,res)=>{
     let text = req.params.text;
-    fs.writeFile('./File.txt',text, err => {
-        if (err) {
-          console.error(err);
-        }
-      });
+    fs.writeFile('./File.txt',text, err => {if (err) {console.error(err);}});
+
     const { spawn } = require('child_process');
     const pyProg = spawn('python3', ['./ClassifyText.py']);
 
     pyProg.stdout.on('data', function(data) {
+        console.log(data.toString());
         return res.send(data.toString());
     })
 })
 
 
-//video to blog converter using python file
-// app.get('/test/:videoId/:title',(req,res)=>{
-//     let videoId = req.params.videoId;
-//     let title = req.params.title;
-//     let text = "";
-//     const { spawn } = require('child_process');
-//     const pyProg = spawn('python3', ['./AudioToTextconverter.py',videoId]);
-
-//     pyProg.stdout.on('data', function(data) {
-//         text = data.toString();
-//         myarray =[]
-//         myarray.push({videoId, title, text})
-//         return res.send(myarray)
-//     })
-// })
-
-
-
 //temp python calling method
 app.get('/test/:videoId/:title', (req, res) => {
-
 
     let videoId = req.params.videoId;
     let title = req.params.title;
@@ -172,30 +133,21 @@ app.get('/test/:videoId/:title', (req, res) => {
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
     db.query(qr,videoId,(err,result)=>{
-
-        if(err)
-        {
+        if(err){
             console.log(err,'error occured');
         }
 
-        if(result.length>0)
-        {
+        if(result.length>0){
             return res.send(result);
         }
-        else
-        {
-            console.log("here")
+        else{
             const { spawn } = require('child_process');
             const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
-                console.log("here2")
                 text = data.toString();
-                console.log(data.toString())
-                //myarray =[{videoId:string ="",title:string="",text:string=""}]
                 myarray = [];
                 myarray.push({videoId, title, text})
-                console.log(text);
                 res.send(myarray);
 
                 let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
