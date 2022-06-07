@@ -177,8 +177,10 @@ app.get('/recommendation/:userId',(req,res)=>{
 })
 
 //classify text
-app.get('/classify',(req,res)=>{
-    
+app.get('/classify/:text',(req,res)=>{
+    let text = req.params.text;
+    console.log(text);
+
     const { spawn } = require('child_process');
     const pyProg = spawn('python3', ['./ClassifyText.py']);
 

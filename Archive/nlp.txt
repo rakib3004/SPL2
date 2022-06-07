@@ -1,5 +1,0 @@
-Natural Language Process
-
-Tokenization
-Noralization
-Lemitaziton

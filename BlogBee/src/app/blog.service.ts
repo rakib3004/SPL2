@@ -29,8 +29,9 @@ export class BlogService {
     return this._http.get("http://localhost:3000/recommendation/"+userId);
   }
 
-  getBlogTags(){
-    return this._http.get("http://localhost:3000/classify");
+  getBlogTags(text:string){
+    console.log(text);
+    return this._http.get("http://localhost:3000/classify/"+text);
   }
 
   addNewRating(ratingInfo:any){
