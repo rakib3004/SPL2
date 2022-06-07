@@ -13,7 +13,7 @@ import {BlogService} from '../blog.service';
 export class HomeComponent implements OnInit {
   constructor(private videoService: VideoService, private blogService:BlogService ,private router: Router) {}
   videos: Video[] = [];
-  userId:number = 40;
+  userId:number = 10;
   recommendedVideos: Video[] = [];
   recommendedIndex: number[] = [];
   //recommendedIndex  = [38, 4, 9, 25, 1, 13, 58, 0, 6, 40, 19, 32, 24, 47, 3, 5, 48, 8, 31, 24, 23, 43, 36, 61, 16, 44];
