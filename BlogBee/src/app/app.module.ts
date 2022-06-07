@@ -15,6 +15,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { AccountService } from './account.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HistoryComponent } from './history/history.component';
+import { RatingComponent } from './rating/rating.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 @NgModule({
@@ -29,13 +32,15 @@ import { HistoryComponent } from './history/history.component';
     FavouriteListComponent,
     AboutUsComponent,
     HistoryComponent,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]
