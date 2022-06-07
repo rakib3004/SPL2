@@ -6,16 +6,17 @@
       BlogBee
   </div>
 
+  <span *ngIf="incorrect==1" style="color:red">*Incorrect Email or Password</span>
   <form [formGroup]="signinForm" (ngSubmit)="signIn()" class="p-3 mt-3">
       <div class="form-field d-flex align-items-center">
           <span class="far fa-user"></span>
-          <input type="text" name="userName" id="userName" placeholder="Username/email">
+          <input formControlName="userName" type="text" id="userName" placeholder="Username/email">
           <span class="text-danger" *ngIf="signinForm.controls['userName'].dirty && signinForm.hasError('required','userName')">*User Name or email is Required</span>
       </div>
 
       <div class="form-field d-flex align-items-center">
           <span class="fas fa-key"></span>
-          <input type="password" name="password" id="pwd" placeholder="Password">
+          <input formControlName="password" type="password" id="pwd" placeholder="Password">
           <span class="text-danger" *ngIf="signinForm.controls['[password]'].dirty && signinForm.hasError('required','password')">*Password is Required</span>
       </div>
       <button [disabled]="!signinForm.valid" class="btn mt-3">Login</button>

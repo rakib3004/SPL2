@@ -12,7 +12,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignInComponent implements OnInit {
 
   public signinForm !: FormGroup;
-  loggedIn = 0;
+  incorrect = 0;
+  loggedIn = this.accService.loggedIn;
   constructor(private formbuilder:FormBuilder,private accService:AccountService,private router:Router) { }
 
   ngOnInit(): void {
@@ -23,10 +24,17 @@ export class SignInComponent implements OnInit {
   }
 
   signIn(){
+    console.log(this.signinForm.value)
     this.accService.signIn(this.signinForm.value).subscribe(res=>{
+      console.log(res);
       if(res==true){
         alert("Sign In Successfull");
         this.loggedIn = 1;
+        this.router.navigate(['']);
+      }
+      else{
+        this.incorrect = 1;
+        //alert("Incorrect email or password");
       }
     })
   }

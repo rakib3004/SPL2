@@ -13,7 +13,7 @@ export class AccountService {
 
   userData = new UserData();
   logInfo = new LogInfo();
-  loggedIn = 0;
+  loggedIn:number = 0;
 
   getUserData(){
     return this.userData;
@@ -26,17 +26,13 @@ export class AccountService {
   //get all data
   apiUrl = 'http://localhost:3000/login';
 
-
-
   signUp(signUpInfo:any){
     return this._http.post('http://localhost:3000/signupUsers',signUpInfo);
   }
 
   signIn(signinInfo:any){
-    return this._http.post(this.apiUrl, signinInfo)
+    return this._http.post(this.apiUrl, signinInfo);
   }
-
-  
 
   getAllData(){
     return this._http.get(`${this.apiUrl}`);

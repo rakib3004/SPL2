@@ -61,20 +61,39 @@ app.post('/signupUsers',(req,res)=>{
 });
 
 //post login data
-app.post('/login',(req,res)=>{
-    console.log(req.body);
+app.post('/login',(req,res1)=>{
     let userName = req.body.userName;
     let password = req.body.password;
+    console.log(req.body.password);
+    console.log(req.body.userName);
 
-    let qr = `SELECT * FROM userInfo WHERE name = ? AND password = ?`;
-    db.query(qr, [ userName, password ],(err, result)=> {
-    if(err)
-    {
-        console.log(err,'errs');
-    }
-    res.send(result);
+    let qr = `SELECT password FROM users WHERE userName = ?`;
 
-    });
+    db.query(qr,userName,(err,res)=>{
+        console.log("hi")
+        console.log(res[0].password);
+        if(res.length>0){
+            bcrypt.compare(password, res[0].password).then(function(result) {
+                console.log(result);
+                res1.send(result);
+            });
+        }
+        else{
+            res1.send(false);
+        }
+    })
+
+    
+
+    // let qr = `SELECT * FROM users WHERE (userName = ? or userName = ?)  AND password = ?`;
+    // db.query(qr, [ userName, email, password ],(err, result)=> {
+    // if(err)
+    // {
+    //     console.log(err,'errs');
+    // }
+    // res.send(result);
+
+    // });
 });
 
 

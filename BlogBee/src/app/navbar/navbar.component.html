@@ -18,8 +18,9 @@
   </div>
 
   <div class="nav-right flex-div">
-    <button type="button" class="btn btn-secondary btn-lg" (click)="signin()">Sign In</button>
-    <img src="assets/images/r.png" class="user-icon" alt="User-Icon" />
+    <button *ngIf="loggedIn==0" type="button" class="btn btn-secondary btn-lg" (click)="signin()">Sign In</button>
+    <button *ngIf="loggedIn==1" type="button" class="btn btn-secondary btn-lg" (click)="signout()">Sign Out</button>
+    <!--img src="assets/images/r.png" class="user-icon" alt="User-Icon" /-->
   </div>
 </nav>
 
