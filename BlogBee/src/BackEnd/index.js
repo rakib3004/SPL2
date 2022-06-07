@@ -5,11 +5,15 @@ const mysql = require('mysql2');
 const { send } = require('process');
 const { query } = require('express');
 const { clear } = require('console');
+const session = require('express-session');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 const app = express();
 
 app.use(cors());
 app.use(bodyparser.json());
+app.use(session({secret: "B:=<[X<wbb<ZGr7-"}))
 
 
 //database connection
@@ -44,10 +48,14 @@ app.post('/signupUsers',(req,res)=>{
         if(result.length>0){
             res.send(false);
         }
-        else{             
-            let qr = "INSERT INTO users (userName, email, password) VALUES (?, ?, ?)";
-            db.query(qr,[userName,email,password]);
-            res.send(true);
+        else{  
+            bcrypt.hash(password, saltRounds).then(function(hash) {
+                // Store hash in your password DB.
+                let qr = "INSERT INTO users (userName, email, password) VALUES (?, ?, ?)";
+                db.query(qr,[userName,email,hash]);
+                res.send(true);
+            });           
+            
         }
     });
 });

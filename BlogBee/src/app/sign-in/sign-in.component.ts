@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AccountService } from '../account.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -10,23 +11,24 @@ import { AccountService } from '../account.service';
 })
 export class SignInComponent implements OnInit {
 
-  constructor(private accService:AccountService,private router:Router) { }
+  public signinForm !: FormGroup;
+  loggedIn = 0;
+  constructor(private formbuilder:FormBuilder,private accService:AccountService,private router:Router) { }
 
-  logInfo = this.accService.getLogInfo();
-
-  success: boolean=false;
-
-  loginButtonAction(){
-    console.log(this.logInfo);
-    this.accService.loginValidation();
-  }
-
-  signUp(){
-    this.router.navigate(['signup']);
-  }
- 
   ngOnInit(): void {
-    
+    this.signinForm = this.formbuilder.group({
+      userName:['',[Validators.required]],
+      password:['',[Validators.required]]
+    })
+  }
+
+  signIn(){
+    this.accService.signIn(this.signinForm.value).subscribe(res=>{
+      if(res==true){
+        alert("Sign In Successfull");
+        this.loggedIn = 1;
+      }
+    })
   }
 
 }

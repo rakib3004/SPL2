@@ -1,26 +1,27 @@
-
-
 <div class="wrapper">
   <div class="logo">
-      <img src="assets/images/user.png" alt="">
+    <img src="assets/images/user.png" alt="">
   </div>
   <div class="text-center mt-4 name">
       BlogBee
   </div>
-  <form class="p-3 mt-3">
+
+  <form [formGroup]="signinForm" (ngSubmit)="signIn()" class="p-3 mt-3">
       <div class="form-field d-flex align-items-center">
           <span class="far fa-user"></span>
-          <input type="text" name="userName" id="userName" placeholder="Username/email"
-          [(ngModel)] = "logInfo.userName" [ngModelOptions]="{standalone: true}" >
+          <input type="text" name="userName" id="userName" placeholder="Username/email">
+          <span class="text-danger" *ngIf="signinForm.controls['userName'].dirty && signinForm.hasError('required','userName')">*User Name or email is Required</span>
       </div>
+
       <div class="form-field d-flex align-items-center">
           <span class="fas fa-key"></span>
-          <input type="password" name="password" id="pwd" placeholder="Password"
-          [(ngModel)] = "logInfo.password" [ngModelOptions]="{standalone: true}">
+          <input type="password" name="password" id="pwd" placeholder="Password">
+          <span class="text-danger" *ngIf="signinForm.controls['[password]'].dirty && signinForm.hasError('required','password')">*Password is Required</span>
       </div>
-      <button class="btn mt-3" (click)="loginButtonAction()">Login</button>
+      <button [disabled]="!signinForm.valid" class="btn mt-3">Login</button>
   </form>
+
   <div class="text-center fs-6">
-      <a href="#">Forget password?</a> or <a href="" routerLink="signup" (click)="signUp()">Sign up</a>
+      <a href="#">Forget password?</a> or <a href="" routerLink="/signup">Sign up</a>
   </div>
 </div>

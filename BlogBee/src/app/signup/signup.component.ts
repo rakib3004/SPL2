@@ -25,6 +25,7 @@ export class SignupComponent implements OnInit {
   }
 
   signUp(){
+    
     if(this.signupForm.value.password==this.signupForm.value.rpassword)
       {
         this.mismatch=0;

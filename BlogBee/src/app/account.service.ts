@@ -13,9 +13,7 @@ export class AccountService {
 
   userData = new UserData();
   logInfo = new LogInfo();
-
-  loginObject=new Boolean();
-  // loginObject=this.loginObject;
+  loggedIn = 0;
 
   getUserData(){
     return this.userData;
@@ -34,31 +32,11 @@ export class AccountService {
     return this._http.post('http://localhost:3000/signupUsers',signUpInfo);
   }
 
-  loginValidation(){
-    console.log(this.logInfo);
-    this._http.post(this.apiUrl, this.logInfo).subscribe(data => {
-      if(JSON.stringify(data)=="[]") 
-      {
-        
-        console.log("Invaid");
-        alert('Incorrect password or user Name');
-        this.logInfo.password='';
-        this.logInfo.userName='';
-        this.loginObject=false;
-        this.router.navigateByUrl('signin');
-        
-      }
-      else 
-      {
-        alert('Login Successful');
-        this.loginObject=true;
-        console.log("valid");
-        this.router.navigateByUrl('');
-      }
-    });
-
-    console.log(this.loginObject);
+  signIn(signinInfo:any){
+    return this._http.post(this.apiUrl, signinInfo)
   }
+
+  
 
   getAllData(){
     return this._http.get(`${this.apiUrl}`);
