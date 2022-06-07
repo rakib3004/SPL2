@@ -5,6 +5,7 @@ const mysql = require('mysql2');
 const { send } = require('process');
 const { query } = require('express');
 const { clear } = require('console');
+const fs = require('fs');
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -120,9 +121,22 @@ app.get('/recommendation/:userId',(req,res)=>{
     const pyProg = spawn('python3', ['./recommendationSystem.py',userId]);
 
     pyProg.stdout.on('data', function(data) {
-        //console.log(data.toString());
-        // myarray =[]
-        // myarray.push({videoId, title, text})
+        return res.send(data.toString());
+    })
+})
+
+//classify text
+app.get('/classify/:text',(req,res)=>{
+    let text = req.params.text;
+    fs.writeFile('./File.txt',text, err => {
+        if (err) {
+          console.error(err);
+        }
+      });
+    const { spawn } = require('child_process');
+    const pyProg = spawn('python3', ['./ClassifyText.py']);
+
+    pyProg.stdout.on('data', function(data) {
         return res.send(data.toString());
     })
 })

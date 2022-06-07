@@ -25,13 +25,14 @@ text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 
-#deployment_set= open("ConvertedText/Language5.txt", "r")
+deployment_text= open("File.txt", "r")
 
-topicSource = 'ConvertedText/*'
+deployment_set=deployment_text.read()
+deployment_list = open(deployment_set)
+deployment_data = deployment_list.read()
+deployment_list = [deployment_data]
 
 
-
-
-tagPrediction = text_clf.predict(topicSource)
+tagPrediction = text_clf.predict(deployment_list)
 tagElement = twenty_train.target_names[tagPrediction[0]].split('.')
 print(tagElement[:])
