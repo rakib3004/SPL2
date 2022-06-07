@@ -27,9 +27,7 @@ twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 deployment_text= open("File.txt", "r")
 
-deployment_set=deployment_text.read()
-deployment_list = open(deployment_set)
-deployment_data = deployment_list.read()
+deployment_data=deployment_text.read()
 deployment_list = [deployment_data]
 
 
