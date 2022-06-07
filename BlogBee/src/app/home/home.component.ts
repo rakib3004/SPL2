@@ -4,6 +4,7 @@ import { Video } from '../video';
 import { VideoService } from '../video.service';
 import {BlogService} from '../blog.service';
 import { AccountService } from '../account.service';
+import { timestamp } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
   })
 
 
-  this.blogService.getRecommendedItem(this.accService.currentUserId).subscribe(res=>{
+  this.blogService.getRecommendedItem(this.accService.currentUserNo).subscribe(res=>{
     this.recommendedIndex = res as Array<number>;
     this.recommendedIndex.forEach(index => {
       if(index<64)
@@ -33,6 +34,14 @@ export class HomeComponent implements OnInit {
     });
   })  
 }
+
+  ratingInfo:any;
+  ratingButton(rating:any,videoId:any){
+    this.ratingInfo.timestamp = new Date();
+    this.ratingInfo.userNo = this.accService.currentUserNo;
+    this.ratingInfo.rating = rating;
+    this.ratingInfo.videoId = videoId;
+  }
 
 
   showBlog(targetVideo: Video) {

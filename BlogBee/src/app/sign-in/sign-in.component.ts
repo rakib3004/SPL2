@@ -19,6 +19,9 @@ export class SignInComponent implements OnInit {
   constructor(private formbuilder:FormBuilder,private accService:AccountService,private router:Router) { }
 
   ngOnInit(): void {
+    if(this.accService.loginObject) {
+      this.router.navigate(['']);
+    }
     this.signinForm = this.formbuilder.group({
       userName:['',[Validators.required]],
       password:['',[Validators.required]]
@@ -35,7 +38,7 @@ export class SignInComponent implements OnInit {
       }
       else{
         this.user = res as User[];
-        this.accService.currentUserId = this.user[0].userId;
+        this.accService.currentUserNo = this.user[0].userId;
         this.accService.loginObject = true;
         this.router.navigate(['']);
       }

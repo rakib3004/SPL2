@@ -32,6 +32,10 @@ export class BlogService {
     return this._http.get("http://localhost:3000/classify");
   }
 
+  addNewRating(ratingInfo:any){
+    this._http.post("http://localhost:3000/rating",ratingInfo);
+  }
+
   getBlogToShow():Blog{
     return this.blog;
   }

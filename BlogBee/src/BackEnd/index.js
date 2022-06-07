@@ -14,7 +14,7 @@ const app = express();
 
 app.use(cors());
 app.use(bodyparser.json());
-app.use(session({secret: "B:=<[X<wbb<ZGr7-"}))
+//app.use(session({secret: "B:=<[X<wbb<ZGr7-"}))
 
 
 //database connection
@@ -66,13 +66,14 @@ app.post('/login',(req,res1)=>{
     let userName = req.body.userName;
     let password = req.body.password;
 
-    let qr = `SELECT password FROM users WHERE userName = ?`;
+    let qr = `SELECT password, userId FROM users WHERE userName = ?`;
 
     db.query(qr,userName,(err,res)=>{
-        console.log(res[0].password);
+        console.log(res[0].password,res[0].userId);
         if(res.length>0){
             bcrypt.compare(password, res[0].password).then(function(result) {
-                res1.send(result);
+                if(result==true) res1.send(res);
+                else res1.send(false);
             });
         }
         else{
@@ -81,6 +82,25 @@ app.post('/login',(req,res1)=>{
     })
 });
 
+
+//add new rating data
+app.post('/rating',(req,result)=>{
+    let userNo = req.body.userNo;
+    let rating = req.body.rating;
+    let videoId = req.body.videoId;
+    let timestamp = req.body.timeStamp;
+
+    db.query("SELECT userId FROM users WHERE userN0 = ?",userNo, (err,res1)=>{
+        let userId = res1[0].userId;
+        db.query("SELECT videoNo FROM videoInfo WHERE videoId = ?",videoId,(err,res2)=>{
+            let videoNo = res2[0].videoNo;
+            let qr1 = "INSERT INTO RatingData (userId, userNo, videoId, videoNo, rating, timestamp) VALUES (?, ?, ?, ?, ?, ?)";
+            db.query(qr1,[userId, userNo, videoId, videoNo, rating, timestamp],(err,res3)=>{
+
+            });
+        })
+    })
+})
 
 //get all video data
 app.get('/videoInfo',(req,res)=>{

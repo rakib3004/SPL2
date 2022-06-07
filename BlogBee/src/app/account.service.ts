@@ -14,7 +14,7 @@ export class AccountService {
   userData = new UserData();
   logInfo = new LogInfo();
   loginObject=false;
-  currentUserId = 17;
+  currentUserNo = 17;
 
   getUserData(){
     return this.userData;
