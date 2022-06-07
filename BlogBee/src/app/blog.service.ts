@@ -28,8 +28,8 @@ export class BlogService {
     return this._http.get("http://localhost:3000/recommendation/"+userId);
   }
 
-  getBlogTags(blogText:string){
-    return this._http.get("http://localhost:3000/classify/");
+  getBlogTags(){
+    return this._http.get("http://localhost:3000/classify");
   }
 
   getBlogToShow():Blog{

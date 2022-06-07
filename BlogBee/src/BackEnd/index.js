@@ -108,10 +108,8 @@ app.get('/recommendation/:userId',(req,res)=>{
 })
 
 //classify text
-app.get('/classify/:text',(req,res)=>{
-    let text = req.params.text;
-    fs.writeFile('./File.txt',text, err => {if (err) {console.error(err);}});
-
+app.get('/classify',(req,res)=>{
+    
     const { spawn } = require('child_process');
     const pyProg = spawn('python3', ['./ClassifyText.py']);
 
@@ -128,7 +126,6 @@ app.get('/test/:videoId/:title', (req, res) => {
     let videoId = req.params.videoId;
     let title = req.params.title;
     let text = "";
-    console.log(videoId)
 
     let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
@@ -138,6 +135,7 @@ app.get('/test/:videoId/:title', (req, res) => {
         }
 
         if(result.length>0){
+            //fs.writeFile('./File.txt',result.toString(), err => {if (err) {console.error(err);}});
             return res.send(result);
         }
         else{
