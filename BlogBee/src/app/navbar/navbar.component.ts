@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(private router:Router,private accService:AccountService) {}
 
   click = 1;
-  loggedIn = this.accService.loggedIn;
+  loggedIn = this.accService.loginObject;
 
   menuButtonClickEvent() {
     if (this.click == 0) this.click = 1;
@@ -22,13 +22,14 @@ export class NavbarComponent implements OnInit {
     this.router.navigateByUrl('signin');
   }
 
-
   signup(){
     this.router.navigateByUrl('signup');
   }
 
   signout(){
-
+    this.accService.loginObject = false;
+    console.log(this.accService.loginObject);
+    this.router.navigate(['']);
   }
 
 

@@ -13,7 +13,7 @@ export class SignInComponent implements OnInit {
 
   public signinForm !: FormGroup;
   incorrect = 0;
-  loggedIn = this.accService.loggedIn;
+  loggedIn = this.accService.loginObject;
   constructor(private formbuilder:FormBuilder,private accService:AccountService,private router:Router) { }
 
   ngOnInit(): void {
@@ -29,7 +29,7 @@ export class SignInComponent implements OnInit {
       console.log(res);
       if(res==true){
         alert("Sign In Successfull");
-        this.loggedIn = 1;
+        this.loggedIn = true;
         this.router.navigate(['']);
       }
       else{

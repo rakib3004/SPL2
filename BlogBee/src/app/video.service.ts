@@ -19,9 +19,9 @@ export class VideoService {
   
 
   // Get all videos
- getVideos(): Observable<any> {
-     return this._http.get('http://localhost:3000/videoInfo');
-  }
+  getVideos(): Observable<any> {
+    return this._http.get('http://localhost:3000/videoInfo');
+ }
 
 
   // temporary function to add videos into database

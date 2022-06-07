@@ -18,8 +18,8 @@
   </div>
 
   <div class="nav-right flex-div">
-    <button *ngIf="loggedIn==0" type="button" class="btn btn-secondary btn-lg" (click)="signin()">Sign In</button>
-    <button *ngIf="loggedIn==1" type="button" class="btn btn-secondary btn-lg" (click)="signout()">Sign Out</button>
+    <button *ngIf="!loggedIn" type="button" class="btn btn-secondary btn-lg" (click)="signin()">Sign In</button>
+    <button *ngIf="loggedIn" type="button" class="btn btn-secondary btn-lg" (click)="signout()">Sign Out</button>
     <!--img src="assets/images/r.png" class="user-icon" alt="User-Icon" /-->
   </div>
 </nav>
@@ -27,24 +27,10 @@
 <!--sidebar-->
 <div class="sidebar" [class.small-sidebar]="click == 0">
   <div class="shortcut-links">
-    <a href=""
-      ><img src="assets/images/home.png" />
-      <p>Home</p></a
-    >
-    <a href="" routerLink="favList"
-      ><img src="assets/images/favicon.png" />
-      <p>Favourite List</p></a
-    >
-   
-    <a href="" routerLink="history"
-      ><img src="assets/images/history.png" />
-      <p>History</p></a
-    >
-    <a href="" routerLink="about-us"
-      ><img src="assets/images/about.png" />
-      <p>About</p></a
-    >
-   
+    <a href=""><img src="assets/images/home.png" /><p>Home</p></a>
+    <a href="" routerLink="favList"><img src="assets/images/favicon.png" /><p>Favourite List</p></a>
+    <a href="" routerLink="history"><img src="assets/images/history.png" /><p>History</p></a>
+    <a href="" routerLink="about-us"><img src="assets/images/about.png" /><p>About</p></a>
     <hr />
   </div>
 </div>

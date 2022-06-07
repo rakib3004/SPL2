@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BlogService } from '../blog.service';
 import { Video } from '../video';
 import { VideoService } from '../video.service';
 
