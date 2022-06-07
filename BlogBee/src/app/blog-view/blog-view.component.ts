@@ -12,19 +12,16 @@ import { Tags } from '../tags';
 })
 export class BlogViewComponent{
 
-  blogs = new Array();
+  blogs:Blog[] = new Array();
   //blogs: Blog[] = [];
   tags = new Tags();
 
   constructor(private blogService:BlogService) {}
 
-
-
   ngOnInit(): void {
     this.blogService.showBlog().subscribe((res: any) => {
         this.blogs = res as Blog[];
         console.log("showBlog");
-        
       },
         (err) => console.log('error occured')
     );
