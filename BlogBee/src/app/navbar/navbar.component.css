@@ -21,8 +21,8 @@ img{
 nav{
   padding: 10px 2%;
   justify-content: space-between;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  background: #212020;
+  box-shadow: 0 0 10px white;
+  background: white;
   position: sticky;
   top: 0;
   z-index: 10;
@@ -76,7 +76,7 @@ nav{
 /*sidebar component css*/
 
 .sidebar{
-  background-color: #212020;
+  background-color: white;
   width: 15%;
   height: 100vh;
   position: fixed;
@@ -98,12 +98,10 @@ nav{
   margin-bottom: 20px;
   width: fit-content;
   flex-wrap: wrap;
-  color: #ccc;
+  color: black;
 }
 
-.shortcut-links a:first-child{
-  color: #ed3833;
-}
+
 
 .shortcut-links hr{
   border: 0;
