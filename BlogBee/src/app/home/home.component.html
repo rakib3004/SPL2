@@ -12,8 +12,10 @@
     </div>
 
     <div class="group2">
-      <button (click)="addToFavouriteButton(video.videoId)"  class="btn btn-success mr-4 btngrp">Add to Favourite</button>
-      <button (click)="ratingButton(video.videoId)" class="btn btn-primary ml-4 btngrp">Rate</button>
+
+      <span > <button (click)="addToFavouriteButton(video.videoId)"  type="button" style="margin-right: 24px;margin-top: 20px;" class="btn btn-success">Add To Favourite</button>
+          
+        <button (click)="ratingButton(video.videoId)" type="button" class="btn btn-primary" style="margin-top: 20px;">Rate</button></span>
     </div>
 
   </div>
