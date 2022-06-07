@@ -16,7 +16,7 @@ import { AccountService } from './account.service';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HistoryComponent } from './history/history.component';
 import { RatingComponent } from './rating/rating.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 
 
@@ -40,7 +40,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
   ],
   providers: [AccountService],
   bootstrap: [AppComponent]
