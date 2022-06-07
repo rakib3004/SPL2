@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { FavouriteListComponent } from './favourite-list/favourite-list.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { HistoryComponent } from './history/history.component';
+import { RatingComponent } from './rating/rating.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,6 +19,8 @@ const routes: Routes = [
   { path: 'favList', component: FavouriteListComponent },
   { path: 'about-us', component: AboutUsComponent },
   { path: 'history', component: HistoryComponent },
+  { path: 'rating', component: RatingComponent },
+
 ];
 
 @NgModule({
