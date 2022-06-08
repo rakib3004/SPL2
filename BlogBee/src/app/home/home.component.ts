@@ -63,6 +63,5 @@ export class HomeComponent implements OnInit {
       console.log("Successfully added to Favorite list");
     },err=>{console.log(err)});
   }
-
   
 }

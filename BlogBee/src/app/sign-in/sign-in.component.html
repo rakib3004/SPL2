@@ -11,14 +11,15 @@
         <div class="form-field d-flex align-items-center">
             <span class="far fa-user"></span>
             <input formControlName="userName" type="text" id="userName" placeholder="Username/email">
-            <span class="text-danger" *ngIf="signinForm.controls['userName'].dirty && signinForm.hasError('required','userName')">*User Name or email is Required</span>
         </div>
-  
+        <span class="text-danger" *ngIf="signinForm.controls['userName'].dirty && signinForm.hasError('required','userName')">*User Name or email is Required</span>
+        
         <div class="form-field d-flex align-items-center">
             <span class="fas fa-key"></span>
             <input formControlName="password" type="password" id="pwd" placeholder="Password">
-            <span class="text-danger" *ngIf="signinForm.controls['[password]'].dirty && signinForm.hasError('required','password')">*Password is Required</span>
+            
         </div>
+        <span class="text-danger" *ngIf="signinForm.controls['[password]'].dirty && signinForm.hasError('required','password')">*Password is Required</span>
         <button [disabled]="!signinForm.valid" class="btn mt-3">Login</button>
     </form>
   

@@ -38,7 +38,7 @@ export class SignInComponent implements OnInit {
       }
       else{
         this.user = res as User[];
-        this.accService.currentUserNo = this.user[0].userId;
+        this.accService.currentUserNo = this.user[0].userNo;
         this.accService.loginObject = true;
         this.router.navigate(['']);
       }
