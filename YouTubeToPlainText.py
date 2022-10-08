@@ -1,6 +1,6 @@
-from youtube_transcript_api import YouTubeTranscriptApi as yta
-
 import re
+
+from youtube_transcript_api import YouTubeTranscriptApi as yta
 
 my_file = open("YouTubeData/YouTubeURL.txt", "r")
 
