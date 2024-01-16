@@ -62,6 +62,7 @@ app.post('/signup',(req,res)=>{
     });
 });
 
+
 //post login data
 app.post('/signin',(req,res1)=>{
     let userName = req.body.userName;
@@ -164,7 +165,6 @@ app.get('/videoInfo',(req,res)=>{
         res.send(result);
     });
 });
-
 
 //recommendation algorithm 
 app.get('/recommendation/:userId',(req,res)=>{
