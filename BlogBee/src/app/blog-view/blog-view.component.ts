@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Blog } from '../blog';
 import { BlogService } from '../blog.service';
-import { Tags } from '../tags';
+import { switchMap } from 'rxjs/operators';
 
 
 @Component({
@@ -13,7 +13,15 @@ import { Tags } from '../tags';
 export class BlogViewComponent{
 
   blogs:Blog[] = [];
-  tags = new Tags();
+  tags: any = ['Politics', 'Science', 'Religion'];
+  text: string = "";
+
+
+  getRandomBootstrapClass(): string {
+    const bootstrapClasses = ['badge-primary', 'badge-danger', 'badge-success'];
+    const randomIndex = Math.floor(Math.random() * bootstrapClasses.length);
+    return bootstrapClasses[randomIndex];
+  }
 
   constructor(private blogService:BlogService) {}
 
@@ -21,7 +29,14 @@ export class BlogViewComponent{
     this.blogService.showBlog().subscribe(res => {
         this.blogs = res as Blog [];
         console.log(this.blogs);
+        this.text = this.blogs[0].text;
       },
     );
+
+    // this.blogService.getBlogTags(this.text).subscribe(res => {
+    //   this.tags = res as Array<any>;
+    // },
+
+ 
   }
 }

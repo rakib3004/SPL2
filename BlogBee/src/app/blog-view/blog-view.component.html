@@ -8,12 +8,12 @@
     </div>
 
     <div class="stand">
-        <h3>Topics: <span class="badge badge-primary">Politics</span>
-            <span class="badge badge-danger">Science</span>
-            <span class="badge badge-success">Religion</span>
+        <h3>Topics:
+          <span *ngFor="let tag of tags" class="badge" [ngClass]="getRandomBootstrapClass()">
+            {{ tag }}
+          </span>
         </h3>
-
-    </div>
+      </div>
 
 
 

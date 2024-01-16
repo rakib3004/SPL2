@@ -36,7 +36,6 @@ export class BlogService {
   }
 
   getBlogTags(text:string){
-    console.log(text);
     return this._http.get("http://localhost:3000/classify/"+text);
   }
 
