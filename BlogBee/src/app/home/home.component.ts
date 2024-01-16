@@ -47,7 +47,7 @@ export class HomeComponent implements OnInit {
     this.blogService.setVideo(targetVideo);
     this.router.navigate(['blogView']);
   }
-
+  
 
   tempFav = {
     videoId: "",
