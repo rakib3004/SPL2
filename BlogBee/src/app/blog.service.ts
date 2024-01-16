@@ -16,15 +16,19 @@ export class BlogService {
   ratingVideoId = "";
 
   setVideo(video: Video){
-    this.video = video
+    this.video = video;
+    console.log(video)
   }
 
   constructor(private _http:HttpClient) { }
   
   showBlog(){
     const body = { videoId: this.video.videoId, title: this.video.title };
+    console.log(this.video,body);
+
 
     return this._http.post("http://localhost:3000/blog", body);
+
   }
 
   getRecommendedItem(userId:any){

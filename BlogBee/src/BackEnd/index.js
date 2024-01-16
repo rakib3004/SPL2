@@ -164,12 +164,13 @@ app.get('/videoInfo',(req,res)=>{
     });
 });
 
+
 //recommendation algorithm 
 app.get('/recommendation/:userId',(req,res)=>{
     let userId = req.params.userId;
    
     const { spawn } = require('child_process');
-    const pyProg = spawn('python3', ['./recommendationSystem.py',userId]);
+    const pyProg = spawn('python', ['./recommendationSystem.py',userId]);
 
     pyProg.stdout.on('data', function(data) {
         return res.send(data.toString());
@@ -182,7 +183,7 @@ app.get('/classify/:text',(req,res)=>{
     console.log(text);
 
     const { spawn } = require('child_process');
-    const pyProg = spawn('python3', ['./ClassifyText.py']);
+    const pyProg = spawn('python', ['./ClassifyText.py']);
 
     pyProg.stdout.on('data', function(data) {
         console.log(data.toString());
@@ -196,7 +197,6 @@ app.post('/blog', (req, res) => {
 
     let videoId = req.body.videoId;
     let title = req.body.title;
-    let text = "";
 
     // let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
@@ -210,26 +210,41 @@ app.post('/blog', (req, res) => {
     //         return res.send(result);
     //     }
     //     else{
+
+    let text = '';
+    let  myarray = [];
+
+
             const { spawn } = require('child_process');
-            const pyProg = spawn('python3', ['./AudioToTextconverter.py',videoId]);
-
-            pyProg.stdout.on('data', function(data) {
-                text = data.toString();
-                console.log(text)
-                myarray = [];
-                myarray.push({videoId, title, text})
-                res.send(myarray);
-
-                // let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
-                // db.query(query,[videoId,title,text]);
-                // clear(myarray);
-            })
+            const pyProg = spawn('python', ['./AudioToTextconverter.py',videoId]);
             
+
+            pyProg.stdout.on('data', function (data) {
+                text += data.toString();
+              });
+
+            // myarray.push({videoId, title, text})
+            // res.send(myarray);
+
+
+             pyProg.on('close', (code) => {
+
+    receivedStatusCode = code;
+    myarray.push({ videoId, title, text });
+
+   
+    res.json(myarray);
+  });
+
+  pyProg.stderr.on('data', function (data) {
+    console.error('Error from Python script:', data.toString());
+    res.status(500).send('Internal Server Error');
+  });
+
         // }
     // });
  
 })
-
 
 //temp video inserting 
 app.post('/insertRatings',(req,res)=>{

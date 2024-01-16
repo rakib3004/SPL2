@@ -47,4 +47,4 @@ transcript=transcript.replace("\n"," ").replace("\r"," ")
 
 print(transcript)
 
-sys.stdout.flush()
+# sys.stdout.flush()

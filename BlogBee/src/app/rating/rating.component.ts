@@ -14,9 +14,7 @@ export class RatingComponent implements OnInit {
 
   starRating:Array<number> | any;
 
-
   constructor(private router:Router,private blogService:BlogService,private accService:AccountService) { 
-    
   
   }
 
