@@ -15,11 +15,12 @@ app.use(bodyparser.json());
 
 const db = mysql.createConnection({
     host: 'localhost',
-    videos: 'root',
+    user: 'root',
     password: '',
-    database: 'account',
+    database: 'videos',
     port:3306
 });
+
 
 //check database connection
 db.connect(err=>{
@@ -118,8 +119,5 @@ app.delete('/delete-video', function (req, res) {
         return res.send({ error: false, data: results, message: 'User has been updated successfully.' });
     });
 }); 
-// set port
-// app.listen(3000, function () {
-//     console.log('Node app is running on port 3000');
-// });
+
 module.exports = app;

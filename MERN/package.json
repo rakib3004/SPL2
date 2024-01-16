@@ -4,7 +4,8 @@
   "description": "this is my first npm project",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx nodemon app.js"
   },
   "author": "Md. Rakib Trofder",
   "license": "ISC",
@@ -13,7 +14,8 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongoose": "^6.2.11",
-    "nodemon": "^2.0.15",
+    "mysql2": "^3.7.0",
+    "nodemon": "^2.0.22",
     "python-shell": "^3.0.1"
   }
 }
