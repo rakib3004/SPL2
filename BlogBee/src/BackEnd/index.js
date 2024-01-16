@@ -14,7 +14,6 @@ const app = express();
 
 app.use(cors());
 app.use(bodyparser.json());
-//app.use(session({secret: "B:=<[X<wbb<ZGr7-"}))
 
 
 //database connection
@@ -22,7 +21,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'BlogBee',
+    database: 'blogbee',
     port:3306
 });
 
@@ -34,7 +33,8 @@ db.connect(err=>{
 
 
 //post singup data into database
-app.post('/signupUsers',(req,res)=>{
+
+app.post('/signup',(req,res)=>{
     let userName = req.body.userName;
     let email = req.body.email;
     let password = req.body.password;
@@ -62,7 +62,7 @@ app.post('/signupUsers',(req,res)=>{
 });
 
 //post login data
-app.post('/login',(req,res1)=>{
+app.post('/signin',(req,res1)=>{
     let userName = req.body.userName;
     let password = req.body.password;
 
@@ -128,6 +128,7 @@ app.post('/favourite',(req,result)=>{
 
     let qr = "Select * from FavouriteList where userNo=? and videoId=?";
     db.query(qr,[userNo,videoId],(err,res)=>{
+
         if(res.length>0){
             result.send(false);
         }
@@ -153,7 +154,7 @@ app.put('/remove',(req,result)=>{
 
 //get all video data
 app.get('/videoInfo',(req,res)=>{
-    let qr = "select * from videoInfo";
+    let qr = "SELECT * from videoInfo";
     db.query(qr,(err,result)=>{
         if(err)
         {
@@ -162,7 +163,6 @@ app.get('/videoInfo',(req,res)=>{
         res.send(result);
     });
 });
-
 
 //recommendation algorithm 
 app.get('/recommendation/:userId',(req,res)=>{
@@ -192,40 +192,41 @@ app.get('/classify/:text',(req,res)=>{
 
 
 //temp python calling method
-app.get('/test/:videoId/:title', (req, res) => {
+app.post('/blog', (req, res) => {
 
-    let videoId = req.params.videoId;
-    let title = req.params.title;
+    let videoId = req.body.videoId;
+    let title = req.body.title;
     let text = "";
 
-    let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
+    // let qr = `SELECT * FROM Blogs WHERE videoId = ?`;
 
-    db.query(qr,videoId,(err,result)=>{
-        if(err){
-            console.log(err,'error occured');
-        }
+    // db.query(qr,videoId,(err,result)=>{
+    //     if(err){
+    //         console.log(err,'error occured');
+    //     }
 
-        if(result.length>0){
-            //fs.writeFile('./File.txt',result.toString(), err => {if (err) {console.error(err);}});
-            return res.send(result);
-        }
-        else{
+    //     if(result.length<0){
+    //         //fs.writeFile('./File.txt',result.toString(), err => {if (err) {console.error(err);}});
+    //         return res.send(result);
+    //     }
+    //     else{
             const { spawn } = require('child_process');
-            const pyProg = spawn('python3', ['/Users/muktar/Desktop/SPL2/BlogBee/src/BackEnd/AudioToTextconverter.py',videoId]);
+            const pyProg = spawn('python3', ['./AudioToTextconverter.py',videoId]);
 
             pyProg.stdout.on('data', function(data) {
                 text = data.toString();
+                console.log(text)
                 myarray = [];
                 myarray.push({videoId, title, text})
                 res.send(myarray);
 
-                let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
-                db.query(query,[videoId,title,text]);
-                clear(myarray);
+                // let query = "INSERT INTO Blogs (videoId, title, text) VALUES (?, ?, ?)";
+                // db.query(query,[videoId,title,text]);
+                // clear(myarray);
             })
             
-        }
-    });
+        // }
+    // });
  
 })
 
@@ -254,5 +255,5 @@ app.post('/insertRatings',(req,res)=>{
 
 
 app.listen(3000,()=>{
-    console.log('server running......')
+    console.log('server running......');
 });

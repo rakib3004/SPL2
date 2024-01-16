@@ -4,7 +4,7 @@ import { Video } from '../video';
 import { VideoService } from '../video.service';
 import {BlogService} from '../blog.service';
 import { AccountService } from '../account.service';
-import { timestamp } from 'rxjs';
+
 
 @Component({
   selector: 'app-home',
@@ -26,13 +26,13 @@ export class HomeComponent implements OnInit {
   })
 
 
-  this.blogService.getRecommendedItem(this.accService.currentUserNo).subscribe(res=>{
-    this.recommendedIndex = res as Array<number>;
-    this.recommendedIndex.forEach(index => {
-      if(index<64)
-      this.recommendedVideos.push(this.videos[index]);
-    });
-  })  
+  // this.blogService.getRecommendedItem(this.accService.currentUserNo).subscribe(res=>{
+  //   this.recommendedIndex = res as Array<number>;
+  //   this.recommendedIndex.forEach(index => {
+  //     if(index<64)
+  //     this.recommendedVideos.push(this.videos[index]);
+  //   });
+  // })  
 }
 
  

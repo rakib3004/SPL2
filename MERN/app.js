@@ -17,7 +17,7 @@ const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'videos',
+    database: 'blogbee',
     port:3306
 });
 

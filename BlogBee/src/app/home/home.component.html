@@ -1,6 +1,6 @@
 <div>
   <div class="list-container">
-    <div class="vid-list shadow p-3 mb-5 rounded" *ngFor="let video of recommendedVideos">
+    <div class="vid-list shadow p-3 mb-5 rounded" *ngFor="let video of videos">
       <div class="group1">
       <img src="{{'https://img.youtube.com/vi/' + video.videoId+'/0.jpg'}}" (click)="showBlog(video)" class="thumbnail" alt="Thumbnail" />
       <div class="flex-div">

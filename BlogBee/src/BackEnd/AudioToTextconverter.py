@@ -4,14 +4,15 @@ from youtube_transcript_api import YouTubeTranscriptApi as yta
 from time import sleep
 from urllib import response
 from requests import session
-from requests_html import HTMLSession
-from bs4 import BeautifulSoup as bs
+# from requests_html import HTMLSession
+# from bs4 import BeautifulSoup as bs
 
 
-session = HTMLSession()
+# session = HTMLSession()
 
 video_id = sys.argv[1]
 
+# video_id = 'aJKkUFR4eDA'
 
 data = yta.get_transcript(video_id)
 transcript = ''

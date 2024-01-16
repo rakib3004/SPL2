@@ -22,7 +22,9 @@ export class BlogService {
   constructor(private _http:HttpClient) { }
   
   showBlog(){
-    return this._http.get("http://localhost:3000/test/"+this.video.videoId+"/"+this.video.title);
+    const body = { videoId: this.video.videoId, title: this.video.title };
+
+    return this._http.post("http://localhost:3000/blog", body);
   }
 
   getRecommendedItem(userId:any){
