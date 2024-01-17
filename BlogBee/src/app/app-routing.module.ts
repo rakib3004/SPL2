@@ -16,9 +16,9 @@ const routes: Routes = [
   { path: 'navbar', component: NavbarComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'blogView', component: BlogViewComponent },
-  { path: 'favList', component: FavouriteListComponent },
+  // { path: 'favList', component: FavouriteListComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'history', component: HistoryComponent },
+  // { path: 'history', component: HistoryComponent },
   { path: 'rating', component: RatingComponent },
 
 ];

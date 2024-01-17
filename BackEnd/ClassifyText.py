@@ -6,7 +6,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import Pipeline
 from sklearn.linear_model import SGDClassifier
 from sklearn.pipeline import Pipeline
-
+import json
 
 
 twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
@@ -21,6 +21,14 @@ twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 
 deployment_text= open("Text.txt", "r")
+
+
+# json_object =  sys.argv[1] if len(sys.argv) > 1 else ''
+# data= json.loads(json_object)
+
+# deployment_text  = data.text
+# print(data.text)
+
 
 deployment_data=deployment_text.read()
 deployment_list = [deployment_data]

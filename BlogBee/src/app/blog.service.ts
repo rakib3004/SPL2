@@ -26,6 +26,7 @@ export class BlogService {
     const body = { videoId: this.video.videoId, title: this.video.title };
     console.log(this.video,body);
 
+    
 
     return this._http.post("http://localhost:3000/blog", body);
 
@@ -35,8 +36,14 @@ export class BlogService {
     return this._http.get("http://localhost:3000/recommendation/"+userId);
   }
 
+
+
   getBlogTags(text:string){
-    return this._http.get("http://localhost:3000/classify/"+text);
+    const body = { text: text};
+
+    const data =  this._http.post("http://localhost:3000/tags",body);
+    console.log(data);
+    return data;
   }
 
   addNewRating(ratingInfo:any){

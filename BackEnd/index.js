@@ -4,7 +4,7 @@ const cors = require('cors');
 const mysql = require('mysql2');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
-
+const fs = require('fs');
 const app = express();
 
 app.use(cors());
@@ -137,6 +137,7 @@ app.post('/favourite',(req,result)=>{
     },err=>{console.log(err)})
 })
 
+
 //delete from fav list
 app.put('/remove',(req,result)=>{
     console.log("Remove from favlist");
@@ -161,6 +162,7 @@ app.get('/api/v1/videos',(req,res)=>{
     });
 });
 
+
 //recommendation algorithm 
 app.get('/recommendation/:userId',(req,res)=>{
     let userId = req.params.userId;
@@ -173,20 +175,33 @@ app.get('/recommendation/:userId',(req,res)=>{
     })
 })
 
-//classify text
-app.get('/classify/:text',(req,res)=>{
-    let text = req.params.text;
-    console.log(text);
+
+
+
+app.post('/tags',(req,res)=>{
+    let text = req.body.text;
+
+    fs.writeFileSync('Text.txt', text);
+
+    let outputData = '';
 
     const { spawn } = require('child_process');
     const pyProg = spawn('python', ['./ClassifyText.py']);
 
     pyProg.stdout.on('data', function(data) {
-        console.log(data.toString());
-        return res.send(data.toString());
-    })
-})
+        outputData += data.toString();
+    });
 
+    pyProg.on('close', function (code) {
+        const outputArray = outputData.replace(/'/g, '').replace(/\r?\n/g, '')
+        .slice(1, -1) 
+        .split(', ')
+        console.log(outputArray);
+        return res.send(outputArray);
+      });
+
+
+})
 
 
 //temp python calling method
@@ -208,6 +223,9 @@ app.post('/blog', (req, res) => {
     //     }
     //     else{
 
+
+
+
     let text = '';
     let  myarray = [];
 
@@ -226,6 +244,8 @@ app.post('/blog', (req, res) => {
     myarray.push({ videoId, title, text });
 
    
+
+
     res.json(myarray);
   });
 
@@ -238,6 +258,7 @@ app.post('/blog', (req, res) => {
     // });
  
 })
+
 
 //temp video inserting 
 app.post('/insertRatings',(req,res)=>{
@@ -260,6 +281,7 @@ app.post('/insertRatings',(req,res)=>{
     });
     console.log('successfully inserted RatingData');        
 });
+
 
 
 app.listen(3000,()=>{

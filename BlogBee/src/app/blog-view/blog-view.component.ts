@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Blog } from '../blog';
 import { BlogService } from '../blog.service';
 import { switchMap } from 'rxjs/operators';
-
+import { Tag } from '../tag';
 
 @Component({
   selector: 'app-blog-view',
@@ -13,7 +13,7 @@ import { switchMap } from 'rxjs/operators';
 export class BlogViewComponent{
 
   blogs:Blog[] = [];
-  tags: any = ['Politics', 'Science', 'Religion'];
+  tags: Tag [] = [];
   text: string = "";
 
 
@@ -26,11 +26,30 @@ export class BlogViewComponent{
   constructor(private blogService:BlogService) {}
 
   ngOnInit(): void {
-    this.blogService.showBlog().subscribe(res => {
+    // this.blogService.showBlog().subscribe(res => {
+    //     this.blogs = res as Blog [];
+    //     console.log(this.blogs);
+    //     this.text = this.blogs[0].text;
+    //   },
+    // );
+
+    this.blogService.showBlog().pipe(
+      switchMap((res) => {
         this.blogs = res as Blog [];
         console.log(this.blogs);
         this.text = this.blogs[0].text;
-      },
+
+    
+        return this.blogService.getBlogTags(this.text);
+      })
+    ).subscribe((resTags ) => {
+      console.log(resTags)
+      this.tags = resTags as Tag [];
+
+    },
+    (error) => {
+      console.error('Error in HTTP request:', error);
+    }
     );
 
     // this.blogService.getBlogTags(this.text).subscribe(res => {
