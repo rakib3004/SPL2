@@ -1,5 +1,5 @@
 import nltk
-from sklearn.datasets import fetch_20newsgroups
+from sklearn.datasets import 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.naive_bayes import MultinomialNB
@@ -17,6 +17,7 @@ text_clf = Pipeline([('vect', CountVectorizer()), ('tfidf', TfidfTransformer()),
 text_clf = text_clf.fit(twenty_train.data, twenty_train.target)
 
 
+fetch_20newsgroups
 twenty_test = fetch_20newsgroups(subset='test', shuffle=True)
 
 

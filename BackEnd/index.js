@@ -242,7 +242,6 @@ app.post('/blog', (req, res) => {
 
     receivedStatusCode = code;
     myarray.push({ videoId, title, text });
-
    
 
 
@@ -284,6 +283,6 @@ app.post('/insertRatings',(req,res)=>{
 
 
 
-app.listen(3000,()=>{
+app.listen(4000,()=>{
     console.log('server running......');
 });

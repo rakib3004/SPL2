@@ -55,7 +55,9 @@ export class BlogViewComponent{
     // this.blogService.getBlogTags(this.text).subscribe(res => {
     //   this.tags = res as Array<any>;
     // },
+  }
 
- 
+  transform(value: string): string {
+    return value.replace(/[^\x00-\x7F]/g, '');
   }
 }

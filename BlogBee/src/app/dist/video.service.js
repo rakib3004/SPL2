@@ -13,16 +13,16 @@ var VideoService = /** @class */ (function () {
         this.http = http;
     }
     VideoService.prototype.getVideos = function () {
-        return this.http.get('http://localhost:3000/api/videos');
+        return this.http.get('http://localhost:4000/api/videos');
     };
     VideoService.prototype.addVideo = function (newVideo) {
         var headers = new Headers();
         headers.append('Content-Type', 'application/json');
-        return this.http.append('http://localhost:3000/api/video', newVideo);
+        return this.http.append('http://localhost:4000/api/video', newVideo);
     };
     VideoService.prototype.deleteVideo = function (_id) {
         var headers = new Headers();
-        return this.http["delete"]('http://localhost:3000/api/video', _id);
+        return this.http["delete"]('http://localhost:4000/api/video', _id);
     };
     VideoService = __decorate([
         core_1.Injectable({

@@ -28,12 +28,12 @@ export class BlogService {
 
     
 
-    return this._http.post("http://localhost:3000/blog", body);
+    return this._http.post("http://localhost:4000/blog", body);
 
   }
 
   getRecommendedItem(userId:any){
-    return this._http.get("http://localhost:3000/recommendation/"+userId);
+    return this._http.get("http://localhost:4000/recommendation/"+userId);
   }
 
 
@@ -41,14 +41,14 @@ export class BlogService {
   getBlogTags(text:string){
     const body = { text: text};
 
-    const data =  this._http.post("http://localhost:3000/tags",body);
+    const data =  this._http.post("http://localhost:4000/tags",body);
     console.log(data);
     return data;
   }
 
   addNewRating(ratingInfo:any){
     console.log(ratingInfo);
-    return this._http.post("http://localhost:3000/rating",ratingInfo);
+    return this._http.post("http://localhost:4000/rating",ratingInfo);
   }
 
   getBlogToShow():Blog{
@@ -56,16 +56,16 @@ export class BlogService {
   }
 
   getFavouritelist(userNo:number){
-    return this._http.get("http://localhost:3000/favouriteList/"+userNo);
+    return this._http.get("http://localhost:4000/favouriteList/"+userNo);
   }
 
   addToFavouriteList(favVideo:any){
-   return this._http.post("http://localhost:3000/favourite",favVideo);
+   return this._http.post("http://localhost:4000/favourite",favVideo);
   }
 
   removeFromFavouriteList(favVideo:any){
     console.log(favVideo);
-    return this._http.put("http://localhost:3000/remove",favVideo);
+    return this._http.put("http://localhost:4000/remove",favVideo);
    }
 
 }

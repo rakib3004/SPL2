@@ -20,7 +20,7 @@ export class VideoService {
 
   // Get all videos
   getVideos(): Observable<any> {
-    return this._http.get('http://localhost:3000/api/v1/videos');
+    return this._http.get('http://localhost:4000/api/v1/videos');
  }
 
 

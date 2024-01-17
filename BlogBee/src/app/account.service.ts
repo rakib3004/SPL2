@@ -25,14 +25,14 @@ export class AccountService {
   }
 
   //get all data
-  apiUrl = 'http://localhost:3000/api/v1/users/';
+  apiUrl = 'http://localhost:4000/api/v1/users/';
 
   signUp(signUpInfo:any){
-    return this._http.post(this.apiUrl+'/signup',signUpInfo);
+    return this._http.post(this.apiUrl+'signup',signUpInfo);
   }
 
   signIn(signinInfo:any){
-    return this._http.post(this.apiUrl+'/signin', signinInfo);
+    return this._http.post(this.apiUrl+'signin', signinInfo);
   }
 
 }
