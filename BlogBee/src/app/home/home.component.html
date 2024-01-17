@@ -1,8 +1,8 @@
-<div>
+<!-- <div>
   <div class="list-container">
     <div class="vid-list shadow p-3 mb-5 rounded" *ngFor="let video of videos">
       <div class="group1">
-      <img src="{{'https://img.youtube.com/vi/' + video.videoId+'/0.jpg'}}" (click)="showBlog(video)" class="thumbnail" alt="Thumbnail" />
+      <img src="{{'https://img.youtube.com/vi/'+video.videoId+'/0.jpg'}}" (click)="showBlog(video)" class="thumbnail" alt="Thumbnail" />
       <div class="flex-div">
         <div class="vid-info">
           <p (click)="showBlog(video)">{{video.title}}</p>
@@ -10,14 +10,36 @@
       </div>
     </div>
 
-    <div class="group2">
-
-      <span > <button  (click)="addToFavouriteButton(video.videoId,video.title)"  type="button" style="margin-right: 24px;margin-top: 20px;" class="btn btn-success">Favourite(+)</button>
-          
-        <button  (click)="ratingButton(video.videoId)" type="button" class="btn btn-primary" style="margin-top: 20px;">Rate</button></span>
-    </div>
-
+    <div class=" text-center"> 
+<button  (click)="showBlog(video)" type="button" class="btn btn-success" style="margin-right: px;margin-top: 20px;">Show Transcript</button>
   </div>
 
+  </div>
+</div> -->
+
+
+<div class="list-container">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let video of videos">
+      <div class="vid-list shadow p-3 mb-5 rounded h-90">
+        <div class="group1">
+          <img src="{{'https://img.youtube.com/vi/'+video.videoId+'/0.jpg'}}" (click)="showBlog(video)" class="thumbnail" alt="Thumbnail" />
+          <div class="flex-div">
+            <div class="vid-info">
+              <p (click)="showBlog(video)">{{ truncateTitle(video.title) }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-3">
+          <button (click)="showBlog(video)" type="button" class="btn btn-success">Show Transcript</button>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+     <!-- <span > <button  (click)="addToFavouriteButton(video.videoId,video.title)"  type="button" style="margin-right: 24px;margin-top: 20px;" class="btn btn-success">Favourite(+)</button>
+          
+        <button  (click)="ratingButton(video.videoId)" type="button" class="btn btn-primary" style="margin-top: 20px;">Rate</button></span>
+    </div> -->

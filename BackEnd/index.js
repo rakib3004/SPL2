@@ -2,11 +2,6 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const cors = require('cors');
 const mysql = require('mysql2');
-const { send } = require('process');
-const { query } = require('express');
-const { clear } = require('console');
-const fs = require('fs');
-const session = require('express-session');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -35,7 +30,7 @@ db.connect(err=>{
 
 //post singup data into database
 
-app.post('/signup',(req,res)=>{
+app.post('/api/v1/users/signup',(req,res)=>{
     let userName = req.body.userName;
     let email = req.body.email;
     let password = req.body.password;
@@ -64,7 +59,7 @@ app.post('/signup',(req,res)=>{
 
 
 //post login data
-app.post('/signin',(req,res1)=>{
+app.post('/api/v1/users/signin',(req,res1)=>{
     let userName = req.body.userName;
     let password = req.body.password;
 
@@ -155,7 +150,7 @@ app.put('/remove',(req,result)=>{
 })
 
 //get all video data
-app.get('/videoInfo',(req,res)=>{
+app.get('/api/v1/videos',(req,res)=>{
     let qr = "SELECT * from videoInfo";
     db.query(qr,(err,result)=>{
         if(err)
@@ -193,6 +188,7 @@ app.get('/classify/:text',(req,res)=>{
 })
 
 
+
 //temp python calling method
 app.post('/blog', (req, res) => {
 
@@ -215,7 +211,6 @@ app.post('/blog', (req, res) => {
     let text = '';
     let  myarray = [];
 
-
             const { spawn } = require('child_process');
             const pyProg = spawn('python', ['./AudioToTextconverter.py',videoId]);
             
@@ -223,11 +218,8 @@ app.post('/blog', (req, res) => {
             pyProg.stdout.on('data', function (data) {
                 text += data.toString();
               });
-
             // myarray.push({videoId, title, text})
             // res.send(myarray);
-
-
              pyProg.on('close', (code) => {
 
     receivedStatusCode = code;

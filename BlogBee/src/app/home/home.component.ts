@@ -35,6 +35,10 @@ export class HomeComponent implements OnInit {
   // })  
 }
 
+truncateTitle(title: string): string {
+  const maxLength = 42;
+  return title.length > maxLength ? title.slice(0, maxLength) + '...' : title;
+}
  
 
   ratingButton(videoId:any){
