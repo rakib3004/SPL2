@@ -2,7 +2,9 @@ import joblib
 from sklearn.datasets import fetch_20newsgroups
 
 
-twenty_train = fetch_20newsgroups(subset='train', shuffle=True)
+twenty_train = fetch_20newsgroups()
+
+print(twenty_train)
 
 loaded_model = joblib.load('text_classification_model.joblib')
 
